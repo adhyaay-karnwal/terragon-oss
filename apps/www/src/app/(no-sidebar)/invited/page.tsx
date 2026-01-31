@@ -4,26 +4,26 @@ import { InvitedWaitlist } from "@/components/invited-waitlist";
 import { StructuredData } from "@/components/system/structured-data";
 import { Metadata } from "next";
 import { cookies } from "next/headers";
-import { validateAccessCode } from "@terragon/shared/model/access-codes";
+import { validateAccessCode } from "@rover/shared/model/access-codes";
 import { db } from "@/lib/db";
 import { OG_IMAGE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "You've been invited to Terragon",
+  title: "You've been invited to Rover",
   description:
-    "Join Terragon with your exclusive access code and start using background agents for Claude Code.",
+    "Join Rover with your exclusive access code and start using background agents for Claude Code.",
   openGraph: {
-    title: "You've been invited to Terragon",
+    title: "You've been invited to Rover",
     description:
-      "Join Terragon with your exclusive access code and start using background agents for Claude Code.",
-    url: "https://www.terragonlabs.com/invited",
-    siteName: "Terragon",
+      "Join Rover with your exclusive access code and start using background agents for Claude Code.",
+    url: "https://www.roverlabs.com/invited",
+    siteName: "Rover",
     images: [
       {
         url: OG_IMAGE_URL,
         width: 1200,
         height: 630,
-        alt: "Terragon - Background agents for Claude Code",
+        alt: "Rover - Background agents for Claude Code",
       },
     ],
     locale: "en_US",
@@ -31,15 +31,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "You've been invited to Terragon",
+    title: "You've been invited to Rover",
     description:
-      "Join Terragon with your exclusive access code and start using background agents for Claude Code.",
-    site: "@terragonlabs",
-    creator: "@terragonlabs",
+      "Join Rover with your exclusive access code and start using background agents for Claude Code.",
+    site: "@roverlabs",
+    creator: "@roverlabs",
     images: [OG_IMAGE_URL],
   },
   keywords: [
-    "Terragon",
+    "Rover",
     "AI coding assistant",
     "Claude Code",
     "background agents",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     "exclusive access",
   ],
   alternates: {
-    canonical: "https://www.terragonlabs.com/invited",
+    canonical: "https://www.roverlabs.com/invited",
   },
   robots: {
     index: false,

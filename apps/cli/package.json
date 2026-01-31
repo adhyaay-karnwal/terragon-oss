@@ -1,5 +1,5 @@
 {
-  "name": "@terragon-labs/cli",
+  "name": "@rover-labs/cli",
   "version": "0.1.21",
   "type": "module",
   "bin": {
@@ -33,8 +33,8 @@
     "update-notifier": "^7.3.1"
   },
   "devDependencies": {
-    "@terragon/agent": "workspace:*",
-    "@terragon/cli-api-contract": "workspace:*",
+    "@rover/agent": "workspace:*",
+    "@rover/cli-api-contract": "workspace:*",
     "@types/node": "^22.6.1",
     "@types/react": "^19.1.8",
     "@types/update-notifier": "^6.0.8",
@@ -53,21 +53,21 @@
     "README.md"
   ],
   "keywords": [
-    "terragon",
+    "rover",
     "cli",
     "terry",
     "ai",
     "coding-assistant"
   ],
-  "author": "Terragon Labs",
+  "author": "Rover Labs",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/terragon-labs/terragon.git",
+    "url": "https://github.com/rover-labs/rover.git",
     "directory": "apps/cli"
   },
-  "homepage": "https://www.terragonlabs.com",
+  "homepage": "https://www.roverlabs.com",
   "bugs": {
-    "url": "https://github.com/terragon-labs/terragon/issues"
+    "url": "https://github.com/rover-labs/rover/issues"
   }
 }

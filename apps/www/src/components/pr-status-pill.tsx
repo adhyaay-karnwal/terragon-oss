@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { GithubCheckStatus, GithubPRStatus } from "@terragon/shared";
+import { GithubCheckStatus, GithubPRStatus } from "@rover/shared";
 import {
   GitPullRequestArrow,
   GitMerge,

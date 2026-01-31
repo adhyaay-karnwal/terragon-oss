@@ -3,7 +3,7 @@ import {
   DBUserMessage,
   ThreadSource,
   ThreadSourceMetadata,
-} from "@terragon/shared";
+} from "@rover/shared";
 import { createNewThread } from "./new-thread-shared";
 
 /**

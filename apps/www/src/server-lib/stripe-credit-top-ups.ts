@@ -3,8 +3,8 @@ import { db } from "@/lib/db";
 import {
   getUserCredits,
   grantUserCredits,
-} from "@terragon/shared/model/credits";
-import { updateUserInfoServerSide } from "@terragon/shared/model/user";
+} from "@rover/shared/model/credits";
+import { updateUserInfoServerSide } from "@rover/shared/model/user";
 
 export const CREDIT_TOP_UP_REASON = "credit_top_up";
 export const CREDIT_AUTO_RELOAD_REASON = "credit_auto_reload";
@@ -22,7 +22,9 @@ function extractCreditMetadata(
     return null;
   }
   const reason = metadata.reason;
-  const userId = metadata.terragon_user_id;
+  // Support both new (rover_user_id) and legacy (terragon_user_id) metadata keys
+  // for backwards compatibility during rebrand transition
+  const userId = metadata.rover_user_id ?? metadata.terragon_user_id;
   if (typeof userId !== "string" || userId.length === 0) {
     return null;
   }

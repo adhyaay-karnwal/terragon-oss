@@ -3,24 +3,24 @@ import {
   getGithubPR,
   getThreadsForGithubPR,
   upsertGithubPR,
-} from "@terragon/shared/model/github";
+} from "@rover/shared/model/github";
 import { Octokit } from "octokit";
 import {
   getGithubPRMergeableState,
   getGithubPRStatus,
   getGithubPRChecksStatus,
-} from "@terragon/shared/github-api/helpers";
-import { getInstallationToken } from "@terragon/shared/github-app";
+} from "@rover/shared/github-api/helpers";
+import { getInstallationToken } from "@rover/shared/github-app";
 import { getPostHogServer } from "./posthog-server";
-import { publishBroadcastUserMessage } from "@terragon/shared/broadcast-server";
-import { BroadcastMessageThreadData } from "@terragon/types/broadcast";
-import { updateThread } from "@terragon/shared/model/threads";
+import { publishBroadcastUserMessage } from "@rover/shared/broadcast-server";
+import { BroadcastMessageThreadData } from "@rover/types/broadcast";
+import { updateThread } from "@rover/shared/model/threads";
 import {
   getGitHubAccountIdForUser,
   getGitHubUserAccessTokenOrThrow,
   getUserSettings,
-} from "@terragon/shared/model/user";
-import { env } from "@terragon/env/apps-www";
+} from "@rover/shared/model/user";
+import { env } from "@rover/env/apps-www";
 import { UserFacingError } from "./server-actions";
 
 export function parseRepoFullName(repoFullName: string): [string, string] {
@@ -69,7 +69,7 @@ export async function ensureBranchExists({
           );
 
           // Create a README file to initialize the branch
-          const readmeContent = `# ${repoName}\n\nThis repository was initialized by Terragon.`;
+          const readmeContent = `# ${repoName}\n\nThis repository was initialized by Rover.`;
 
           await octokit.rest.repos.createOrUpdateFileContents({
             owner,

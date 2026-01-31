@@ -1,5 +1,5 @@
 import { Daytona } from "@daytonaio/sdk";
-import { getTemplateIdForSize } from "@terragon/sandbox-image";
+import { getTemplateIdForSize } from "@rover/sandbox-image";
 import { nanoid } from "nanoid/non-secure";
 import { NextRequest } from "next/server";
 

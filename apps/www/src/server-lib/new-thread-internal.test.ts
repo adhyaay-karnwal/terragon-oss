@@ -1,12 +1,12 @@
 import { describe, it, vi, beforeEach, expect } from "vitest";
 import { newThreadInternal } from "./new-thread-internal";
 import { db } from "@/lib/db";
-import { createTestUser } from "@terragon/shared/model/test-helpers";
-import { User, DBUserMessage } from "@terragon/shared";
+import { createTestUser } from "@rover/shared/model/test-helpers";
+import { User, DBUserMessage } from "@rover/shared";
 import { mockWaitUntil, waitUntilResolved } from "@/test-helpers/mock-next";
-import { getThread } from "@terragon/shared/model/threads";
+import { getThread } from "@rover/shared/model/threads";
 
-const repoFullName = "terragon/test-repo";
+const repoFullName = "rover/test-repo";
 const mockMessage: DBUserMessage = {
   type: "user",
   parts: [{ type: "text", text: "Internal task message" }],

@@ -1,2 +1,2 @@
-export { default as daemonAsStr } from "@terragon/daemon/raw-txt";
-export { default as mcpServerAsStr } from "@terragon/mcp-server/raw-txt";
+export { default as daemonAsStr } from "@rover/daemon/raw-txt";
+export { default as mcpServerAsStr } from "@rover/mcp-server/raw-txt";

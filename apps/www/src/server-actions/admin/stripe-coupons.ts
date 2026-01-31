@@ -7,7 +7,7 @@ import { db } from "@/lib/db";
 import {
   user as userTable,
   userStripePromotionCode,
-} from "@terragon/shared/db/schema";
+} from "@rover/shared/db/schema";
 import { asc, inArray, lt } from "drizzle-orm";
 import {
   stripeCouponsCreate,

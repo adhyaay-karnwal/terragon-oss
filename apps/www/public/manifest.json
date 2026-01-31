@@ -1,6 +1,6 @@
 {
-  "name": "Terragon",
-  "short_name": "Terragon",
+  "name": "Rover",
+  "short_name": "Rover",
   "description": "AI-powered coding assistant platform",
   "start_url": "/",
   "display": "standalone",

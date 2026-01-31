@@ -8,11 +8,11 @@ import {
 } from "@tanstack/react-query";
 import { billingInfoQueryOptions } from "@/queries/billing-queries";
 import { userCreditBalanceQueryOptions } from "@/queries/user-credit-balance-queries";
-import { getUserInfoServerSide } from "@terragon/shared/model/user";
+import { getUserInfoServerSide } from "@rover/shared/model/user";
 import { db } from "@/lib/db";
 
 export const metadata: Metadata = {
-  title: "Billing | Terragon",
+  title: "Billing | Rover",
 };
 
 export default async function BillingSettingsPage() {

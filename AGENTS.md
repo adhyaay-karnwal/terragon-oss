@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**Terragon** - An AI-powered coding assistant platform that allows users to run coding agents in parallel inside remote sandboxes. This allows users to do multiple tasks concurrently and asynchronously. The remote sandboxes are full development environments that allow the coding agents to make edits, run tests, verify changes and put up commit and PRs.
+**Rover** - An AI-powered coding assistant platform that allows users to run coding agents in parallel inside remote sandboxes. This allows users to do multiple tasks concurrently and asynchronously. The remote sandboxes are full development environments that allow the coding agents to make edits, run tests, verify changes and put up commit and PRs.
 
 ## Repository Structure
 
@@ -205,7 +205,7 @@ pnpm -C apps/cli uninstall:dev
 - **Environment**: `.env.example` files in apps/www, apps/broadcast, packages
 - **Development**: Docker Compose with PostgreSQL 16, Redis 7
 - **Deployment**: Vercel (frontend), PartyKit (WebSocket), sandbox providers
-- **TypeScript**: Shared config via `@terragon/tsconfig`
+- **TypeScript**: Shared config via `@rover/tsconfig`
 
 ### Key Environment Variables
 
@@ -230,20 +230,20 @@ pnpm -C apps/cli uninstall:dev
 
 ### Shared Packages
 
-- **`@terragon/shared`**: Database models, schemas, and core utilities
-- **`@terragon/daemon`**: Sandbox agent runtime and communication
-- **`@terragon/bundled`**: Bundled scripts for deployment (includes daemon, mcp-server)
-- **`@terragon/env`**: Environment configuration management
-- **`@terragon/r2`**: Cloudflare R2 storage integration
-- **`@terragon/dev-env`**: Docker development environment
-- **`@terragon/tsconfig`**: Shared TypeScript configuration
-- **`@terragon/mcp-server`**: Model Context Protocol server for follow-up task suggestions
-- **`@terragon/debug-scripts`**: Debugging utilities for E2B sandboxes (SSH, connect, create, resume)
-- **`@terragon/cli-api-contract`**: ORPC-based CLI API contract definitions
-- **`@terragon/transactional`**: React Email-based transactional email templates
-- **`@terragon/sandbox`**: Sandbox abstraction across multiple providers (E2B, Docker, Daytona)
-- **`@terragon/sandbox-image`**: Sandbox image specific code to create template images for sandbox providers
-- **`@terragon/one-time-token-signin`**: Better Auth plugin for magic-link/one-time token sign-in
+- **`@rover/shared`**: Database models, schemas, and core utilities
+- **`@rover/daemon`**: Sandbox agent runtime and communication
+- **`@rover/bundled`**: Bundled scripts for deployment (includes daemon, mcp-server)
+- **`@rover/env`**: Environment configuration management
+- **`@rover/r2`**: Cloudflare R2 storage integration
+- **`@rover/dev-env`**: Docker development environment
+- **`@rover/tsconfig`**: Shared TypeScript configuration
+- **`@rover/mcp-server`**: Model Context Protocol server for follow-up task suggestions
+- **`@rover/debug-scripts`**: Debugging utilities for E2B sandboxes (SSH, connect, create, resume)
+- **`@rover/cli-api-contract`**: ORPC-based CLI API contract definitions
+- **`@rover/transactional`**: React Email-based transactional email templates
+- **`@rover/sandbox`**: Sandbox abstraction across multiple providers (E2B, Docker, Daytona)
+- **`@rover/sandbox-image`**: Sandbox image specific code to create template images for sandbox providers
+- **`@rover/one-time-token-signin`**: Better Auth plugin for magic-link/one-time token sign-in
 
 ## Important Notes
 

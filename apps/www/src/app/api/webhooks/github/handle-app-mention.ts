@@ -11,14 +11,14 @@ import {
 import {
   getUserIdByGitHubAccountId,
   getUserSettings,
-} from "@terragon/shared/model/user";
+} from "@rover/shared/model/user";
 import { db } from "@/lib/db";
-import { getThreadForGithubPRAndUser } from "@terragon/shared/model/github";
+import { getThreadForGithubPRAndUser } from "@rover/shared/model/github";
 import { queueFollowUpInternal } from "@/server-lib/follow-up";
-import { getGitHubMentionAutomationsForRepo } from "@terragon/shared/model/automations";
-import { GitHubMentionTriggerConfig } from "@terragon/shared/automations";
-import { Automation } from "@terragon/shared/db/types";
-import { DBUserMessage } from "@terragon/shared/db/db-message";
+import { getGitHubMentionAutomationsForRepo } from "@rover/shared/model/automations";
+import { GitHubMentionTriggerConfig } from "@rover/shared/automations";
+import { Automation } from "@rover/shared/db/types";
+import { DBUserMessage } from "@rover/shared/db/db-message";
 import {
   addEyesReactionToComment,
   getAccessInfoForGitHubAccount,
@@ -27,11 +27,11 @@ import {
 } from "./utils";
 import { getAccessInfoForUser } from "@/lib/subscription";
 import { maybeBatchThreads } from "@/lib/batch-threads";
-import { getFeatureFlagForUser } from "@terragon/shared/model/feature-flags";
-import { getPrimaryThreadChat } from "@terragon/shared/utils/thread-utils";
-import { AIAgent, AIModel } from "@terragon/agent/types";
-import { getThreadChat } from "@terragon/shared/model/threads";
-import { modelToAgent } from "@terragon/agent/utils";
+import { getFeatureFlagForUser } from "@rover/shared/model/feature-flags";
+import { getPrimaryThreadChat } from "@rover/shared/utils/thread-utils";
+import { AIAgent, AIModel } from "@rover/agent/types";
+import { getThreadChat } from "@rover/shared/model/threads";
+import { modelToAgent } from "@rover/agent/utils";
 
 // Handle app mention by adding to existing thread or creating a new one
 export async function handleAppMention({
@@ -106,7 +106,7 @@ export async function handleAppMention({
     return;
   }
 
-  // Find all Terragon users who should get tasks created
+  // Find all Rover users who should get tasks created
   const usersToTriggerTasks = await getUsersToTriggerTasks({
     repoFullName,
     issueOrPrType,

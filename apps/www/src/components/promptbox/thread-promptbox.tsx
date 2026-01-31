@@ -9,12 +9,12 @@ import {
   DBUserMessage,
   GithubPRStatus,
   GithubCheckStatus,
-} from "@terragon/shared";
-import { AIAgent, AIModel } from "@terragon/agent/types";
+} from "@rover/shared";
+import { AIAgent, AIModel } from "@rover/agent/types";
 import { SimplePromptBox } from "./simple-promptbox";
 import { QueuedMessages } from "./queued-messages";
 import { useAccessInfo } from "@/queries/subscription";
-import { ensureAgent } from "@terragon/agent/utils";
+import { ensureAgent } from "@rover/agent/utils";
 import { GitHubQuickActions } from "../chat/github-quick-actions";
 
 interface ThreadPromptBoxProps {
