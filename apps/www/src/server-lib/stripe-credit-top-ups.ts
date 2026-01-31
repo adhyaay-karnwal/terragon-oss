@@ -22,7 +22,9 @@ function extractCreditMetadata(
     return null;
   }
   const reason = metadata.reason;
-  const userId = metadata.rover_user_id;
+  // Support both new (rover_user_id) and legacy (terragon_user_id) metadata keys
+  // for backwards compatibility during rebrand transition
+  const userId = metadata.rover_user_id ?? metadata.terragon_user_id;
   if (typeof userId !== "string" || userId.length === 0) {
     return null;
   }

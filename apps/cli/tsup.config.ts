@@ -13,8 +13,11 @@ export default defineConfig({
   bundle: true,
   noExternal: ["@rover/cli-api-contract"],
   define: {
+    // Support both ROVER_WEB_URL (new) and TERRAGON_WEB_URL (legacy) for backwards compatibility
     "process.env.TERRAGON_WEB_URL": JSON.stringify(
-      process.env.TERRAGON_WEB_URL || "https://www.roverlabs.com",
+      process.env.ROVER_WEB_URL ||
+        process.env.TERRAGON_WEB_URL ||
+        "https://www.roverlabs.com",
     ),
     "process.env.TERRY_NO_AUTO_UPDATE": JSON.stringify(
       process.env.TERRY_NO_AUTO_UPDATE || "0",
