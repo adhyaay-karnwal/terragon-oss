@@ -257,7 +257,7 @@ export async function startAgentMessage({
       // Get or create sandbox for the thread
       const startTime = Date.now();
       // We need to provide onStatusUpdate for both new and resumed threads
-      // so the UI can show sandbox setup progress (e.g., "Running terragon-setup.sh")
+      // so the UI can show sandbox setup progress (e.g., "Running rover-setup.sh")
       const onStatusUpdate: CreateSandboxOptions["onStatusUpdate"] = async ({
         sandboxId,
         sandboxStatus,

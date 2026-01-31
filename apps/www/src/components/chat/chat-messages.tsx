@@ -63,7 +63,7 @@ function getBootingSubstatusMessage(substatus: BootingSubstatus): string {
     case "installing-agent":
       return "Installing agent";
     case "running-setup-script":
-      return "Running terragon-setup.sh";
+      return "Running rover-setup.sh";
     case "booting-done":
       return "Waiting for assistant to start";
     default:
@@ -84,7 +84,7 @@ function getAgentRateLimitMessage({
       Agent rate limit reached. {retryAtStr}{" "}
       {agent === "claudeCode" && (
         <Link
-          href="https://docs.terragonlabs.com/docs/agent-providers/claude-code#automatic-rate-limit-handling"
+          href="https://docs.roverlabs.com/docs/agent-providers/claude-code#automatic-rate-limit-handling"
           target="_blank"
           rel="noopener noreferrer"
           className="underline hover:no-underline text-sm"

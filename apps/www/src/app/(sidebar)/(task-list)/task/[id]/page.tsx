@@ -20,12 +20,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const userId = await getUserIdOrNull();
   if (!userId) {
-    return { title: "Task | Terragon" };
+    return { title: "Task | Rover" };
   }
   const { id } = await params;
   const thread = unwrapResult(await getThreadAction(id));
   if (!thread) {
-    return { title: "Task | Terragon" };
+    return { title: "Task | Rover" };
   }
   return {
     title: getThreadDocumentTitle(thread),

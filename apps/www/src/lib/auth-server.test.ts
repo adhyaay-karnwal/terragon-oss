@@ -238,7 +238,7 @@ describe("auth-server", () => {
 
   describe("validInternalRequestOrThrow", () => {
     it("should throw an error when the secret is incorrect", async () => {
-      await mockNextHeaders({ "X-Terragon-Secret": "incorrect" });
+      await mockNextHeaders({ "X-Rover-Secret": "incorrect" });
       await expect(validInternalRequestOrThrow()).rejects.toThrow(
         "Unauthorized",
       );
@@ -246,7 +246,7 @@ describe("auth-server", () => {
 
     it("should not throw an error when the secret is correct", async () => {
       await mockNextHeaders({
-        "X-Terragon-Secret": env.INTERNAL_SHARED_SECRET,
+        "X-Rover-Secret": env.INTERNAL_SHARED_SECRET,
       });
       await validInternalRequestOrThrow();
     });

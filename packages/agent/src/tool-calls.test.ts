@@ -94,9 +94,9 @@ describe("normalizeToolCall", () => {
   });
 
   describe("MCP SuggestFollowupTask", () => {
-    it("should normalize mcp__terry__SuggestFollowupTask to SuggestFollowupTask", () => {
+    it("should normalize mcp__rover__SuggestFollowupTask to SuggestFollowupTask", () => {
       const result = normalizeToolCall("claudeCode", {
-        name: "mcp__terry__SuggestFollowupTask",
+        name: "mcp__rover__SuggestFollowupTask",
         parameters: { task: "test" },
       });
 

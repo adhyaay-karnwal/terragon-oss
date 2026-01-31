@@ -24,7 +24,7 @@ export async function BannerContainer() {
   if (flags.shutdownMode) {
     return (
       <BannerBar id="shutdown-banner">
-        Terragon is shutting down on February 9th, 2026.{" "}
+        Rover is shutting down on February 9th, 2026.{" "}
         <Link
           href={`${publicDocsUrl()}/docs/resources/shutdown`}
           className="underline"
@@ -45,8 +45,8 @@ export async function BannerContainer() {
         !billingInfo.signupTrial?.isActive
       ) {
         const bannerText = billingInfo.unusedPromotionCode
-          ? "Upgrade to continue using Terragon. Enjoy 2 months free applied at checkout."
-          : "Upgrade to continue using Terragon.";
+          ? "Upgrade to continue using Rover. Enjoy 2 months free applied at checkout."
+          : "Upgrade to continue using Rover.";
         // Render through the client priority gate so impersonation always wins.
         return (
           <BannerPriorityGate>

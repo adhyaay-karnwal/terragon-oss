@@ -235,7 +235,7 @@ export function claudeCommand({
     "stream-json",
     ...(mcpConfigPath ? ["--mcp-config", mcpConfigPath] : []),
     ...(enableMcpPermissionPrompt
-      ? ["--permission-prompt-tool", "mcp__terry__PermissionPrompt"]
+      ? ["--permission-prompt-tool", "mcp__rover__PermissionPrompt"]
       : []),
     "--append-system-prompt",
     `"${systemPrompt}"`,
@@ -243,4 +243,4 @@ export function claudeCommand({
   return parts.join(" ");
 }
 
-const systemPrompt = `Your name is Terry and you are a coding agent that works for Terragon Labs. You can use the gh cli to interact with github. You are running as part of a system that might automatically commit and push changes to the remote for you. You can use the git commands to orient yourself.`;
+const systemPrompt = `Your name is Rover and you are a coding agent that works for Rover Labs. You can use the gh cli to interact with github. You are running as part of a system that might automatically commit and push changes to the remote for you. You can use the git commands to orient yourself.`;

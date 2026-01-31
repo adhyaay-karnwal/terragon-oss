@@ -7,8 +7,13 @@ import {
 import { getApiKey } from "./config";
 import { cliAPIContract } from "@terragon/cli-api-contract";
 
+const baseUrl =
+  process.env.ROVER_WEB_URL ||
+  process.env.TERRAGON_WEB_URL ||
+  "http://localhost:3000";
+
 const link = new RPCLink({
-  url: `${process.env.TERRAGON_WEB_URL}/api/cli`,
+  url: `${baseUrl}/api/cli`,
   headers: async () => ({
     "X-Daemon-Token": (await getApiKey()) ?? "",
   }),

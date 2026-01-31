@@ -21,7 +21,7 @@ export default function AnnouncementBanner({
             <span className="bg-muted-foreground text-background text-xs font-semibold px-2.5 py-1 rounded-full">
               Notice
             </span>
-            <span>Terragon is shutting down on February 9th, 2026.</span>
+            <span>Rover is shutting down on February 9th, 2026.</span>
           </span>
         </a>
       </div>

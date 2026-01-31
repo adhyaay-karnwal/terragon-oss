@@ -35,7 +35,7 @@ export const OnboardingCompletionReminderEmail = ({
 
               <Text className="text-base text-gray-700 mb-3">
                 You've connected GitHub and Claude Code, but haven't created a
-                task, so you aren't seeing Terragon shine!
+                task, so you aren't seeing Rover shine!
               </Text>
 
               <Text className="text-base text-gray-700 mb-4">
@@ -73,10 +73,10 @@ export const OnboardingCompletionReminderEmail = ({
               <Text className="text-base text-gray-700 mb-0">
                 Need additional help? Email{" "}
                 <Link
-                  href="mailto:support@terragonlabs.com"
+                  href="mailto:support@roverlabs.com"
                   className="text-green-600 underline"
                 >
-                  support@terragonlabs.com
+                  support@roverlabs.com
                 </Link>{" "}
                 or join our{" "}
                 <Link
@@ -91,7 +91,7 @@ export const OnboardingCompletionReminderEmail = ({
               <Text className="text-base text-gray-700 mt-6 mb-0">
                 Best,
                 <br />
-                Terragon team
+                Rover team
               </Text>
             </Section>
           </Container>

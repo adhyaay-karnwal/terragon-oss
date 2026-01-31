@@ -3,20 +3,20 @@
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 
-const fullCommand = "terry pull 1234";
+const fullCommand = "rover pull 1234";
 const outputLines: Array<string | { text: string; delay: number }> = [
   { text: "Fetching task...", delay: 2000 },
   "✓ Task fetched successfully",
   "",
   "Name           Add konami code easter egg",
-  "Branch         terragon/add-konami-code-easter-egg",
-  "Repository     terragon-labs/terragon",
+  "Branch         rover/add-konami-code-easter-egg",
+  "Repository     rover-labs/rover",
   "PR Number      #1234",
   { text: "", delay: 600 },
   "✓ Task ready for local work",
 ];
 
-export function TerryPullTerminal() {
+export function RoverPullTerminal() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
   const [visible, setVisible] = useState(false);

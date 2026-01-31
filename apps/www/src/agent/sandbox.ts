@@ -322,7 +322,7 @@ export async function createSandboxForThread({
     // Check if this is a setup script failure
     if (
       error instanceof Error &&
-      error.message.includes("terragon-setup.sh failed:")
+      error.message.includes("rover-setup.sh failed:")
     ) {
       throw wrapError("setup-script-failed", error);
     }

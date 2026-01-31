@@ -39,7 +39,7 @@ const inputSchema = z.object({
 });
 
 const CODE_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-const CODE_PREFIX = "TERRAGON";
+const CODE_PREFIX = "ROVER";
 const CODE_LENGTH = 10;
 
 function generateCouponCode() {

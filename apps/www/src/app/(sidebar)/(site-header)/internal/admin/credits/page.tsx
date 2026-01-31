@@ -129,7 +129,7 @@ export default async function AdminCreditsUsagePage() {
       <div>
         <h1 className="text-2xl font-semibold">Internal Credits Usage</h1>
         <p className="text-muted-foreground text-sm">
-          Aggregate cost of billable usage covered by Terragon&apos;s internal
+          Aggregate cost of billable usage covered by Rover&apos;s internal
           credits across all accounts.
         </p>
       </div>
