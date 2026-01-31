@@ -35,13 +35,13 @@ const packageJson = JSON.parse(
 );
 
 program
-  .name("terry")
-  .description("Terry CLI - Terragon Labs coding assistant")
+  .name("rover")
+  .description("Terry CLI - Rover Labs coding assistant")
   .version(packageJson.version);
 
 program
   .command("auth [apiKey]")
-  .description("Authenticate with your Terragon API key")
+  .description("Authenticate with your Rover API key")
   .action((apiKey: string | undefined) => {
     render(
       <QueryProvider>

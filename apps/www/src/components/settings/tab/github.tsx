@@ -36,7 +36,7 @@ export function GitHubSettings() {
         <div className="flex flex-col gap-4">
           <SettingsWithExternalLink
             label="Repository access"
-            description="Manage which GitHub repositories Terragon can access"
+            description="Manage which GitHub repositories Rover can access"
             href={getGHAppInstallUrl()}
           />
           <SettingsWithExternalLink
@@ -49,12 +49,12 @@ export function GitHubSettings() {
 
       <SettingsSection
         label="Pull Request Defaults"
-        description="Configure how Terragon creates and manages pull requests"
+        description="Configure how Rover creates and manages pull requests"
       >
         <div className="flex flex-col gap-4">
           <SettingsWithCTA
             label="Default pull request stage"
-            description="Set the default stage of pull requests Terragon creates"
+            description="Set the default stage of pull requests Rover creates"
           >
             <PullRequestStageSetting />
           </SettingsWithCTA>

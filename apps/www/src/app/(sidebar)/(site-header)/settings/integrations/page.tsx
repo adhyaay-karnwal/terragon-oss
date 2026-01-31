@@ -5,7 +5,7 @@ import { getSlackAccounts } from "@terragon/shared/model/slack";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Integrations Settings | Terragon",
+  title: "Integrations Settings | Rover",
 };
 
 export default async function IntegrationsSettingsPage() {

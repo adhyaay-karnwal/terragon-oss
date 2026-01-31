@@ -57,7 +57,7 @@ export const updateMcpConfig = userOnlyAction(
 
     // Track MCP config save
     const mcpServerNames = mcpConfig?.mcpServers
-      ? Object.keys(mcpConfig.mcpServers).filter((name) => name !== "terry")
+      ? Object.keys(mcpConfig.mcpServers).filter((name) => name !== "rover")
       : [];
 
     getPostHogServer().capture({

@@ -129,9 +129,9 @@ describe("maybeTriggerCreditAutoReload", () => {
       customer: "cus_123",
       default_payment_method: "pm_123",
       auto_advance: false,
-      description: "Terragon Credit Auto-Reload",
+      description: "Rover Credit Auto-Reload",
       metadata: {
-        terragon_user_id: userId,
+        rover_user_id: userId,
         reason: CREDIT_AUTO_RELOAD_REASON,
       },
     });
@@ -141,9 +141,9 @@ describe("maybeTriggerCreditAutoReload", () => {
       pricing: {
         price: "STRIPE_PRICE_CREDIT_PACK_TEST",
       },
-      description: "Terragon Credit Auto-Reload",
+      description: "Rover Credit Auto-Reload",
       metadata: {
-        terragon_user_id: userId,
+        rover_user_id: userId,
         reason: CREDIT_AUTO_RELOAD_REASON,
       },
     });

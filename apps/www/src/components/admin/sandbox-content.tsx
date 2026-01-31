@@ -63,7 +63,7 @@ export function AdminSandboxContent(props: {
     const blob = new Blob([logContent], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
     const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-    const filename = `terragon-daemon-${props.sandboxId}-${timestamp}.log`;
+    const filename = `rover-daemon-${props.sandboxId}-${timestamp}.log`;
 
     const link = document.createElement("a");
     link.href = url;
@@ -117,7 +117,7 @@ export function AdminSandboxContent(props: {
           <div className="flex flex-col flex-1 min-h-0 border rounded-lg overflow-hidden">
             <div className="flex w-full items-center justify-between px-4 py-2 border-b bg-muted/50">
               <h3 className="text-sm font-semibold">
-                /tmp/terragon-daemon.log
+                /tmp/rover-daemon.log
               </h3>
               <div className="flex items-center gap-4">
                 <Button

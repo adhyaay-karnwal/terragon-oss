@@ -1,6 +1,6 @@
-# @terragon/mcp-server
+# @rover/mcp-server
 
-Model Context Protocol (MCP) server providing AI assistant tools for Terragon.
+Model Context Protocol (MCP) server providing AI assistant tools for Rover.
 
 ## Overview
 
@@ -12,7 +12,7 @@ This MCP server provides tools for enhanced AI assistant capabilities:
 ## Installation
 
 ```bash
-pnpm install @terragon/mcp-server
+pnpm install @rover/mcp-server
 ```
 
 ## Usage
@@ -67,11 +67,11 @@ From this directory you can run:
 
 ```bash
 # Test the SuggestFollowupTask tool
-claude --mcp-config servers.json --allowedTools "mcp__terry__SuggestFollowupTask" --verbose --output-format stream-json -p "Create a test follow up task"
+claude --mcp-config servers.json --allowedTools "mcp__rover__SuggestFollowupTask" --verbose --output-format stream-json -p "Create a test follow up task"
 
 # Test the PermissionPrompt tool
-claude --mcp-config servers.json --allowedTools "mcp__terry__PermissionPrompt" --verbose --output-format stream-json -p "Request permission for a test action"
+claude --mcp-config servers.json --allowedTools "mcp__rover__PermissionPrompt" --verbose --output-format stream-json -p "Request permission for a test action"
 
 # Test both tools
-claude --mcp-config servers.json --allowedTools "mcp__terry__SuggestFollowupTask,mcp__terry__PermissionPrompt" --verbose --output-format stream-json -p "Test both tools"
+claude --mcp-config servers.json --allowedTools "mcp__rover__SuggestFollowupTask,mcp__rover__PermissionPrompt" --verbose --output-format stream-json -p "Test both tools"
 ```

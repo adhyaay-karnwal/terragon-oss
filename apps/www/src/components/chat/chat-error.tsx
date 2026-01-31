@@ -301,7 +301,7 @@ function ChatContent({
     case "setup-script-failed": {
       return (
         <ChatErrorContentsWithPre
-          header="terragon-setup.sh failed"
+          header="rover-setup.sh failed"
           errorStr={errorInfo}
           renderAnsi
         />

@@ -12,7 +12,7 @@ export function getEnv({
   overrides?: Record<string, string>;
 }) {
   const env: Record<string, string> = {
-    // Indicates the agent is running in a Terragon sandbox environment
+    // Indicates the agent is running in a Rover sandbox environment
     TERRAGON: "true",
     // Set default GH_TOKEN from GitHub access token
     // This can be overridden if user provides their own GH_TOKEN

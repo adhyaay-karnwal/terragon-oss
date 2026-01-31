@@ -106,7 +106,7 @@ export async function handleAppMention({
     return;
   }
 
-  // Find all Terragon users who should get tasks created
+  // Find all Rover users who should get tasks created
   const usersToTriggerTasks = await getUsersToTriggerTasks({
     repoFullName,
     issueOrPrType,

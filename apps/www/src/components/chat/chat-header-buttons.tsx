@@ -117,7 +117,7 @@ function CodeButton({ thread }: { thread: ThreadInfoFull }) {
   useEffect(() => {
     // Don't load preference for non claude code agents
     if (isClaudeCodeAgent) {
-      const stored = localStorage.getItem("terry-open-claude");
+      const stored = localStorage.getItem("rover-open-claude");
       if (stored === "true") {
         setOpenClaude(true);
       }
@@ -127,7 +127,7 @@ function CodeButton({ thread }: { thread: ThreadInfoFull }) {
   // Save the preference to localStorage when it changes
   const handleOpenClaudeChange = (checked: boolean) => {
     setOpenClaude(checked);
-    localStorage.setItem("terry-open-claude", String(checked));
+    localStorage.setItem("rover-open-claude", String(checked));
   };
 
   const copyToClipboard = async (
@@ -146,7 +146,7 @@ function CodeButton({ thread }: { thread: ThreadInfoFull }) {
     }
   };
 
-  const pullCommand = `terry pull${openClaude && isClaudeCodeAgent ? " -r" : ""} ${thread.id}`;
+  const pullCommand = `rover pull${openClaude && isClaudeCodeAgent ? " -r" : ""} ${thread.id}`;
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -180,8 +180,8 @@ function CodeButton({ thread }: { thread: ThreadInfoFull }) {
             <div
               className="flex items-center bg-muted rounded-md font-mono text-sm cursor-pointer hover:bg-muted/80 transition-colors"
               onClick={() => {
-                copyToClipboard(pullCommand, "Copied pull command", "terry");
-                posthog.capture("terry_pull_command_copied", {
+                copyToClipboard(pullCommand, "Copied pull command", "rover");
+                posthog.capture("rover_pull_command_copied", {
                   threadId: thread.id,
                   agent: threadChat?.agent,
                   withResume: isClaudeCodeAgent && openClaude,
@@ -196,7 +196,7 @@ function CodeButton({ thread }: { thread: ThreadInfoFull }) {
                 className="h-7 w-7 p-0 mr-1 flex-shrink-0 flex items-center justify-center"
                 aria-label="Copy command"
               >
-                {copiedCommand === "terry" ? (
+                {copiedCommand === "rover" ? (
                   <Check className="h-3 w-3" />
                 ) : (
                   <Copy className="h-3 w-3" />

@@ -151,7 +151,7 @@ export function IntegrationsVisual() {
       icon: <SlackIcon className="size-5" />,
       title: "#engineering",
       subtitle: "Sarah Johnson 2:34 PM",
-      action: "@terragon update hero section",
+      action: "@rover update hero section",
     },
     {
       icon: <LinearIcon className="size-5" />,
@@ -175,7 +175,7 @@ export function IntegrationsVisual() {
       icon: <SlackIcon className="size-5" />,
       title: "#product",
       subtitle: "Alex Chen 11:23 AM",
-      action: "@terragon implement feature",
+      action: "@rover implement feature",
     },
     {
       icon: <LinearIcon className="size-5" />,
@@ -193,7 +193,7 @@ export function IntegrationsVisual() {
       icon: <SlackIcon className="size-5" />,
       title: "#backend",
       subtitle: "Jamie Lee 9:15 AM",
-      action: "@terragon fix API timeout",
+      action: "@rover fix API timeout",
     },
     {
       icon: <JiraIcon className="size-5" />,
@@ -211,7 +211,7 @@ export function IntegrationsVisual() {
       icon: <SlackIcon className="size-5" />,
       title: "#design",
       subtitle: "Morgan Davis 4:45 PM",
-      action: "@terragon update button styles",
+      action: "@rover update button styles",
     },
     {
       icon: <GithubIcon className="size-5" />,
@@ -223,7 +223,7 @@ export function IntegrationsVisual() {
       icon: <SlackIcon className="size-5" />,
       title: "#frontend",
       subtitle: "Taylor Reed 10:30 AM",
-      action: "@terragon optimize loading",
+      action: "@rover optimize loading",
     },
   ];
 
