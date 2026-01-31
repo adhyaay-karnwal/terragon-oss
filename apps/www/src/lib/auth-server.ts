@@ -255,7 +255,7 @@ function getUserFlagsNormalized(userFlags: UserFlags) {
 
 export async function validInternalRequestOrThrow() {
   const requestHeaders = await headers();
-  const secret = requestHeaders.get("X-Terragon-Secret");
+  const secret = requestHeaders.get("X-Rover-Secret");
   if (secret !== env.INTERNAL_SHARED_SECRET) {
     console.error("Unauthorized internal request");
     throw new Error("Unauthorized");

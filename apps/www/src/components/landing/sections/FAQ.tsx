@@ -6,15 +6,15 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question: "What is Terragon?",
+    question: "What is Rover?",
     answer:
-      "Terragon is an AI-powered coding assistant platform that allows you to run coding agents in parallel inside remote sandboxes. This enables you to work on multiple tasks concurrently and asynchronously, with agents that can make edits, run tests, verify changes, and create commits and PRs.",
+      "Rover is an AI-powered coding assistant platform that allows you to run coding agents in parallel inside remote sandboxes. This enables you to work on multiple tasks concurrently and asynchronously, with agents that can make edits, run tests, verify changes, and create commits and PRs.",
   },
   {
-    question: "Which coding agents does Terragon support?",
+    question: "Which coding agents does Rover support?",
     answer: (
       <>
-        Terragon supports{" "}
+        Rover supports{" "}
         <a
           target="_blank"
           className="underline"
@@ -41,10 +41,10 @@ const faqs = [
   {
     question: "Can I bring my own Claude or ChatGPT subscription?",
     answer:
-      "Yes! Terragon supports both Claude and ChatGPT subscriptions. You can connect your existing Claude or ChatGPT subscription within your agent settings.",
+      "Yes! Rover supports both Claude and ChatGPT subscriptions. You can connect your existing Claude or ChatGPT subscription within your agent settings.",
   },
   {
-    question: "How does Terragon handle security?",
+    question: "How does Rover handle security?",
     answer: (
       <>
         Tasks are run in ephemeral sandboxes that are with no persistent access.
@@ -106,7 +106,7 @@ export function FAQ() {
           Frequently asked questions
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Everything you need to know about Terragon
+          Everything you need to know about Rover
         </p>
       </div>
       <div className="max-w-3xl mx-auto">

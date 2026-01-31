@@ -27,7 +27,7 @@ export function IntegrationsSettings({
         label="Slack"
         description={
           <>
-            Connect your Slack workspace to interact with Terragon through
+            Connect your Slack workspace to interact with Rover through
             Slack.{" "}
             <Link
               href="https://docs.terragonlabs.com/docs/integrations/slack-integration"

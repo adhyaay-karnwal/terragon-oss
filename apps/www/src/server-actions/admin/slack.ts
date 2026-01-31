@@ -84,13 +84,13 @@ export const parseSlackUrl = adminOnly(async function parseSlackUrl(
   if (!slackInstallation) {
     return {
       success: false,
-      error: `No Slack installation found for workspace: ${workspaceDomain}. Make sure the workspace is connected to Terragon.`,
+      error: `No Slack installation found for workspace: ${workspaceDomain}. Make sure the workspace is connected to Rover.`,
     };
   }
   if (!slackAccount) {
     return {
       success: false,
-      error: `No Slack account found for workspace: ${workspaceDomain}. Make sure the workspace is connected to Terragon.`,
+      error: `No Slack account found for workspace: ${workspaceDomain}. Make sure the workspace is connected to Rover.`,
     };
   }
   // Initialize Slack client

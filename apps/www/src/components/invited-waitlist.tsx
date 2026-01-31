@@ -41,20 +41,20 @@ export function InvitedWaitlist() {
                   ? plantDark
                   : plantLight
               }
-              alt="Terragon Logo"
+              alt="Rover Logo"
               width={40}
               height={40}
               className="opacity-90"
               priority
             />
             <h1 className="text-4xl font-bold tracking-tight font-[Cabin]">
-              Terragon
+              Rover
             </h1>
           </div>
           {/* Hero Content */}
           <div className="text-center space-y-4">
             <h2 className="text-lg text-muted-foreground">
-              You've been invited! Welcome to Terragon.
+              You've been invited! Welcome to Rover.
             </h2>
           </div>
 
@@ -103,7 +103,7 @@ export function InvitedWaitlist() {
               loop
               muted
               playsInline
-              aria-label="Terragon platform demonstration"
+              aria-label="Rover platform demonstration"
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
               <div className="opacity-0 group-hover:opacity-100 transition-opacity">
@@ -131,7 +131,7 @@ export function InvitedWaitlist() {
       {/* Footer */}
       <footer className="p-4">
         <div className="text-center text-sm text-muted-foreground">
-          <div>© {new Date().getFullYear()} Terragon</div>
+          <div>© {new Date().getFullYear()} Rover</div>
         </div>
       </footer>
 

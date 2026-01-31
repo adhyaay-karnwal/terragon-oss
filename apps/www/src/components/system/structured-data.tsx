@@ -4,14 +4,14 @@ export function StructuredData() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Terragon",
+    name: "Rover",
     applicationCategory: "DeveloperApplication",
     description:
       "AI-powered coding assistant platform that allows you to run coding agents in parallel inside remote sandboxes",
     url: "https://www.terragonlabs.com",
     creator: {
       "@type": "Organization",
-      name: "Terragon Labs",
+      name: "Rover Labs",
       url: "https://www.terragonlabs.com",
     },
     offers: {
@@ -34,7 +34,7 @@ export function StructuredData() {
   const organizationData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Terragon Labs",
+    name: "Rover Labs",
     url: "https://www.terragonlabs.com",
     logo: "https://www.terragonlabs.com/favicon.png",
   };
@@ -42,7 +42,7 @@ export function StructuredData() {
   const websiteData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Terragon",
+    name: "Rover",
     url: "https://www.terragonlabs.com",
   };
 

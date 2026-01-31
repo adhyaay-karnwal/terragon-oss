@@ -1071,7 +1071,7 @@ describe("toDBMessage", () => {
             content: [
               {
                 type: "text",
-                text: "**Directory listing:** Contains CLAUDE.md, ...**README Summary:** Terragon is a...",
+                text: "**Directory listing:** Contains CLAUDE.md, ...**README Summary:** Rover is a...",
               },
             ],
           },
@@ -1136,7 +1136,7 @@ describe("toDBMessage", () => {
           parent_tool_use_id: null,
           parts: [
             {
-              text: "**Directory listing:** Contains CLAUDE.md, ...**README Summary:** Terragon is a...",
+              text: "**Directory listing:** Contains CLAUDE.md, ...**README Summary:** Rover is a...",
               type: "text",
             },
           ],

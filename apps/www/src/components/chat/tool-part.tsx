@@ -117,7 +117,7 @@ const ToolPart = memo(function ToolPart({
         />
       );
     case "SuggestFollowupTask":
-    case "mcp__terry__SuggestFollowupTask":
+    case "mcp__rover__SuggestFollowupTask":
       return (
         <SuggestFollowupTaskTool
           toolPart={

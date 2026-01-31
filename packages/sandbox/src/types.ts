@@ -38,8 +38,8 @@ export type CreateSandboxOptions = {
   mcpConfig?: McpConfig;
   autoUpdateDaemon: boolean;
   customSystemPrompt?: string | null; // Custom system prompt to append to Claude
-  skipSetupScript?: boolean; // Skip running terragon-setup.sh during sandbox setup
-  setupScript?: string | null; // Custom setup script to override repository's terragon-setup.sh
+  skipSetupScript?: boolean; // Skip running rover-setup.sh during sandbox setup
+  setupScript?: string | null; // Custom setup script to override repository's rover-setup.sh
   fastResume?: boolean; // Fast resume mode - skips unnecessary setup steps that run everytime (claude credentials, daemon update, etc)
   publicUrl: string;
   featureFlags: FeatureFlags;
