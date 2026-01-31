@@ -135,12 +135,12 @@ describe("buildCodexToml", () => {
 
     expect(toml).toMatchInlineSnapshot(`
       "# IMPORTANT: the top-level key is \`mcp_servers\` rather than \`mcpServers\`.
-      [model_providers.terry]
-      name = "terry"
+      [model_providers.rover]
+      name = "rover"
       base_url = "https://example.com/api/proxy/openai/v1"
       wire_api = "responses"
 
-        [model_providers.terry.env_http_headers]
+        [model_providers.rover.env_http_headers]
         X-Daemon-Token = "DAEMON_TOKEN"
 
       [mcp_servers.server1]
@@ -257,12 +257,12 @@ describe("buildCodexToml", () => {
     // Check that the TOML was generated
     expect(toml).toMatchInlineSnapshot(`
       "# IMPORTANT: the top-level key is \`mcp_servers\` rather than \`mcpServers\`.
-      [model_providers.terry]
-      name = "terry"
+      [model_providers.rover]
+      name = "rover"
       base_url = "https://example.com/api/proxy/openai/v1"
       wire_api = "responses"
 
-        [model_providers.terry.env_http_headers]
+        [model_providers.rover.env_http_headers]
         X-Daemon-Token = "DAEMON_TOKEN"
 
       [mcp_servers.specialChars]

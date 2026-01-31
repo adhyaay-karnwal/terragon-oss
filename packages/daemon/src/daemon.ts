@@ -106,7 +106,7 @@ export class TerragonDaemon {
     this.agentFrontmatterReader = new AgentFrontmatterReader(runtime);
 
     // Load feature flags from environment variable if available
-    const envFeatureFlags = process.env.TERRAGON_FEATURE_FLAGS;
+    const envFeatureFlags = process.env.ROVER_FEATURE_FLAGS || process.env.TERRAGON_FEATURE_FLAGS;
     if (envFeatureFlags) {
       try {
         this.featureFlags = JSON.parse(envFeatureFlags);
