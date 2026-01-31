@@ -6,12 +6,12 @@ import { validateProviderModel } from "@terragon/agent/proxy";
 describe("buildOpencodeConfig", () => {
   it("should build a valid opencode config", () => {
     const config = buildOpencodeConfig({
-      publicUrl: "https://www.terragonlabs.com",
+      publicUrl: "https://www.roverlabs.com",
       userMcpConfig: {
         mcpServers: {
-          terry: {
+          rover: {
             command: "npx",
-            args: ["-y", "terry", "mcp"],
+            args: ["-y", "rover", "mcp"],
             env: {
               DAEMON_TOKEN: "test-token",
             },
@@ -24,12 +24,12 @@ describe("buildOpencodeConfig", () => {
         "$schema": "https://opencode.ai/config.json",
         "autoupdate": false,
         "mcp": {
-          "terry": {
+          "rover": {
             "type": "local",
             "command": [
               "npx",
               "-y",
-              "terry",
+              "rover",
               "mcp"
             ],
             "enabled": true,
@@ -39,11 +39,11 @@ describe("buildOpencodeConfig", () => {
           }
         },
         "provider": {
-          "terry": {
+          "rover": {
             "npm": "@ai-sdk/openai-compatible",
-            "name": "Terragon",
+            "name": "Rover",
             "options": {
-              "baseURL": "https://www.terragonlabs.com/api/proxy/openrouter/v1",
+              "baseURL": "https://www.roverlabs.com/api/proxy/openrouter/v1",
               "headers": {
                 "X-Daemon-Token": "{env:DAEMON_TOKEN}"
               }
@@ -75,11 +75,11 @@ describe("buildOpencodeConfig", () => {
               }
             }
           },
-          "terry-google": {
+          "rover-google": {
             "npm": "@ai-sdk/google",
-            "name": "Terragon Google",
+            "name": "Rover Google",
             "options": {
-              "baseURL": "https://www.terragonlabs.com/api/proxy/google/v1",
+              "baseURL": "https://www.roverlabs.com/api/proxy/google/v1",
               "apiKey": "unused",
               "headers": {
                 "X-Daemon-Token": "{env:DAEMON_TOKEN}"
@@ -96,11 +96,11 @@ describe("buildOpencodeConfig", () => {
               }
             }
           },
-          "terry-ant": {
+          "rover-ant": {
             "npm": "@ai-sdk/anthropic",
-            "name": "Terragon Anthropic",
+            "name": "Rover Anthropic",
             "options": {
-              "baseURL": "https://www.terragonlabs.com/api/proxy/anthropic/v1",
+              "baseURL": "https://www.roverlabs.com/api/proxy/anthropic/v1",
               "apiKey": "unused",
               "headers": {
                 "X-Daemon-Token": "{env:DAEMON_TOKEN}"
@@ -113,11 +113,11 @@ describe("buildOpencodeConfig", () => {
               }
             }
           },
-          "terry-oai": {
+          "rover-oai": {
             "npm": "@ai-sdk/openai",
-            "name": "Terragon OpenAI",
+            "name": "Rover OpenAI",
             "options": {
-              "baseURL": "https://www.terragonlabs.com/api/proxy/openai/v1",
+              "baseURL": "https://www.roverlabs.com/api/proxy/openai/v1",
               "apiKey": "unused",
               "headers": {
                 "X-Daemon-Token": "{env:DAEMON_TOKEN}"

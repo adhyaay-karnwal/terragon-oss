@@ -21,26 +21,26 @@ describe("buildCodexToml", () => {
           url: "https://api.example.com",
           headers: { Authorization: "Bearer token" },
         },
-        // user-provided terry (should be ignored)
-        terry: { command: "node", args: ["/not/used.mjs"] },
+        // user-provided rover (should be ignored)
+        rover: { command: "node", args: ["/not/used.mjs"] },
       },
     };
 
     const toml = buildCodexToml({
       userMcpConfig: userCfg,
-      includeTerry: true,
-      terryCommand: "node",
-      terryArgs: ["/tmp/terry-mcp-server.mjs"],
-      terryModelProviderBaseUrl: "https://example.com/api/proxy/openai/v1",
+      includeRover: true,
+      roverCommand: "node",
+      roverArgs: ["/tmp/rover-mcp-server.mjs"],
+      roverModelProviderBaseUrl: "https://example.com/api/proxy/openai/v1",
     });
     expect(toml).toMatchInlineSnapshot(`
       "# IMPORTANT: the top-level key is \`mcp_servers\` rather than \`mcpServers\`.
-      [model_providers.terry]
-      name = "terry"
+      [model_providers.rover]
+      name = "rover"
       base_url = "https://example.com/api/proxy/openai/v1"
       wire_api = "responses"
 
-        [model_providers.terry.env_http_headers]
+        [model_providers.rover.env_http_headers]
         X-Daemon-Token = "DAEMON_TOKEN"
 
       [mcp_servers.alpha]
@@ -51,9 +51,9 @@ describe("buildCodexToml", () => {
         [mcp_servers.alpha.env]
         API_KEY = "a"
 
-      [mcp_servers.terry]
+      [mcp_servers.rover]
       command = "node"
-      args = [ "/tmp/terry-mcp-server.mjs" ]
+      args = [ "/tmp/rover-mcp-server.mjs" ]
       startup_timeout_ms = 20_000
 
       [shell_environment_policy]
@@ -66,8 +66,8 @@ describe("buildCodexToml", () => {
     `);
 
     const parsed = tomlParse(toml) as any;
-    expect(parsed.model_providers.terry).toEqual({
-      name: "terry",
+    expect(parsed.model_providers.rover).toEqual({
+      name: "rover",
       base_url: "https://example.com/api/proxy/openai/v1",
       env_http_headers: { "X-Daemon-Token": "DAEMON_TOKEN" },
       wire_api: "responses",
@@ -84,10 +84,10 @@ describe("buildCodexToml", () => {
     expect(parsed.mcp_servers.stream).toBeUndefined();
     expect(parsed.mcp_servers.api).toBeUndefined();
 
-    // built-in terry present and normalized
-    expect(parsed.mcp_servers.terry).toEqual({
+    // built-in rover present and normalized
+    expect(parsed.mcp_servers.rover).toEqual({
       command: "node",
-      args: ["/tmp/terry-mcp-server.mjs"],
+      args: ["/tmp/rover-mcp-server.mjs"],
       startup_timeout_ms: 20_000,
     });
 
@@ -127,10 +127,10 @@ describe("buildCodexToml", () => {
 
     const toml = buildCodexToml({
       userMcpConfig: userCfg,
-      includeTerry: false,
-      terryCommand: "node",
-      terryArgs: ["/tmp/terry-mcp-server.mjs"],
-      terryModelProviderBaseUrl: "https://example.com/api/proxy/openai/v1",
+      includeRover: false,
+      roverCommand: "node",
+      roverArgs: ["/tmp/rover-mcp-server.mjs"],
+      roverModelProviderBaseUrl: "https://example.com/api/proxy/openai/v1",
     });
 
     expect(toml).toMatchInlineSnapshot(`
@@ -184,8 +184,8 @@ describe("buildCodexToml", () => {
 
     const parsed = tomlParse(toml) as any;
 
-    expect(parsed.model_providers.terry).toEqual({
-      name: "terry",
+    expect(parsed.model_providers.rover).toEqual({
+      name: "rover",
       base_url: "https://example.com/api/proxy/openai/v1",
       wire_api: "responses",
       env_http_headers: { "X-Daemon-Token": "DAEMON_TOKEN" },
@@ -248,10 +248,10 @@ describe("buildCodexToml", () => {
 
     const toml = buildCodexToml({
       userMcpConfig: userCfg,
-      includeTerry: false,
-      terryCommand: "node",
-      terryArgs: ["/tmp/terry-mcp-server.mjs"],
-      terryModelProviderBaseUrl: "https://example.com/api/proxy/openai/v1",
+      includeRover: false,
+      roverCommand: "node",
+      roverArgs: ["/tmp/rover-mcp-server.mjs"],
+      roverModelProviderBaseUrl: "https://example.com/api/proxy/openai/v1",
     });
 
     // Check that the TOML was generated
@@ -303,8 +303,8 @@ describe("buildCodexToml", () => {
     }).not.toThrow();
 
     // Verify the values were preserved correctly
-    expect(parsed.model_providers.terry).toEqual({
-      name: "terry",
+    expect(parsed.model_providers.rover).toEqual({
+      name: "rover",
       base_url: "https://example.com/api/proxy/openai/v1",
       wire_api: "responses",
       env_http_headers: { "X-Daemon-Token": "DAEMON_TOKEN" },

@@ -345,7 +345,7 @@ async function updateAgentFiles({
           normalizedUrl = normalizedUrl.slice(0, -1);
         }
       }
-      const terryModelProviderBaseUrl = normalizedUrl
+      const roverModelProviderBaseUrl = normalizedUrl
         ? `${normalizedUrl}/api/proxy/openai/v1`
         : null;
       await updateAgentFilesShared({
@@ -360,13 +360,13 @@ async function updateAgentFiles({
         otherFiles: [
           {
             filename: "config.toml",
-            // Always (re)write Codex MCP config TOML including built-in 'terry' server
+            // Always (re)write Codex MCP config TOML including built-in 'rover' server
             content: buildCodexToml({
               userMcpConfig: mcpConfig,
-              includeTerry: true,
-              terryCommand: "node",
-              terryArgs: [MCP_SERVER_FILE_PATH],
-              terryModelProviderBaseUrl,
+              includeRover: true,
+              roverCommand: "node",
+              roverArgs: [MCP_SERVER_FILE_PATH],
+              roverModelProviderBaseUrl,
             }),
           },
         ],
@@ -526,7 +526,7 @@ export async function runSetupScript({
   };
 }) {
   const customScriptPath =
-    options.setupScriptPath || "/tmp/terragon-setup-custom.sh";
+    options.setupScriptPath || "/tmp/rover-setup-custom.sh";
   const outputs: string[] = [];
   const onUpdateWrapped: OnUpdateCallback = (type, output) => {
     if (type === "stdout" || type === "stderr") {
@@ -555,11 +555,11 @@ export async function runSetupScript({
         onUpdate: onUpdateWrapped,
       });
     } else {
-      // Use the repository's terragon-setup.sh if it exists
+      // Use the repository's rover-setup.sh if it exists
       await executeSetupScriptCommand({
         session,
         command:
-          "bash -c 'if [ -f terragon-setup.sh ]; then chmod +x terragon-setup.sh && bash -x ./terragon-setup.sh; fi'",
+          "bash -c 'if [ -f rover-setup.sh ]; then chmod +x rover-setup.sh && bash -x ./rover-setup.sh; fi'",
         environmentVariables: options.environmentVariables,
         agentCredentials: options.agentCredentials,
         githubAccessToken: options.githubAccessToken,
