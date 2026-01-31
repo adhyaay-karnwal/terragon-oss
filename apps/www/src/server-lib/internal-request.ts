@@ -1,5 +1,5 @@
-import { env } from "@terragon/env/apps-www";
-import { publicAppUrl } from "@terragon/env/next-public";
+import { env } from "@rover/env/apps-www";
+import { publicAppUrl } from "@rover/env/next-public";
 
 export async function internalPOST(path: string) {
   console.log(`internalPOST ${path}`);
@@ -10,7 +10,7 @@ export async function internalPOST(path: string) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "X-Terragon-Secret": env.INTERNAL_SHARED_SECRET,
+      "X-Rover-Secret": env.INTERNAL_SHARED_SECRET,
     },
   });
 }

@@ -1,7 +1,7 @@
 import { db } from "@/lib/db";
-import { env } from "@terragon/env/apps-www";
-import { AIAgent, AIAgentCredentials, AIModel } from "@terragon/agent/types";
-import { getAgentProviderCredentialsDecrypted } from "@terragon/shared/model/agent-provider-credentials";
+import { env } from "@rover/env/apps-www";
+import { AIAgent, AIAgentCredentials, AIModel } from "@rover/agent/types";
+import { getAgentProviderCredentialsDecrypted } from "@rover/shared/model/agent-provider-credentials";
 import { getCodexCredentialsJSONOrNull } from "@/agent/msg/codexCredentials";
 import { getClaudeCredentialsJSONOrNull } from "@/agent/msg/claudeCredentials";
 import { ThreadError } from "./error";

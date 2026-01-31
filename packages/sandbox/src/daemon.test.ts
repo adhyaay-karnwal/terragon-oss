@@ -3,7 +3,7 @@ import { installDaemon } from "./daemon";
 import type { ISandboxSession } from "./types";
 
 // Mock the bundled imports
-vi.mock("@terragon/bundled", () => ({
+vi.mock("@rover/bundled", () => ({
   daemonAsStr: "mock-daemon-content",
   mcpServerAsStr: "mock-mcp-server-content",
 }));
@@ -274,7 +274,7 @@ describe("daemon installation", () => {
         featureFlags: {},
       });
 
-      expect(executedCommands).toContain("chmod +x /tmp/terragon-daemon.mjs");
+      expect(executedCommands).toContain("chmod +x /tmp/rover-daemon.mjs");
     });
 
     it("should write all required files", async () => {
@@ -287,7 +287,7 @@ describe("daemon installation", () => {
         featureFlags: {},
       });
 
-      expect(writtenFiles["/tmp/terragon-daemon.mjs"]).toBe(
+      expect(writtenFiles["/tmp/rover-daemon.mjs"]).toBe(
         "mock-daemon-content",
       );
       expect(writtenFiles["/tmp/terry-mcp-server.mjs"]).toBe(

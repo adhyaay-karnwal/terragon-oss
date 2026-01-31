@@ -8,7 +8,7 @@ echo "🗑️  Uninstalling Terry CLI..."
 
 # Unlink the global package
 echo "📦 Removing global link..."
-npm unlink -g @terragon-labs/cli
+npm unlink -g @rover-labs/cli
 
 echo "✅ Terry CLI has been uninstalled!"
 echo ""

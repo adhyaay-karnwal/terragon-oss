@@ -2,11 +2,11 @@
 
 import { AlertCircle } from "lucide-react";
 import Link from "next/link";
-import { AIModel } from "@terragon/agent/types";
+import { AIModel } from "@rover/agent/types";
 import {
   isAgentSupportedForCredits,
   modelToAgent,
-} from "@terragon/agent/utils";
+} from "@rover/agent/utils";
 import { useCredentialInfoForAgent } from "@/atoms/user-credentials";
 
 interface CredentialsWarningProps {

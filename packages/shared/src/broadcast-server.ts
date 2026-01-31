@@ -2,9 +2,9 @@ import {
   BroadcastChannelUser,
   BroadcastUserMessage,
   getBroadcastChannelStr,
-} from "@terragon/types/broadcast";
-import { env } from "@terragon/env/pkg-shared";
-import { publicBroadcastUrl } from "@terragon/env/next-public";
+} from "@rover/types/broadcast";
+import { env } from "@rover/env/pkg-shared";
+import { publicBroadcastUrl } from "@rover/env/next-public";
 
 export async function publishBroadcastUserMessage(
   message: BroadcastUserMessage,
@@ -28,7 +28,7 @@ export async function publishBroadcastUserMessage(
       method: "POST",
       body: JSON.stringify(message),
       headers: {
-        "X-Terragon-Secret": env.INTERNAL_SHARED_SECRET!,
+        "X-Rover-Secret": env.INTERNAL_SHARED_SECRET!,
       },
     },
   );

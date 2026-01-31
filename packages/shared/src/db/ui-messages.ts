@@ -1,10 +1,10 @@
 /////////////////
 // Messages
 /////////////////
-import { AIAgent } from "@terragon/agent/types";
+import { AIAgent } from "@rover/agent/types";
 import { DBSystemMessage } from "./db-message";
 import { GitDiffStats } from "./types";
-import { AIModel } from "@terragon/agent/types";
+import { AIModel } from "@rover/agent/types";
 
 export type UIMessage = UIUserMessage | UIAgentMessage | UISystemMessage;
 

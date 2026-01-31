@@ -5,7 +5,7 @@ import {
   InferContractRouterOutputs,
 } from "@orpc/contract";
 import { getApiKey } from "./config";
-import { cliAPIContract } from "@terragon/cli-api-contract";
+import { cliAPIContract } from "@rover/cli-api-contract";
 
 const link = new RPCLink({
   url: `${process.env.TERRAGON_WEB_URL}/api/cli`,

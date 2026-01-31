@@ -1,7 +1,7 @@
-import { AIModel } from "@terragon/agent/types";
-import { getDefaultModelForAgent } from "@terragon/agent/utils";
-import { UserCredentials } from "@terragon/shared";
-import { UserFlags } from "@terragon/shared";
+import { AIModel } from "@rover/agent/types";
+import { getDefaultModelForAgent } from "@rover/agent/utils";
+import { UserCredentials } from "@rover/shared";
+import { UserFlags } from "@rover/shared";
 
 export function getDefaultModel({
   userCredentials,

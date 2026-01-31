@@ -1,4 +1,4 @@
-import { ThreadInfo } from "@terragon/shared";
+import { ThreadInfo } from "@rover/shared";
 import {
   archiveThread,
   unarchiveThread,

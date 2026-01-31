@@ -7,14 +7,14 @@ import {
   DBUserMessage,
   ThreadChatInsert,
   ThreadInsert,
-} from "@terragon/shared";
-import { SelectedAIModels } from "@terragon/agent/types";
-import { modelToAgent } from "@terragon/agent/utils";
+} from "@rover/shared";
+import { SelectedAIModels } from "@rover/agent/types";
+import { modelToAgent } from "@rover/agent/utils";
 import {
   getThread,
   updateThread,
   updateThreadChat,
-} from "@terragon/shared/model/threads";
+} from "@rover/shared/model/threads";
 import { updateThreadChatWithTransition } from "@/agent/update-status";
 import { waitUntil } from "@vercel/functions";
 import { startAgentMessage } from "@/agent/msg/startAgentMessage";
@@ -23,7 +23,7 @@ import { generateAndUpdateThreadName } from "@/server-lib/new-thread-shared";
 import { uploadUserMessageImages } from "@/lib/r2-file-upload-server";
 import { userMessageToPlainText } from "@/components/promptbox/tiptap-to-richtext";
 import { newThreadsMultiModel } from "@/server-lib/new-threads-multi-model";
-import { getPrimaryThreadChat } from "@terragon/shared/utils/thread-utils";
+import { getPrimaryThreadChat } from "@rover/shared/utils/thread-utils";
 
 export type UpdateDraftThreadUpdates = Partial<{
   userMessage: DBUserMessage;

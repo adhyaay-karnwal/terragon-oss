@@ -6,11 +6,11 @@ import {
   insertAgentProviderCredentials,
   updateAgentProviderCredentialsById,
   deleteAgentProviderCredentialById,
-} from "@terragon/shared/model/agent-provider-credentials";
+} from "@rover/shared/model/agent-provider-credentials";
 import { getPostHogServer } from "@/lib/posthog-server";
-import { env } from "@terragon/env/apps-www";
+import { env } from "@rover/env/apps-www";
 import { UserFacingError } from "@/lib/server-actions";
-import { AIAgent } from "@terragon/agent/types";
+import { AIAgent } from "@rover/agent/types";
 import { getAgentProviderCredentials } from "@/server-lib/credentials";
 
 export const getAgentProviderCredentialsAction = userOnlyAction(

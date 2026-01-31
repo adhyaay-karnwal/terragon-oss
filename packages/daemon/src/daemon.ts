@@ -1,4 +1,4 @@
-import { AIAgent } from "@terragon/agent/types";
+import { AIAgent } from "@rover/agent/types";
 import { IDaemonRuntime, writeToUnixSocket } from "./runtime";
 import {
   DaemonMessageClaude,
@@ -61,7 +61,7 @@ type ActiveProcessState = {
   pollInterval: NodeJS.Timeout | null;
 };
 
-export class TerragonDaemon {
+export class RoverDaemon {
   private startTime: number = 0;
   private messageBuffer: MessageBufferEntry[] = [];
   private runtime: IDaemonRuntime;
@@ -129,7 +129,7 @@ export class TerragonDaemon {
    * Initialize and start the daemon
    */
   async start(): Promise<void> {
-    this.runtime.logger.info("🚀 Starting Terragon Daemon...");
+    this.runtime.logger.info("🚀 Starting Rover Daemon...");
     this.runtime.logger.info("Daemon version", {
       version: DAEMON_VERSION,
     });

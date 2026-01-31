@@ -9,7 +9,7 @@ import {
   dehydrate,
 } from "@tanstack/react-query";
 import { threadQueryOptions } from "@/queries/thread-queries";
-import { ThreadInfoFull } from "@terragon/shared";
+import { ThreadInfoFull } from "@rover/shared";
 import { getThreadAction } from "@/server-actions/get-thread";
 import { unwrapResult } from "@/lib/server-actions";
 
@@ -20,12 +20,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const userId = await getUserIdOrNull();
   if (!userId) {
-    return { title: "Task | Terragon" };
+    return { title: "Task | Rover" };
   }
   const { id } = await params;
   const thread = unwrapResult(await getThreadAction(id));
   if (!thread) {
-    return { title: "Task | Terragon" };
+    return { title: "Task | Rover" };
   }
   return {
     title: getThreadDocumentTitle(thread),
