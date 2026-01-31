@@ -111,7 +111,7 @@ describe("getThreadAction", () => {
         expect(result).toBeDefined();
         expect(result!.id).toBe(threadId);
         expect(mockOctokit.rest.repos.get).toHaveBeenCalledWith({
-          owner: "terragon",
+          owner: "rover",
           repo: "test-repo",
         });
       });

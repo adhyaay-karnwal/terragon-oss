@@ -10,11 +10,12 @@ function expandTilde(input: string): string {
 }
 
 function getSettingsDir(): string {
-  const override = process.env.TERRY_SETTINGS_DIR;
+  const override =
+    process.env.ROVER_SETTINGS_DIR || process.env.TERRY_SETTINGS_DIR;
   if (override && override.trim().length > 0) {
     return resolve(expandTilde(override.trim()));
   }
-  return join(homedir(), ".terry");
+  return join(homedir(), ".rover");
 }
 
 const CONFIG_DIR = getSettingsDir();

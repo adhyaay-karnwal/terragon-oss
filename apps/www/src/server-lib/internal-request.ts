@@ -10,7 +10,7 @@ export async function internalPOST(path: string) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "X-Terragon-Secret": env.INTERNAL_SHARED_SECRET,
+      "X-Rover-Secret": env.INTERNAL_SHARED_SECRET,
     },
   });
 }

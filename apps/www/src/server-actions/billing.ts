@@ -31,7 +31,7 @@ export const getStripeCheckoutUrl = userOnlyAction(
     const flags = await getFeatureFlagsGlobal({ db });
     if (flags.shutdownMode) {
       throw new UserFacingError(
-        "New subscriptions are no longer available. Terragon is shutting down on February 14th, 2026.",
+        "New subscriptions are no longer available. Rover is shutting down on February 14th, 2026.",
       );
     }
 

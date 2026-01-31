@@ -69,7 +69,7 @@ export async function ensureBranchExists({
           );
 
           // Create a README file to initialize the branch
-          const readmeContent = `# ${repoName}\n\nThis repository was initialized by Terragon.`;
+          const readmeContent = `# ${repoName}\n\nThis repository was initialized by Rover.`;
 
           await octokit.rest.repos.createOrUpdateFileContents({
             owner,

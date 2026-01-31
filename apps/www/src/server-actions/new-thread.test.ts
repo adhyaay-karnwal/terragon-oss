@@ -11,7 +11,7 @@ import {
 import { getThread } from "@terragon/shared/model/threads";
 import { unwrapResult } from "@/lib/server-actions";
 
-const repoFullName = "terragon/test-repo";
+const repoFullName = "rover/test-repo";
 const mockMessage: DBUserMessage = {
   type: "user",
   parts: [{ type: "text", text: "Test task message" }],

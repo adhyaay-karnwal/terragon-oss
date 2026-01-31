@@ -12,7 +12,7 @@ import {
 import Image from "next/image";
 import { OpenAIIcon } from "@/components/icons/openai";
 import { MultiTaskVisual } from "@/components/landing/widgets/MultiTaskVisual";
-import { TerryPullTerminal } from "@/components/landing/widgets/TerryPullTerminal";
+import { RoverPullTerminal } from "@/components/landing/widgets/RoverPullTerminal";
 import { AutomationsVisual } from "@/components/landing/widgets/AutomationsVisual";
 import { IntegrationsVisual } from "@/components/landing/widgets/IntegrationsVisual";
 import { WorkAnywhere } from "@/components/landing/widgets/WorkAnywhere";
@@ -123,7 +123,7 @@ export default function BentoFeatures() {
             icon={<Cloud className="size-4" />}
             label="Runs in the Cloud"
             heading="Work from anywhere"
-            description="Terragon works from your phone and lets you work wherever you are"
+            description="Rover works from your phone and lets you work wherever you are"
             visual={<WorkAnywhere />}
           />
           <FeatureBox
@@ -143,10 +143,10 @@ export default function BentoFeatures() {
           />
           <FeatureBox
             icon={<Terminal className="size-4" />}
-            label="terry cli"
+            label="rover cli"
             heading="Take control locally"
             description="Pull tasks to your local environment when they need your attention. Kick off tasks directly from the CLI."
-            visual={<TerryPullTerminal />}
+            visual={<RoverPullTerminal />}
           />
           <FeatureBox
             icon={<Workflow className="size-4" />}

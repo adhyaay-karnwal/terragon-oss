@@ -30,7 +30,7 @@ describe("handleStripeCreditTopUpEvent", () => {
           subtotal: 2_000,
           amount_paid: 2_000,
           metadata: {
-            terragon_user_id: user.id,
+            rover_user_id: user.id,
             reason: CREDIT_TOP_UP_REASON,
           },
         } as unknown as Stripe.Invoice,
@@ -67,7 +67,7 @@ describe("handleStripeCreditTopUpEvent", () => {
           amount_paid: 2_000,
           subtotal: 2_000,
           metadata: {
-            terragon_user_id: user.id,
+            rover_user_id: user.id,
             reason: CREDIT_TOP_UP_REASON,
           },
         } as unknown as Stripe.Invoice,
@@ -104,7 +104,7 @@ describe("handleStripeCreditTopUpEvent", () => {
           amount_paid: 2_000,
           subtotal: 2_000,
           metadata: {
-            terragon_user_id: user.id,
+            rover_user_id: user.id,
             reason: CREDIT_AUTO_RELOAD_REASON,
           },
         } as unknown as Stripe.Invoice,
@@ -138,7 +138,7 @@ describe("handleStripeCreditTopUpEvent", () => {
           id: `pi_test_123_${nanoid()}`,
           object: "payment_intent",
           metadata: {
-            terragon_user_id: user.id,
+            rover_user_id: user.id,
             reason: CREDIT_TOP_UP_REASON,
           },
           payment_method: "pm_intent_456",

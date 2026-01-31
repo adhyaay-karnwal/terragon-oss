@@ -11,10 +11,10 @@ import { buildMergedMcpConfig } from "./utils/mcp-merge";
 import { getEnv } from "./env";
 import { AIAgentCredentials } from "@terragon/agent/types";
 
-export const DAEMON_FILE_PATH = "/tmp/terragon-daemon.mjs";
-export const MCP_SERVER_FILE_PATH = "/tmp/terry-mcp-server.mjs";
+export const DAEMON_FILE_PATH = "/tmp/rover-daemon.mjs";
+export const MCP_SERVER_FILE_PATH = "/tmp/rover-mcp-server.mjs";
 export const MCP_SERVER_JSON_FILE_PATH = "/tmp/mcp-server.json";
-export const DAEMON_LOG_FILE_PATH = "/tmp/terragon-daemon.log";
+export const DAEMON_LOG_FILE_PATH = "/tmp/rover-daemon.log";
 
 async function startDaemon({
   session,
@@ -56,6 +56,7 @@ async function startDaemon({
           // 1 minute max timeout for bash commands
           BASH_MAX_TIMEOUT_MS: (60 * 1000).toString(),
           // Pass feature flags as JSON in environment variable
+          ROVER_FEATURE_FLAGS: JSON.stringify(featureFlags),
           TERRAGON_FEATURE_FLAGS: JSON.stringify(featureFlags),
         },
       }),
@@ -89,12 +90,12 @@ export async function installDaemon({
   await session.writeTextFile(DAEMON_FILE_PATH, daemonFile);
   await session.writeTextFile(MCP_SERVER_FILE_PATH, mcpServerFile);
 
-  // Merge user MCP config with built-in terry server (shared logic with Codex)
+  // Merge user MCP config with built-in rover server (shared logic with Codex)
   const mcpConfig = buildMergedMcpConfig({
     userMcpConfig,
-    includeTerry: true,
-    terryCommand: "node",
-    terryArgs: [MCP_SERVER_FILE_PATH],
+    includeRover: true,
+    roverCommand: "node",
+    roverArgs: [MCP_SERVER_FILE_PATH],
   });
 
   await session.writeTextFile(
@@ -186,7 +187,7 @@ export async function updateDaemonIfOutdated({
       await sendKillMessage({ session });
       // Remove the old daemon files
       await session.runCommand(
-        `rm -f ${DAEMON_FILE_PATH} ${MCP_SERVER_FILE_PATH} ${MCP_SERVER_JSON_FILE_PATH} ${defaultPipePath}`,
+        `rm -f ${DAEMON_FILE_PATH} ${MCP_SERVER_FILE_PATH} ${MCP_SERVER_JSON_FILE_PATH} ${defaultPipePath} /tmp/terragon-daemon.mjs /tmp/terragon-daemon.log /tmp/terragon-daemon.pipe /tmp/terragon-daemon.sock`,
       );
       // Install the new daemon
       await installDaemon({
@@ -243,7 +244,7 @@ export async function sendMessage({
   message: DaemonMessage;
 }) {
   const jsonMessage = JSON.stringify(message);
-  const filePath = `/tmp/terragon-msg-${Date.now()}.json`;
+  const filePath = `/tmp/rover-msg-${Date.now()}.json`;
   await session.writeTextFile(filePath, jsonMessage);
   await session.runCommand(`chmod 666 ${filePath}`);
   await session.runCommand(

@@ -22,13 +22,14 @@ describe("getEnv", () => {
     expect(env.GH_TOKEN).toBe("custom-token");
   });
 
-  it("should set TERRAGON to true", () => {
+  it("should set ROVER to true (and keep TERRAGON for back-compat)", () => {
     const env = getEnv({
       githubAccessToken: "token",
       userEnv: [],
       agentCredentials: null,
     });
 
+    expect(env.ROVER).toBe("true");
     expect(env.TERRAGON).toBe("true");
   });
 

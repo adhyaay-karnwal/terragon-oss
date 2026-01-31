@@ -61,7 +61,7 @@ type ActiveProcessState = {
   pollInterval: NodeJS.Timeout | null;
 };
 
-export class TerragonDaemon {
+export class RoverDaemon {
   private startTime: number = 0;
   private messageBuffer: MessageBufferEntry[] = [];
   private runtime: IDaemonRuntime;
@@ -106,7 +106,8 @@ export class TerragonDaemon {
     this.agentFrontmatterReader = new AgentFrontmatterReader(runtime);
 
     // Load feature flags from environment variable if available
-    const envFeatureFlags = process.env.TERRAGON_FEATURE_FLAGS;
+    const envFeatureFlags =
+      process.env.ROVER_FEATURE_FLAGS || process.env.TERRAGON_FEATURE_FLAGS;
     if (envFeatureFlags) {
       try {
         this.featureFlags = JSON.parse(envFeatureFlags);
@@ -129,7 +130,7 @@ export class TerragonDaemon {
    * Initialize and start the daemon
    */
   async start(): Promise<void> {
-    this.runtime.logger.info("🚀 Starting Terragon Daemon...");
+    this.runtime.logger.info("🚀 Starting Rover Daemon...");
     this.runtime.logger.info("Daemon version", {
       version: DAEMON_VERSION,
     });

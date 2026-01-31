@@ -52,10 +52,10 @@ export const sendOnboardingEmail = adminOnly(async function sendOnboardingEmail(
   const resend = new Resend(env.RESEND_API_KEY ?? "DUMMY_KEY");
 
   const result = await resend.emails.send({
-    from: "The Terragon Team <onboarding@mail.terragonlabs.com>",
+    from: "The Rover Team <onboarding@mail.roverlabs.com>",
     to: email,
-    replyTo: "support@terragonlabs.com",
-    subject: "Welcome to the Terragon Alpha!",
+    replyTo: "support@roverlabs.com",
+    subject: "Welcome to the Rover Alpha!",
     react: <WaitlistWelcomeEmail accessLink={accessLink} />,
   });
 
@@ -124,10 +124,10 @@ export const sendReengagementEmails = adminOnly(async (adminUser: User) => {
       const accessLink = `${baseUrl}/invited?code=${recipient.code}`;
 
       const result = await resend.emails.send({
-        from: "The Terragon Team <onboarding@mail.terragonlabs.com>",
+        from: "The Rover Team <onboarding@mail.roverlabs.com>",
         to: recipient.email,
-        replyTo: "support@terragonlabs.com",
-        subject: "Reminder: Redeem Terragon Access Code",
+        replyTo: "support@roverlabs.com",
+        subject: "Reminder: Redeem Rover Access Code",
         react: <WaitlistWelcomeEmail accessLink={accessLink} />,
       });
 
@@ -209,9 +209,9 @@ export const sendOnboardingCompletionEmails = adminOnly(
         const dashboardLink = `${baseUrl}/`;
 
         const result = await resend.emails.send({
-          from: "The Terragon Team <onboarding@mail.terragonlabs.com>",
+          from: "The Rover Team <onboarding@mail.roverlabs.com>",
           to: user.email,
-          replyTo: "support@terragonlabs.com",
+          replyTo: "support@roverlabs.com",
           subject: "Forget something?",
           react: (
             <OnboardingCompletionReminderEmail dashboardLink={dashboardLink} />

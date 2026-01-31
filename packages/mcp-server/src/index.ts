@@ -8,7 +8,7 @@ import {
 
 const server = new Server(
   {
-    name: "terragon-mcp-server",
+    name: "rover-mcp-server",
     version: "0.0.1",
   },
   {
@@ -19,7 +19,7 @@ const server = new Server(
 );
 
 const followupTaskDescription = `
-Suggest a follow-up task to the user. The user will have the option to spin up another copy of Terry to run and process this task. 
+Suggest a follow-up task to the user. The user will have the option to spin up another copy of Rover to run and process this task. 
 Give all of the context required to do this task effectively. Use this tool anytime you think there are tasks the user should do but
 don't make sense to do in the current thread. Examples of these include:
 

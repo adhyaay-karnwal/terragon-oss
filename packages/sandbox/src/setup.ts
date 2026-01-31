@@ -12,7 +12,7 @@ import {
 } from "./utils";
 import { McpConfig } from "./mcp-config";
 import { AIAgent, AIAgentCredentials } from "@terragon/agent/types";
-import { terragonSetupScriptTimeoutMs } from "./constants";
+import { roverSetupScriptTimeoutMs } from "./constants";
 import { buildAmpSettings } from "./agents/amp-settings";
 import { buildCodexToml } from "./agents/codex-config";
 import { buildGeminiSettings } from "./agents/gemini-settings";
@@ -123,7 +123,7 @@ export async function setupSandboxOneTime(
   // Wait for daemon to be ready (it has its own 1 second wait)
   await daemonPromise;
 
-  // Only run terragon-setup.sh if not explicitly skipped
+  // Only run rover-setup.sh if not explicitly skipped
   if (options.skipSetupScript) {
     console.log("Skipping setup script");
   } else {
@@ -345,7 +345,7 @@ async function updateAgentFiles({
           normalizedUrl = normalizedUrl.slice(0, -1);
         }
       }
-      const terryModelProviderBaseUrl = normalizedUrl
+      const roverModelProviderBaseUrl = normalizedUrl
         ? `${normalizedUrl}/api/proxy/openai/v1`
         : null;
       await updateAgentFilesShared({
@@ -360,13 +360,13 @@ async function updateAgentFiles({
         otherFiles: [
           {
             filename: "config.toml",
-            // Always (re)write Codex MCP config TOML including built-in 'terry' server
+            // Always (re)write Codex MCP config TOML including built-in 'rover' server
             content: buildCodexToml({
               userMcpConfig: mcpConfig,
-              includeTerry: true,
-              terryCommand: "node",
-              terryArgs: [MCP_SERVER_FILE_PATH],
-              terryModelProviderBaseUrl,
+              includeRover: true,
+              roverCommand: "node",
+              roverArgs: [MCP_SERVER_FILE_PATH],
+              roverModelProviderBaseUrl,
             }),
           },
         ],
@@ -480,7 +480,7 @@ async function executeSetupScriptCommand({
   const result = await Promise.race([
     (async () => {
       await session.runCommand(command, {
-        timeoutMs: terragonSetupScriptTimeoutMs,
+        timeoutMs: roverSetupScriptTimeoutMs,
         onStdout: (data) => onUpdate?.("stdout", data),
         onStderr: (data) => onUpdate?.("stderr", data),
         env: getEnv({
@@ -495,12 +495,12 @@ async function executeSetupScriptCommand({
       });
     })(),
     new Promise<"timeout">((resolve) =>
-      setTimeout(() => resolve("timeout"), terragonSetupScriptTimeoutMs),
+      setTimeout(() => resolve("timeout"), roverSetupScriptTimeoutMs),
     ),
   ]);
   if (result === "timeout") {
     throw new Error(
-      `Command timed out after ${terragonSetupScriptTimeoutMs}ms`,
+      `Command timed out after ${roverSetupScriptTimeoutMs}ms`,
     );
   }
   // Log the git status after the setup script runs
@@ -526,7 +526,7 @@ export async function runSetupScript({
   };
 }) {
   const customScriptPath =
-    options.setupScriptPath || "/tmp/terragon-setup-custom.sh";
+    options.setupScriptPath || "/tmp/rover-setup-custom.sh";
   const outputs: string[] = [];
   const onUpdateWrapped: OnUpdateCallback = (type, output) => {
     if (type === "stdout" || type === "stderr") {
@@ -536,7 +536,7 @@ export async function runSetupScript({
   };
 
   try {
-    // If a custom setup script is provided, use it instead of checking for terragon-setup.sh
+    // If a custom setup script is provided, use it instead of checking for rover-setup.sh
     if (options.setupScript) {
       await options.onUpdate?.(
         "system",
@@ -555,11 +555,11 @@ export async function runSetupScript({
         onUpdate: onUpdateWrapped,
       });
     } else {
-      // Use the repository's terragon-setup.sh if it exists
+      // Use the repository's rover-setup.sh if it exists (fallback to terragon-setup.sh)
       await executeSetupScriptCommand({
         session,
         command:
-          "bash -c 'if [ -f terragon-setup.sh ]; then chmod +x terragon-setup.sh && bash -x ./terragon-setup.sh; fi'",
+          "bash -c 'if [ -f rover-setup.sh ]; then chmod +x rover-setup.sh && bash -x ./rover-setup.sh; elif [ -f terragon-setup.sh ]; then chmod +x terragon-setup.sh && bash -x ./terragon-setup.sh; fi'",
         environmentVariables: options.environmentVariables,
         agentCredentials: options.agentCredentials,
         githubAccessToken: options.githubAccessToken,
