@@ -12,7 +12,7 @@ import {
 import Image from "next/image";
 import { OpenAIIcon } from "@/components/icons/openai";
 import { MultiTaskVisual } from "@/components/landing/widgets/MultiTaskVisual";
-import { TerryPullTerminal } from "@/components/landing/widgets/TerryPullTerminal";
+import { RoverPullTerminal } from "@/components/landing/widgets/RoverPullTerminal";
 import { AutomationsVisual } from "@/components/landing/widgets/AutomationsVisual";
 import { IntegrationsVisual } from "@/components/landing/widgets/IntegrationsVisual";
 import { WorkAnywhere } from "@/components/landing/widgets/WorkAnywhere";
@@ -146,7 +146,7 @@ export default function BentoFeatures() {
             label="rover cli"
             heading="Take control locally"
             description="Pull tasks to your local environment when they need your attention. Kick off tasks directly from the CLI."
-            visual={<TerryPullTerminal />}
+            visual={<RoverPullTerminal />}
           />
           <FeatureBox
             icon={<Workflow className="size-4" />}

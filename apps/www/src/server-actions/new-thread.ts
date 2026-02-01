@@ -1,8 +1,8 @@
 "use server";
 
 import { userOnlyAction } from "@/lib/auth-server";
-import { SelectedAIModels } from "@terragon/agent/types";
-import { DBUserMessage, ThreadSource } from "@terragon/shared";
+import { SelectedAIModels } from "@rover/agent/types";
+import { DBUserMessage, ThreadSource } from "@rover/shared";
 import { createNewThread } from "../server-lib/new-thread-shared";
 import { getAccessInfoForUser } from "@/lib/subscription";
 import { SUBSCRIPTION_MESSAGES } from "@/lib/subscription-msgs";

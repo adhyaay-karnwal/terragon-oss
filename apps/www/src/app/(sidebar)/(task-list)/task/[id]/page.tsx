@@ -9,7 +9,7 @@ import {
   dehydrate,
 } from "@tanstack/react-query";
 import { threadQueryOptions } from "@/queries/thread-queries";
-import { ThreadInfoFull } from "@terragon/shared";
+import { ThreadInfoFull } from "@rover/shared";
 import { getThreadAction } from "@/server-actions/get-thread";
 import { unwrapResult } from "@/lib/server-actions";
 

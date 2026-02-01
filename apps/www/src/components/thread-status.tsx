@@ -1,6 +1,6 @@
 import { combineThreadStatuses } from "@/agent/thread-status";
 import { cn } from "@/lib/utils";
-import { ThreadInfo, ThreadStatus } from "@terragon/shared";
+import { ThreadInfo, ThreadStatus } from "@rover/shared";
 import { Clock, Check, CircleDashed, X, File, Calendar } from "lucide-react";
 
 type MinimalThreadStatus =
@@ -143,13 +143,13 @@ function MinimalStatusIndicator({
     finishing: (
       <Check
         strokeWidth={strokeWidth}
-        className={cn("text-green-600/90", size)}
+        className={cn("text-primary/90", size)}
       />
     ),
     complete: (
       <Check
         strokeWidth={strokeWidth}
-        className={cn("text-green-600/90", size)}
+        className={cn("text-primary/90", size)}
       />
     ),
     error: (

@@ -1,5 +1,5 @@
 import { memo, useState, useMemo } from "react";
-import { UIGitDiffPart } from "@terragon/shared/db/ui-messages";
+import { UIGitDiffPart } from "@rover/shared/db/ui-messages";
 import {
   ChevronDown,
   ChevronRight,
@@ -8,7 +8,7 @@ import {
   ExternalLink,
   FileDiff,
 } from "lucide-react";
-import { parseGitDiffStats } from "@terragon/shared/utils/git-diff";
+import { parseGitDiffStats } from "@rover/shared/utils/git-diff";
 import { useThread } from "./thread-context";
 import "@git-diff-view/react/styles/diff-view-pure.css";
 import { useTheme } from "next-themes";
@@ -136,7 +136,7 @@ export const GitDiffPart = memo(function GitDiffPart({
           {(diffStats.additions > 0 || diffStats.deletions > 0) && (
             <div className="flex items-center gap-2 text-xs font-medium flex-shrink-0 min-w-0">
               {diffStats.additions > 0 && (
-                <span className="flex items-center gap-1 text-green-600 dark:text-green-400 whitespace-nowrap">
+                <span className="flex items-center gap-1 text-primary dark:text-green-400 whitespace-nowrap">
                   <span>+{diffStats.additions}</span>
                 </span>
               )}

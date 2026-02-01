@@ -1,8 +1,8 @@
 import { describe, beforeAll, it, afterAll } from "vitest";
-import type { ISandboxSession } from "@terragon/sandbox/types";
-import { bashQuote } from "@terragon/sandbox/utils";
-import type { SandboxProvider, SandboxSize } from "@terragon/types/sandbox";
-import { getOrCreateSandbox, hibernateSandbox } from "@terragon/sandbox";
+import type { ISandboxSession } from "@rover/sandbox/types";
+import { bashQuote } from "@rover/sandbox/utils";
+import type { SandboxProvider, SandboxSize } from "@rover/types/sandbox";
+import { getOrCreateSandbox, hibernateSandbox } from "@rover/sandbox";
 
 const timeoutMs = 5 * 60 * 1000;
 

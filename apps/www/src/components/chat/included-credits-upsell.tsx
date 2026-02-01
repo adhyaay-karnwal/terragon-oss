@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { AIAgent } from "@terragon/agent/types";
+import { AIAgent } from "@rover/agent/types";
 import {
   getAgentProviderDisplayName,
   isConnectedCredentialsSupported,
-} from "@terragon/agent/utils";
+} from "@rover/agent/utils";
 
 export function IncludedCreditsUpsell({ agent }: { agent: AIAgent }) {
   const providerName = getAgentProviderDisplayName(agent);

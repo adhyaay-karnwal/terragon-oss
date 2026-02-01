@@ -4,7 +4,7 @@ import { useAtomValue } from "jotai";
 import { userAtom } from "@/atoms/user";
 import { SlackAccountSettings } from "../slack";
 import { SlackAuthToasts } from "../slack-auth-toasts";
-import { SlackAccountWithMetadata } from "@terragon/shared/db/types";
+import { SlackAccountWithMetadata } from "@rover/shared/db/types";
 import { SettingsSection } from "../settings-row";
 import Link from "next/link";
 
@@ -30,7 +30,7 @@ export function IntegrationsSettings({
             Connect your Slack workspace to interact with Rover through
             Slack.{" "}
             <Link
-              href="https://docs.terragonlabs.com/docs/integrations/slack-integration"
+              href="https://docs.roverlabs.com/docs/integrations/slack-integration"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:no-underline"

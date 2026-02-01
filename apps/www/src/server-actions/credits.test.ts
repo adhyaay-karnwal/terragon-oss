@@ -1,11 +1,11 @@
 import { beforeEach, describe, expect, it, MockInstance, vi } from "vitest";
 import { db } from "@/lib/db";
-import { createTestUser } from "@terragon/shared/model/test-helpers";
+import { createTestUser } from "@rover/shared/model/test-helpers";
 import { mockLoggedInUser } from "@/test-helpers/mock-next";
 import * as stripeConfig from "@/server-lib/stripe";
 import { CREDIT_TOP_UP_REASON } from "@/server-lib/stripe-credit-top-ups";
 import { createCreditTopUpCheckoutSession } from "./credits";
-import { getUser, updateUser } from "@terragon/shared/model/user";
+import { getUser, updateUser } from "@rover/shared/model/user";
 
 describe("createCreditTopUpCheckoutSession", () => {
   let stripeCheckoutSessionsCreateSpy: MockInstance<

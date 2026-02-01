@@ -6,7 +6,7 @@ import {
   getDaemonLogs,
   sendMessage,
 } from "./daemon";
-import type { SandboxProvider } from "@terragon/types/sandbox";
+import type { SandboxProvider } from "@rover/types/sandbox";
 import type { ISandboxSession, CreateSandboxOptions } from "./types";
 import { getDaemonFile } from "./constants";
 import { setupSandboxEveryTime } from "./setup";
@@ -20,7 +20,7 @@ import { getGitDefaultBranch } from "./commands/git-default-branch";
 import { gitCommitAndPushBranch } from "./commands/git-commit-and-push";
 import { getOrCreateSandbox } from "./sandbox";
 import { bashQuote } from "./utils";
-import { defaultUnixSocketPath } from "@terragon/daemon/shared";
+import { defaultUnixSocketPath } from "@rover/daemon/shared";
 
 const TIMEOUT_MS = 5 * 60 * 1000; // 5 minutes
 

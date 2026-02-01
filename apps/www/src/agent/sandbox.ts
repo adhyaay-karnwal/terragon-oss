@@ -1,44 +1,44 @@
 import { db } from "@/lib/db";
-import { DB } from "@terragon/shared/db";
-import { AIAgent, AIModel } from "@terragon/agent/types";
+import { DB } from "@rover/shared/db";
+import { AIAgent, AIModel } from "@rover/agent/types";
 import {
   getThreadMinimal,
   updateThread,
   getThreadChat,
-} from "@terragon/shared/model/threads";
+} from "@rover/shared/model/threads";
 import {
   getGitHubUserAccessTokenOrThrow,
   getUser,
   getUserSettings,
-} from "@terragon/shared/model/user";
-import { getFeatureFlagsForUser } from "@terragon/shared/model/feature-flags";
+} from "@rover/shared/model/user";
+import { getFeatureFlagsForUser } from "@rover/shared/model/feature-flags";
 import {
   getOrCreateEnvironment,
   getDecryptedEnvironmentVariables,
   getDecryptedMcpConfig,
   getDecryptedGlobalEnvironmentVariables,
-} from "@terragon/shared/model/environments";
-import { env } from "@terragon/env/apps-www";
+} from "@rover/shared/model/environments";
+import { env } from "@rover/env/apps-www";
 import type {
   CreateSandboxOptions,
   ISandboxSession,
-} from "@terragon/sandbox/types";
-import type { SandboxProvider, SandboxSize } from "@terragon/types/sandbox";
+} from "@rover/sandbox/types";
+import type { SandboxProvider, SandboxSize } from "@rover/types/sandbox";
 import {
   getOrCreateSandbox as getOrCreateSandboxInternal,
   hibernateSandbox as hibernateSandboxInternal,
-} from "@terragon/sandbox";
+} from "@rover/sandbox";
 import { shouldHibernateSandbox } from "./sandbox-resource";
 import { wrapError } from "./error";
 import { getPostHogServer } from "@/lib/posthog-server";
 import { trackSandboxCreation } from "@/lib/rate-limit";
 import { nonLocalhostPublicAppUrl } from "@/lib/server-utils";
 import { generateBranchName } from "@/server-lib/generate-branch-name";
-import { sandboxTimeoutMs } from "@terragon/sandbox/constants";
+import { sandboxTimeoutMs } from "@rover/sandbox/constants";
 import { getAndVerifyCredentials } from "./credentials";
 import { DEFAULT_SANDBOX_SIZE } from "@/lib/subscription-tiers";
-import type { UserSettings } from "@terragon/shared";
-import { ensureAgent } from "@terragon/agent/utils";
+import type { UserSettings } from "@rover/shared";
+import { ensureAgent } from "@rover/agent/utils";
 import { getLastUserMessageModel } from "@/lib/db-message-helpers";
 
 async function getOrCreateSandboxWithTimeout(

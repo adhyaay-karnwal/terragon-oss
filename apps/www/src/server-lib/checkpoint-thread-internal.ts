@@ -3,29 +3,29 @@ import { wrapError, ThreadError } from "@/agent/error";
 import { openPullRequestForThread } from "@/agent/pull-request";
 import { setActiveThreadChat } from "@/agent/sandbox-resource";
 import { getPostHogServer } from "@/lib/posthog-server";
-import { env } from "@terragon/env/apps-www";
+import { env } from "@rover/env/apps-www";
 import {
   getGitDiffMaybeCutoff,
   gitDiffStats,
   gitCommitAndPushBranch,
-} from "@terragon/sandbox/commands";
-import { ISandboxSession } from "@terragon/sandbox/types";
+} from "@rover/sandbox/commands";
+import { ISandboxSession } from "@rover/sandbox/types";
 import {
   DBMessage,
   DBSystemMessage,
   GitDiffStats,
   ThreadInsert,
   ThreadChatInsert,
-} from "@terragon/shared";
+} from "@rover/shared";
 import {
   getThread,
   getThreadChat,
   getThreadMinimal,
   updateThread,
   updateThreadChat,
-} from "@terragon/shared/model/threads";
-import { createGitDiffCheckpoint } from "@terragon/shared/utils/git-diff";
-import { sanitizeForJson } from "@terragon/shared/utils/sanitize-json";
+} from "@rover/shared/model/threads";
+import { createGitDiffCheckpoint } from "@rover/shared/utils/git-diff";
+import { sanitizeForJson } from "@rover/shared/utils/sanitize-json";
 import { generateCommitMessage } from "./generate-commit-message";
 import { sendSystemMessage } from "./send-system-message";
 

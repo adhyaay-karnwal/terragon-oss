@@ -1,7 +1,7 @@
 import {
   getInternalSharedSecret,
   getPublicAppUrl,
-} from "@terragon/env/apps-broadcast";
+} from "@rover/env/apps-broadcast";
 import type * as Party from "partykit/server";
 
 export async function validateRequest(

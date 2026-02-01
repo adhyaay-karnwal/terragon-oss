@@ -11,7 +11,7 @@ import {
   bashQuote,
 } from "./utils";
 import { McpConfig } from "./mcp-config";
-import { AIAgent, AIAgentCredentials } from "@terragon/agent/types";
+import { AIAgent, AIAgentCredentials } from "@rover/agent/types";
 import { roverSetupScriptTimeoutMs } from "./constants";
 import { buildAmpSettings } from "./agents/amp-settings";
 import { buildCodexToml } from "./agents/codex-config";
@@ -363,7 +363,7 @@ async function updateAgentFiles({
             // Always (re)write Codex MCP config TOML including built-in 'rover' server
             content: buildCodexToml({
               userMcpConfig: mcpConfig,
-              includeTerry: true,
+              includeRover: true,
               roverCommand: "node",
               roverArgs: [MCP_SERVER_FILE_PATH],
               roverModelProviderBaseUrl,

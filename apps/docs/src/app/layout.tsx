@@ -26,18 +26,18 @@ export const metadata: Metadata = {
   authors: [{ name: "Rover Labs" }],
   creator: "Rover Labs",
   publisher: "Rover Labs",
-  metadataBase: new URL("https://docs.terragonlabs.com"),
+  metadataBase: new URL("https://docs.roverlabs.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://docs.terragonlabs.com",
+    url: "https://docs.roverlabs.com",
     siteName: "Rover Documentation",
     title: "Rover Documentation",
     description:
       "Documentation for Rover - AI-powered coding assistant platform",
     images: [
       {
-        url: "https://cdn.terragonlabs.com/og-img-2-_W6t.png",
+        url: "https://cdn.roverlabs.com/og-img-2-_W6t.png",
         width: 1200,
         height: 630,
         alt: "Rover Documentation",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Rover Documentation",
     description:
       "Documentation for Rover - AI-powered coding assistant platform",
-    images: ["https://cdn.terragonlabs.com/og-img-2-_W6t.png"],
+    images: ["https://cdn.roverlabs.com/og-img-2-_W6t.png"],
     creator: "@roverlabs",
     site: "@roverlabs",
   },
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://docs.terragonlabs.com",
+    canonical: "https://docs.roverlabs.com",
   },
 };
 
@@ -86,7 +86,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     publisher: {
       "@type": "Organization",
       name: "Rover Labs",
-      url: "https://www.terragonlabs.com",
+      url: "https://www.roverlabs.com",
     },
     inLanguage: "en-US",
   };

@@ -5,7 +5,7 @@ import { StructuredData } from "@/components/system/structured-data";
 import type { Metadata } from "next";
 import { OG_IMAGE_URL } from "@/lib/constants";
 import { db } from "@/lib/db";
-import { getFeatureFlagsGlobal } from "@terragon/shared/model/feature-flags";
+import { getFeatureFlagsGlobal } from "@rover/shared/model/feature-flags";
 
 export const maxDuration = 800;
 
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Rover - Delegate coding tasks to AI background agents",
     description:
       "Run coding agents in parallel inside remote sandboxes. Automate multiple development tasks concurrently with AI-powered assistance.",
-    url: "https://www.terragonlabs.com",
+    url: "https://www.roverlabs.com",
     siteName: "Rover",
     type: "website",
     locale: "en_US",
@@ -66,9 +66,9 @@ export const metadata: Metadata = {
     images: [OG_IMAGE_URL],
   },
   alternates: {
-    canonical: "https://www.terragonlabs.com",
+    canonical: "https://www.roverlabs.com",
   },
-  metadataBase: new URL("https://www.terragonlabs.com"),
+  metadataBase: new URL("https://www.roverlabs.com"),
 };
 
 export default async function Home() {

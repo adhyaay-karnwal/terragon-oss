@@ -2,7 +2,7 @@
 
 import { userOnlyAction } from "@/lib/auth-server";
 import { UserFacingError } from "@/lib/server-actions";
-import { publicAppUrl } from "@terragon/env/next-public";
+import { publicAppUrl } from "@rover/env/next-public";
 import { CREDIT_TOP_UP_REASON } from "@/server-lib/stripe-credit-top-ups";
 import { ensureStripeCustomer } from "@/server-lib/stripe-helpers";
 import { getStripeCreditPackPriceId } from "@/server-lib/stripe";

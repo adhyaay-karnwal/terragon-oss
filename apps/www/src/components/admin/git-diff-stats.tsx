@@ -1,4 +1,4 @@
-import { Thread } from "@terragon/shared";
+import { Thread } from "@rover/shared";
 
 export function GitDiffStats({
   diffStats,
@@ -11,7 +11,7 @@ export function GitDiffStats({
   return (
     <div className="flex items-center gap-1">
       {diffStats.additions > 0 && (
-        <span className="text-green-600 text-xs font-medium">
+        <span className="text-primary text-xs font-medium">
           +{diffStats.additions}
         </span>
       )}

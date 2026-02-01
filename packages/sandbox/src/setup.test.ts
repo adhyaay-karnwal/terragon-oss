@@ -420,7 +420,7 @@ npm run build`;
       expect(setupScriptCall?.[1]?.env).toEqual({
         API_KEY: "secret123",
         DATABASE_URL: "postgres://localhost",
-        TERRAGON: "true",
+        ROVER: "true",
         GH_TOKEN: "test-token",
         TERM: "xterm",
         CI: "true",

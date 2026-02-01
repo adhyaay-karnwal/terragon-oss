@@ -12,7 +12,7 @@ import { ListCommand } from "./commands/list.js";
 import { QueryProvider } from "./providers/QueryProvider.js";
 import { RootLayout } from "./components/RootLayout.js";
 import { startMCPServer } from "./mcp-server/index.js";
-import type { AIModelExternal } from "@terragon/agent/types";
+import type { AIModelExternal } from "@rover/agent/types";
 
 // Set up global error handlers
 process.on("uncaughtException", (error) => {
@@ -36,7 +36,7 @@ const packageJson = JSON.parse(
 
 program
   .name("rover")
-  .description("Terry CLI - Rover Labs coding assistant")
+  .description("Rover CLI - Rover Labs coding assistant")
   .version(packageJson.version);
 
 program

@@ -1,7 +1,7 @@
 "use client";
 
 import { ANNOUNCEMENT_BANNER_STRING } from "@/lib/constants";
-import { publicDocsUrl } from "@terragon/env/next-public";
+import { publicDocsUrl } from "@rover/env/next-public";
 
 export default function AnnouncementBanner({
   isShutdownMode,

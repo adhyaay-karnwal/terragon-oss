@@ -3,7 +3,7 @@ import { installDaemon } from "./daemon";
 import type { ISandboxSession } from "./types";
 
 // Mock the bundled imports
-vi.mock("@terragon/bundled", () => ({
+vi.mock("@rover/bundled", () => ({
   daemonAsStr: "mock-daemon-content",
   mcpServerAsStr: "mock-mcp-server-content",
 }));
@@ -141,7 +141,7 @@ describe("daemon installation", () => {
 
       const mcpConfig = JSON.parse(writtenFiles["/tmp/mcp-server.json"]!);
 
-      // Terry server should remain unchanged
+      // Rover server should remain unchanged
       expect(mcpConfig.mcpServers.rover).toEqual({
         command: "node",
         args: ["/tmp/rover-mcp-server.mjs"],
@@ -221,9 +221,9 @@ describe("daemon installation", () => {
         BASH_MAX_TIMEOUT_MS: "60000",
         API_KEY: "secret-key",
         DATABASE_URL: "postgres://localhost",
-        TERRAGON: "true",
+        ROVER: "true",
         GH_TOKEN: "test-token",
-        TERRAGON_FEATURE_FLAGS: "{}",
+        ROVER_FEATURE_FLAGS: "{}",
       });
     });
 

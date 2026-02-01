@@ -3,8 +3,8 @@ import { db } from "@/lib/db";
 import {
   getUserCredits,
   grantUserCredits,
-} from "@terragon/shared/model/credits";
-import { updateUserInfoServerSide } from "@terragon/shared/model/user";
+} from "@rover/shared/model/credits";
+import { updateUserInfoServerSide } from "@rover/shared/model/user";
 
 export const CREDIT_TOP_UP_REASON = "credit_top_up";
 export const CREDIT_AUTO_RELOAD_REASON = "credit_auto_reload";

@@ -126,7 +126,7 @@ function FileDiff({
           </div>
           <div className="flex items-center gap-1">
             {file.additions > 0 && (
-              <span className="text-green-600 dark:text-green-400 text-xs font-medium">
+              <span className="text-primary dark:text-green-400 text-xs font-medium">
                 +{file.additions}
               </span>
             )}
@@ -206,7 +206,7 @@ function DiffLine({
   let textColor = "";
   if (change.type === "add") {
     bg =
-      "bg-green-50 dark:bg-green-900/20 border-l-2 border-green-400 dark:border-green-600";
+      "bg-green-50 dark:bg-green-900/20 border-l-2 border-green-400 dark:border-primary";
     textColor = "text-green-700 dark:text-green-400";
   } else if (change.type === "del") {
     bg =

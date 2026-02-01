@@ -1,7 +1,7 @@
 import { getUserIdOrNull, getUserIdOrRedirect } from "@/lib/auth-server";
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
-import { getEnvironment } from "@terragon/shared/model/environments";
+import { getEnvironment } from "@rover/shared/model/environments";
 import type { Metadata } from "next";
 import { SetupScriptEditor } from "@/components/environments/setup-script-editor";
 

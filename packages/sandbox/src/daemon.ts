@@ -2,14 +2,14 @@ import {
   DaemonMessage,
   defaultPipePath,
   FeatureFlags,
-} from "@terragon/daemon/shared";
+} from "@rover/daemon/shared";
 import { McpConfig } from "./mcp-config";
 import { getDaemonFile, getMcpServerFile } from "./constants";
 import { CreateSandboxOptions, ISandboxSession } from "./types";
 import { createHash } from "crypto";
 import { buildMergedMcpConfig } from "./utils/mcp-merge";
 import { getEnv } from "./env";
-import { AIAgentCredentials } from "@terragon/agent/types";
+import { AIAgentCredentials } from "@rover/agent/types";
 
 export const DAEMON_FILE_PATH = "/tmp/rover-daemon.mjs";
 export const MCP_SERVER_FILE_PATH = "/tmp/rover-mcp-server.mjs";
@@ -56,7 +56,7 @@ async function startDaemon({
           // 1 minute max timeout for bash commands
           BASH_MAX_TIMEOUT_MS: (60 * 1000).toString(),
           // Pass feature flags as JSON in environment variable
-          TERRAGON_FEATURE_FLAGS: JSON.stringify(featureFlags),
+          ROVER_FEATURE_FLAGS: JSON.stringify(featureFlags),
         },
       }),
       onOutput: (data) => {
@@ -92,7 +92,7 @@ export async function installDaemon({
   // Merge user MCP config with built-in rover server (shared logic with Codex)
   const mcpConfig = buildMergedMcpConfig({
     userMcpConfig,
-    includeTerry: true,
+    includeRover: true,
     roverCommand: "node",
     roverArgs: [MCP_SERVER_FILE_PATH],
   });

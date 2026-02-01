@@ -1,6 +1,6 @@
-import { AIModel } from "@terragon/agent/types";
+import { AIModel } from "@rover/agent/types";
 import { McpConfig } from "../mcp-config";
-import { agentToModels, getModelDisplayName } from "@terragon/agent/utils";
+import { agentToModels, getModelDisplayName } from "@rover/agent/utils";
 
 export function getModelId(modelName: AIModel): string {
   switch (modelName) {

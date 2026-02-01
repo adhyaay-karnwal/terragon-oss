@@ -1,5 +1,5 @@
-import { R2Client } from "@terragon/r2";
-import { env } from "@terragon/env/apps-www";
+import { R2Client } from "@rover/r2";
+import { env } from "@rover/env/apps-www";
 
 // CDN-specific R2 client
 export const r2Cdn = new R2Client({
@@ -7,5 +7,5 @@ export const r2Cdn = new R2Client({
   secretAccessKey: env.R2_SECRET_ACCESS_KEY,
   accountId: env.R2_ACCOUNT_ID,
   bucketName: "cdn-rover",
-  publicUrl: "https://cdn.terragonlabs.com",
+  publicUrl: "https://cdn.roverlabs.com",
 });

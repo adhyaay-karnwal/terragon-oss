@@ -5,14 +5,14 @@ import {
   GithubCheckRunStatus,
   GithubCheckRunConclusion,
   Automation,
-} from "@terragon/shared/db/types";
+} from "@rover/shared/db/types";
 import {
   getGithubCheckRunForThreadChat,
   upsertGithubCheckRun,
-} from "@terragon/shared/model/github";
-import { getAutomation } from "@terragon/shared/model/automations";
-import { getThreadMinimal } from "@terragon/shared/model/threads";
-import { publicAppUrl } from "@terragon/env/next-public";
+} from "@rover/shared/model/github";
+import { getAutomation } from "@rover/shared/model/automations";
+import { getThreadMinimal } from "@rover/shared/model/threads";
+import { publicAppUrl } from "@rover/env/next-public";
 
 type CreateCheckRunParams =
   Endpoints["POST /repos/{owner}/{repo}/check-runs"]["parameters"];

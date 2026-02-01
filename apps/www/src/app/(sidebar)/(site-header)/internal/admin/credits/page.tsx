@@ -1,8 +1,8 @@
 import { getAdminUserOrThrow } from "@/lib/auth-server";
 import { db } from "@/lib/db";
-import * as schema from "@terragon/shared/db/schema";
+import * as schema from "@rover/shared/db/schema";
 import { and, eq, gte, inArray, sql } from "drizzle-orm";
-import { BILLABLE_EVENT_TYPES } from "@terragon/shared/model/credits";
+import { BILLABLE_EVENT_TYPES } from "@rover/shared/model/credits";
 import { getUserListForAdminPage } from "@/server-lib/admin";
 import { TopUsersTable } from "./top-users-table";
 import { formatUsdFromCents } from "@/lib/currency";

@@ -4,11 +4,11 @@ import { AdminThreadsList } from "@/components/admin/threads-list";
 import {
   getThreadCountsForAdmin,
   getThreadsForAdmin,
-} from "@terragon/shared/model/threads";
+} from "@rover/shared/model/threads";
 import { allThreadErrors } from "@/agent/error";
 import { allThreadStatuses } from "@/agent/thread-status";
-import { ThreadSource, ThreadStatus } from "@terragon/shared/db/types";
-import { AIAgent } from "@terragon/agent/types";
+import { ThreadSource, ThreadStatus } from "@rover/shared/db/types";
+import { AIAgent } from "@rover/agent/types";
 
 export default async function AdminThreadsPage({
   searchParams,

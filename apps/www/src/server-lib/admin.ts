@@ -1,8 +1,8 @@
 import { db } from "@/lib/db";
-import * as schema from "@terragon/shared/db/schema";
-import { User } from "@terragon/shared";
+import * as schema from "@rover/shared/db/schema";
+import { User } from "@rover/shared";
 import { inArray, eq, count, sql } from "drizzle-orm";
-import { getSignupTrialInfo } from "@terragon/shared/model/subscription";
+import { getSignupTrialInfo } from "@rover/shared/model/subscription";
 
 export type UserForAdminPage<T extends User = User> = T & {
   numThreads: number;

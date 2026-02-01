@@ -20,12 +20,12 @@ import {
   SUBSCRIPTION_PLAN_CONFIG,
   type SubscriptionPlanConfig,
 } from "@/lib/subscription-plan-config";
-import { SubscriptionStatus } from "@terragon/shared/db/schema";
-import { SignupTrialInfo, SubscriptionInfo } from "@terragon/shared/db/types";
+import { SubscriptionStatus } from "@rover/shared/db/schema";
+import { SignupTrialInfo, SubscriptionInfo } from "@rover/shared/db/types";
 import { useUserCreditBalanceQuery } from "@/queries/user-credit-balance-queries";
 import { CreditsSection } from "../credits";
 import { useServerActionMutation } from "@/queries/server-action-helpers";
-import { publicDocsUrl } from "@terragon/env/next-public";
+import { publicDocsUrl } from "@rover/env/next-public";
 
 const CORE_PLAN = SUBSCRIPTION_PLAN_CONFIG.core;
 const PRO_PLAN = SUBSCRIPTION_PLAN_CONFIG.pro;

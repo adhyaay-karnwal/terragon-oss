@@ -6,7 +6,7 @@ import {
   getUserSettings,
   getUserInfoServerSide,
   updateUserInfoServerSide,
-} from "@terragon/shared/model/user";
+} from "@rover/shared/model/user";
 import { CREDIT_AUTO_RELOAD_REASON } from "./stripe-credit-top-ups";
 import {
   stripeInvoiceItemsCreate,

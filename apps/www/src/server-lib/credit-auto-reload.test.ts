@@ -1,14 +1,14 @@
 import { beforeEach, describe, expect, it, MockInstance, vi } from "vitest";
 import { db } from "@/lib/db";
 import { redis } from "@/lib/redis";
-import { createTestUser } from "@terragon/shared/model/test-helpers";
+import { createTestUser } from "@rover/shared/model/test-helpers";
 import {
   updateUser,
   updateUserInfoServerSide,
   updateUserSettings,
-} from "@terragon/shared/model/user";
+} from "@rover/shared/model/user";
 import { eq } from "drizzle-orm";
-import * as schema from "@terragon/shared/db/schema";
+import * as schema from "@rover/shared/db/schema";
 import * as stripeConfig from "@/server-lib/stripe";
 import { CREDIT_AUTO_RELOAD_REASON } from "./stripe-credit-top-ups";
 import { maybeTriggerCreditAutoReload } from "./credit-auto-reload";

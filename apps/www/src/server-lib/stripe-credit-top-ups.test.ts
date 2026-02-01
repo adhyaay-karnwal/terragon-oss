@@ -1,9 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import Stripe from "stripe";
 import { db } from "@/lib/db";
-import { createTestUser } from "@terragon/shared/model/test-helpers";
-import { getUserCredits } from "@terragon/shared/model/credits";
-import { getUserInfoServerSide } from "@terragon/shared/model/user";
+import { createTestUser } from "@rover/shared/model/test-helpers";
+import { getUserCredits } from "@rover/shared/model/credits";
+import { getUserInfoServerSide } from "@rover/shared/model/user";
 import { nanoid } from "nanoid/non-secure";
 import {
   CREDIT_AUTO_RELOAD_REASON,

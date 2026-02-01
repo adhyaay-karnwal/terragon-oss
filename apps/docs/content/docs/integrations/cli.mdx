@@ -1,5 +1,5 @@
 ---
-title: Terry CLI & MCP
+title: Rover CLI & MCP
 description: Command-line interface for interacting with Rover that can also be used as an MCP server
 ---
 
@@ -8,11 +8,11 @@ import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { Callout } from "fumadocs-ui/components/callout";
 
 <img
-  src="https://img.shields.io/npm/v/@terragon-labs/cli.svg?style=flat-square"
+  src="https://img.shields.io/npm/v/@rover-labs/cli.svg?style=flat-square"
   alt="npm"
 />
 
-The Terry CLI let's you interact with Rover directly from the command line. Create tasks, review changes, pull tasks to pick up where you left off, all from your terminal.
+The Rover CLI let's you interact with Rover directly from the command line. Create tasks, review changes, pull tasks to pick up where you left off, all from your terminal.
 
 ### Requirements
 
@@ -23,11 +23,11 @@ The Terry CLI let's you interact with Rover directly from the command line. Crea
 ### Installation
 
 <Callout type="warning">
-  **Note**: Currently only npm is supported for installing the Terry CLI.
+  **Note**: Currently only npm is supported for installing the Rover CLI.
 </Callout>
 
 ```bash title="Terminal"
-npm install -g @terragon-labs/cli
+npm install -g @rover-labs/cli
 ```
 
 ### Authentication
@@ -45,10 +45,10 @@ This will:
   <Step>Confirm successful connection</Step>
 </Steps>
 
-You can override the default settings directory by setting the `TERRY_SETTINGS_DIR` environment variable before running the CLI. For example:
+You can override the default settings directory by setting the `ROVER_SETTINGS_DIR` environment variable before running the CLI. For example:
 
 ```bash title="Terminal"
-export TERRY_SETTINGS_DIR=~/.config/rover
+export ROVER_SETTINGS_DIR=~/.config/rover
 rover auth
 ```
 
@@ -142,7 +142,7 @@ rover pull <taskId> --resume
   **Getting the task ID**:
   <br />
   You can find the task ID at the end of the URL when viewing a task in
-  Rover. For example, in `https://terragonlabs.com/tasks/abc123-def456`, the
+  Rover. For example, in `https://roverlabs.com/tasks/abc123-def456`, the
   task ID is `abc123-def456`.
 </Callout>
 
@@ -209,7 +209,7 @@ rover mcp
 
 #### Claude Code Integration
 
-You can add the Terry MCP server to your local Claude Code instance to enable direct interaction with Rover tasks from within Claude:
+You can add the Rover MCP server to your local Claude Code instance to enable direct interaction with Rover tasks from within Claude:
 
 ```bash title="Terminal"
 claude mcp add rover -- rover mcp

@@ -223,7 +223,7 @@ pnpm -C apps/cli uninstall:dev
 - **`apps/www`**: Main Next.js frontend application
 - **`apps/broadcast`**: PartyKit WebSocket service for real-time features
 - **`apps/docs`**: Fumadocs-based documentation site
-- **`apps/cli`**: Terry CLI tool for pulling threads (uses Ink for terminal UI)
+- **`apps/cli`**: Rover CLI tool for pulling threads (uses Ink for terminal UI)
 - **`apps/desktop`**: Electron desktop app wrapper around the web UI
 - **`apps/vscode-extension`**: VS Code sidebar extension (React + Tailwind webview with TanStack Router - never use regular HTML links, always use TanStack Router's `useNavigate` hook or `Link` component as regular links don't work in VS Code webview iframes)
 - **`apps/isanthropicdown`**: Status microsite (Vite + Cloudflare Workers)
@@ -253,6 +253,14 @@ pnpm -C apps/cli uninstall:dev
 
 ### Environment Configuration
 
+#### Rebrand Migration Note (March 2025)
+The project has been rebranded from **Terragon** to **Rover**. This included renaming Docker containers and the default database name.
+
+**Developers with existing local environments:**
+1. Run `pnpm -C packages/dev-env docker-down-dev` to stop old containers.
+2. The next time you run `pnpm dev`, new containers named `rover_postgres_dev` and `rover_redis_dev` will be created.
+3. **Note:** Your existing local `terragon` database data will not be automatically migrated. If you need to preserve data, manually export it from the old container before deleting it.
+
 - **Development Database**: PostgreSQL on port 5432, Redis on port 6379
 - **Test Database**: PostgreSQL on port 15432, Redis on port 16379
 - **Environment Files**: `.env.development.local` for local development
@@ -267,7 +275,7 @@ pnpm -C apps/cli uninstall:dev
 - **Database schema out of sync**: Run `pnpm -C packages/shared drizzle-kit-push-dev`
 - **Sandbox connection issues**: Verify E2B API keys are set correctly
 - **Ngrok tunnel issues**: Check `NGROK_AUTH_TOKEN` and `NGROK_DOMAIN` in `.env.development.local`
-- **CLI not found**: Run `pnpm install-cli:dev` to install the Terry CLI locally
+- **CLI not found**: Run `pnpm install-cli:dev` to install the Rover CLI locally
 
 ### Debug Scripts
 

@@ -13,29 +13,29 @@ Interact with Rover directly from GitHub through app mentions, while Rover handl
 ### GitHub App Mentions
 
 <Callout type="info">
-  To mention @terragon-labs on GitHub, you must grant Rover access to the
+  To mention @rover-labs on GitHub, you must grant Rover access to the
   repository you're tagging it in. You can do this in Settings, the repository
   selector in the prompt box, or in Environments.
 </Callout>
 
 #### How It Works
 
-Mention `@terragon-labs` in GitHub to create new Rover tasks:
+Mention `@rover-labs` in GitHub to create new Rover tasks:
 
 <Tabs items={["PR Comments", "Issue Comments", "Code Review Comments"]}>
   <Tab value="PR Comments">
     ```text 
-    @terragon-labs can you fix the failing tests?
+    @rover-labs can you fix the failing tests?
     ```
   </Tab>
 
 <Tab value="Issue Comments">
-  ```text @terragon-labs implement the feature described above ```
+  ```text @rover-labs implement the feature described above ```
 </Tab>
 
   <Tab value="Code Review Comments">
     ```text 
-    @terragon-labs this method could be optimized using memoization 
+    @rover-labs this method could be optimized using memoization
     ```
   </Tab>
 </Tabs>
@@ -54,15 +54,15 @@ When you mention Rover:
   </Step>
   <Step>Work begins in an isolated sandbox</Step>
   <Step>
-    You'll see the task appear in [<House className="inline-block w-4 h-4 mx-1" /> **Home**](https://www.terragonlabs.com)
+    You'll see the task appear in [<House className="inline-block w-4 h-4 mx-1" /> **Home**](https://www.roverlabs.com)
   </Step>
 </Steps>
 
 #### Task Creation Behavior
 
-By default, Rover keeps a single task per pull request or issue. Repeat mentions of `@terragon-labs` on the same thread are added as follow-up messages so the conversation history stays in one place.
+By default, Rover keeps a single task per pull request or issue. Repeat mentions of `@rover-labs` on the same thread are added as follow-up messages so the conversation history stays in one place.
 
-If you want each mention to kick off a fresh task, enable **Create new task when @terragon-labs is tagged on GitHub** in [GitHub & Pull Request Settings](https://www.terragonlabs.com/settings/github). With this toggle on, Rover always creates a brand-new task—complete with its own sandbox and timeline—whenever you tag the app on GitHub, even if a task already exists for that PR or issue.
+If you want each mention to kick off a fresh task, enable **Create new task when @rover-labs is tagged on GitHub** in [GitHub & Pull Request Settings](https://www.roverlabs.com/settings/github). With this toggle on, Rover always creates a brand-new task—complete with its own sandbox and timeline—whenever you tag the app on GitHub, even if a task already exists for that PR or issue.
 
 <Callout type="warning">
   Separate tasks mean separate sandboxes and timelines. Enabling this setting is useful for parallel work or reviewer-specific follow-ups, but you will lose the consolidated discussion history and may need to keep an eye out for duplicated effort.
@@ -74,45 +74,45 @@ This preference applies to your Rover account across every repository you have a
 
 The model selected for a github mention is selected based on the following priority:
 
-1. Model specified in the comment (e.g., `@terragon-labs [sonnet] ...`)
+1. Model specified in the comment (e.g., `@rover-labs [sonnet] ...`)
 2. Model configured in a "Github Mention" automation (if exists)
-3. Your default model specified in [GitHub & Pull Request Settings](https://www.terragonlabs.com/settings/github).
+3. Your default model specified in [GitHub & Pull Request Settings](https://www.roverlabs.com/settings/github).
 4. The last model used in the task (If not creating a new task)
 5. Your last selected model in the dashboard.
 
-If an `@terragon-labs` mention will follow up on an existing task, the first selected model that is valid for the agent will be used. For example, if using Claude Code for a task, specifying `@terragon-labs [gpt-5.1] ...` will have no effect on the model selected.
+If an `@rover-labs` mention will follow up on an existing task, the first selected model that is valid for the agent will be used. For example, if using Claude Code for a task, specifying `@rover-labs [gpt-5.1] ...` will have no effect on the model selected.
 
 Here's a table of how to specify the model for each agent directly in the the github mention comment:
 
 | Agent       | Model                    | Example                                                                                            |
 | ----------- | ------------------------ | -------------------------------------------------------------------------------------------------- |
-| Claude Code | Sonnet                   | `@terragon-labs [sonnet] ...`                                                                      |
-| Claude Code | Haiku                    | `@terragon-labs [haiku] ...`                                                                       |
-| Claude Code | Opus                     | `@terragon-labs [opus] ...`                                                                        |
-| Codex       | GPT-5.2                  | `@terragon-labs [gpt-5.2] ...` OR <br /> `@terragon-labs [gpt-5.2-medium] ...`                     |
-| Codex       | GPT-5.2-Low              | `@terragon-labs [gpt-5.2-low] ...`                                                                 |
-| Codex       | GPT-5.2-High             | `@terragon-labs [gpt-5.2-high] ...`                                                                |
-| Codex       | GPT-5.1                  | `@terragon-labs [gpt-5.1] ...` OR <br /> `@terragon-labs [gpt-5.1-medium] ...`                     |
-| Codex       | GPT-5.1-Codex-Max-Low    | `@terragon-labs [gpt-5.1-codex-max-low] ...`                                                       |
-| Codex       | GPT-5.1-Codex-Max-Medium | `@terragon-labs [gpt-5.1-codex-max] ...` OR <br /> `@terragon-labs [gpt-5.1-codex-max-medium] ...` |
-| Codex       | GPT-5.1-Codex-Max-High   | `@terragon-labs [gpt-5.1-codex-max-high] ...`                                                      |
-| Codex       | GPT-5.1-Codex-Max-XHigh  | `@terragon-labs [gpt-5.1-codex-max-xhigh] ...`                                                     |
-| Codex       | GPT-5.1-Codex-Low        | `@terragon-labs [gpt-5.1-codex-low] ...`                                                           |
-| Codex       | GPT-5.1-Codex-Medium     | `@terragon-labs [gpt-5.1-codex-medium] ...`                                                        |
-| Codex       | GPT-5.1-Codex-High       | `@terragon-labs [gpt-5.1-codex-high] ...`                                                          |
-| Codex       | GPT-5                    | `@terragon-labs [gpt-5] ...`                                                                       |
-| Gemini      | Gemini 3 Pro             | `@terragon-labs [gemini-3-pro] ...`                                                                |
-| Gemini      | Gemini 2.5 Pro           | `@terragon-labs [gemini-2.5-pro] ...`                                                              |
-| OpenCode    | Grok Code Fast 1         | `@terragon-labs [grok-code] ...`                                                                   |
-| OpenCode    | Qwen3 Coder 480B         | `@terragon-labs [qwen3-coder] ...`                                                                 |
-| OpenCode    | Kimi K2                  | `@terragon-labs [kimi-k2] ...`                                                                     |
-| OpenCode    | GLM 4.6                  | `@terragon-labs [glm-4.6] ...`                                                                     |
-| OpenCode    | Gemini 2.5 Pro           | `@terragon-labs [opencode/gemini-2.5-pro] ...`                                                     |
-| Amp         | Amp                      | `@terragon-labs [amp] ...`                                                                         |
+| Claude Code | Sonnet                   | `@rover-labs [sonnet] ...`                                                                      |
+| Claude Code | Haiku                    | `@rover-labs [haiku] ...`                                                                       |
+| Claude Code | Opus                     | `@rover-labs [opus] ...`                                                                        |
+| Codex       | GPT-5.2                  | `@rover-labs [gpt-5.2] ...` OR <br /> `@rover-labs [gpt-5.2-medium] ...`                     |
+| Codex       | GPT-5.2-Low              | `@rover-labs [gpt-5.2-low] ...`                                                                 |
+| Codex       | GPT-5.2-High             | `@rover-labs [gpt-5.2-high] ...`                                                                |
+| Codex       | GPT-5.1                  | `@rover-labs [gpt-5.1] ...` OR <br /> `@rover-labs [gpt-5.1-medium] ...`                     |
+| Codex       | GPT-5.1-Codex-Max-Low    | `@rover-labs [gpt-5.1-codex-max-low] ...`                                                       |
+| Codex       | GPT-5.1-Codex-Max-Medium | `@rover-labs [gpt-5.1-codex-max] ...` OR <br /> `@rover-labs [gpt-5.1-codex-max-medium] ...` |
+| Codex       | GPT-5.1-Codex-Max-High   | `@rover-labs [gpt-5.1-codex-max-high] ...`                                                      |
+| Codex       | GPT-5.1-Codex-Max-XHigh  | `@rover-labs [gpt-5.1-codex-max-xhigh] ...`                                                     |
+| Codex       | GPT-5.1-Codex-Low        | `@rover-labs [gpt-5.1-codex-low] ...`                                                           |
+| Codex       | GPT-5.1-Codex-Medium     | `@rover-labs [gpt-5.1-codex-medium] ...`                                                        |
+| Codex       | GPT-5.1-Codex-High       | `@rover-labs [gpt-5.1-codex-high] ...`                                                          |
+| Codex       | GPT-5                    | `@rover-labs [gpt-5] ...`                                                                       |
+| Gemini      | Gemini 3 Pro             | `@rover-labs [gemini-3-pro] ...`                                                                |
+| Gemini      | Gemini 2.5 Pro           | `@rover-labs [gemini-2.5-pro] ...`                                                              |
+| OpenCode    | Grok Code Fast 1         | `@rover-labs [grok-code] ...`                                                                   |
+| OpenCode    | Qwen3 Coder 480B         | `@rover-labs [qwen3-coder] ...`                                                                 |
+| OpenCode    | Kimi K2                  | `@rover-labs [kimi-k2] ...`                                                                     |
+| OpenCode    | GLM 4.6                  | `@rover-labs [glm-4.6] ...`                                                                     |
+| OpenCode    | Gemini 2.5 Pro           | `@rover-labs [opencode/gemini-2.5-pro] ...`                                                     |
+| Amp         | Amp                      | `@rover-labs [amp] ...`                                                                         |
 
 #### Prompt & Trigger Customizations
 
-You can customize the prompt for a github mention using the "Github Mention" automation. Users on the pro tier can also customize and enable bots to mention @terragon-labs on GitHub to kick off tasks for them.
+You can customize the prompt for a github mention using the "Github Mention" automation. Users on the pro tier can also customize and enable bots to mention @rover-labs on GitHub to kick off tasks for them.
 
 ### How Rover Works with GitHub
 
@@ -128,7 +128,7 @@ When working on a task, Rover:
     <ul className="ml-4 list-disc space-y-1">
       <li>Comprehensive description</li>
       <li>Test plan checklist</li>
-      <li>Co-author attribution to Terry</li>
+      <li>Co-author attribution to Rover</li>
       <li>Links to Rover task</li>
     </ul>
   </Step>
@@ -175,7 +175,7 @@ When your PR has failing GitHub checks, a **Fix it** button appears that allows 
 - Let the agent investigate and fix the failing tests or checks
 - Get your PR back to a passing state quickly
 
-![Fix it button for failed GitHub checks](https://cdn.terragonlabs.com/gh-fix-it--MWU.png)
+![Fix it button for failed GitHub checks](https://cdn.roverlabs.com/gh-fix-it--MWU.png)
 
 #### Mark PR as Ready for Review
 
@@ -185,7 +185,7 @@ When your draft PR has all checks passing, a **Ready for review** button appears
 - Signal to your team that the changes are ready for feedback
 - Move your PR forward in the review process
 
-![Ready for review button](https://cdn.terragonlabs.com/gh-ready-for-review-fi8d.png)
+![Ready for review button](https://cdn.roverlabs.com/gh-ready-for-review-fi8d.png)
 
 These actions help you move faster by reducing context switching between Rover and GitHub.
 

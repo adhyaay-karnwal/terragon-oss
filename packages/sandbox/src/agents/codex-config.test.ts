@@ -28,7 +28,7 @@ describe("buildCodexToml", () => {
 
     const toml = buildCodexToml({
       userMcpConfig: userCfg,
-      includeTerry: true,
+      includeRover: true,
       roverCommand: "node",
       roverArgs: ["/tmp/rover-mcp-server.mjs"],
       roverModelProviderBaseUrl: "https://example.com/api/proxy/openai/v1",
@@ -127,7 +127,7 @@ describe("buildCodexToml", () => {
 
     const toml = buildCodexToml({
       userMcpConfig: userCfg,
-      includeTerry: false,
+      includeRover: false,
       roverCommand: "node",
       roverArgs: ["/tmp/rover-mcp-server.mjs"],
       roverModelProviderBaseUrl: "https://example.com/api/proxy/openai/v1",
@@ -248,7 +248,7 @@ describe("buildCodexToml", () => {
 
     const toml = buildCodexToml({
       userMcpConfig: userCfg,
-      includeTerry: false,
+      includeRover: false,
       roverCommand: "node",
       roverArgs: ["/tmp/rover-mcp-server.mjs"],
       roverModelProviderBaseUrl: "https://example.com/api/proxy/openai/v1",

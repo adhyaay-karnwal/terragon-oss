@@ -1,8 +1,8 @@
-# Terry CLI
+# Rover CLI
 
-![](https://img.shields.io/badge/Node.js-18%2B-brightgreen?style=flat-square) [![npm]](https://www.npmjs.com/package/@terragon-labs/cli)
+![](https://img.shields.io/badge/Node.js-18%2B-orange?style=flat-square) [![npm]](https://www.npmjs.com/package/@rover-labs/cli)
 
-[npm]: https://img.shields.io/npm/v/@terragon-labs/cli.svg?style=flat-square
+[npm]: https://img.shields.io/npm/v/@rover-labs/cli.svg?style=flat-square
 
 The official CLI for Rover Labs - your AI-powered coding assistant.
 
@@ -10,13 +10,13 @@ The official CLI for Rover Labs - your AI-powered coding assistant.
 
 ```bash
 # Using npm
-npm install -g @terragon-labs/cli
+npm install -g @rover-labs/cli
 
 # Using pnpm
-pnpm add -g @terragon-labs/cli
+pnpm add -g @rover-labs/cli
 
 # Using yarn
-yarn global add @terragon-labs/cli
+yarn global add @rover-labs/cli
 ```
 
 ## Commands
@@ -27,7 +27,7 @@ Authenticate with your Rover account. This will:
 
 1. Open your browser for authentication
 2. Generate a secure token
-3. Store credentials safely in `~/.rover/config.json` (configurable via `TERRY_SETTINGS_DIR`)
+3. Store credentials safely in `~/.rover/config.json` (configurable via `ROVER_SETTINGS_DIR`)
 4. Confirm successful connection
 
 ```bash
@@ -36,11 +36,11 @@ rover auth
 
 #### Configuration directory
 
-By default, credentials are stored in `~/.rover/config.json`. You can override the settings directory by setting the `TERRY_SETTINGS_DIR` environment variable:
+By default, credentials are stored in `~/.rover/config.json`. You can override the settings directory by setting the `ROVER_SETTINGS_DIR` environment variable:
 
 ```bash
 # Example: use a custom settings directory
-export TERRY_SETTINGS_DIR=~/.config/rover
+export ROVER_SETTINGS_DIR=~/.config/rover
 rover auth
 ```
 
@@ -93,7 +93,7 @@ rover pull <taskId>
 rover pull <taskId> --resume
 ```
 
-**Getting the task ID**: You can find the task ID at the end of the URL when viewing a task in Rover. For example, in `https://terragonlabs.com/tasks/abc123-def456`, the task ID is `abc123-def456`.
+**Getting the task ID**: You can find the task ID at the end of the URL when viewing a task in Rover. For example, in `https://roverlabs.com/tasks/abc123-def456`, the task ID is `abc123-def456`.
 
 #### Options
 
@@ -137,7 +137,7 @@ rover mcp
 
 #### Claude Code Integration
 
-You can add the Terry MCP server to your local Claude Code instance to enable direct interaction with Rover tasks from within Claude:
+You can add the Rover MCP server to your local Claude Code instance to enable direct interaction with Rover tasks from within Claude:
 
 ```bash
 claude mcp add rover -- rover mcp
@@ -153,5 +153,5 @@ The MCP server acts as a bridge between Claude Code and Rover, allowing you to m
 
 ## Support
 
-- **Documentation**: [https://docs.terragonlabs.com](https://docs.terragonlabs.com)
-- **Website**: [https://terragonlabs.com](https://terragonlabs.com)
+- **Documentation**: [https://docs.roverlabs.com](https://docs.roverlabs.com)
+- **Website**: [https://roverlabs.com](https://roverlabs.com)

@@ -10,7 +10,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Checkbox } from "@/components/ui/checkbox";
 import { cn } from "@/lib/utils";
 import { usePageBreadcrumbs } from "@/hooks/usePageBreadcrumbs";
-import type { SandboxProvider } from "@terragon/types/sandbox";
+import type { SandboxProvider } from "@rover/types/sandbox";
 
 async function fetchLogs({
   sandboxProvider,

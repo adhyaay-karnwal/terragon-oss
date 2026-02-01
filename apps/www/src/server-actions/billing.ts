@@ -3,17 +3,17 @@
 import { headers } from "next/headers";
 import { userOnlyAction } from "@/lib/auth-server";
 import { auth } from "@/lib/auth";
-import { publicAppUrl } from "@terragon/env/next-public";
+import { publicAppUrl } from "@rover/env/next-public";
 import { db } from "@/lib/db";
 import { assertStripeConfigured } from "@/server-lib/stripe";
 import { getBillingInfo as getBillingInfoInternal } from "@/lib/subscription";
-import { AccessTier } from "@terragon/shared";
+import { AccessTier } from "@rover/shared";
 import {
   getSubscriptionInfoForUser,
   setSignupTrialPlanForUser,
-} from "@terragon/shared/model/subscription";
+} from "@rover/shared/model/subscription";
 import { UserFacingError } from "@/lib/server-actions";
-import { getFeatureFlagsGlobal } from "@terragon/shared/model/feature-flags";
+import { getFeatureFlagsGlobal } from "@rover/shared/model/feature-flags";
 
 export const getBillingInfoAction = userOnlyAction(
   async function getBillingInfoAction() {
