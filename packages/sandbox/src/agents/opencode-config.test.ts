@@ -1,12 +1,12 @@
 import { describe, it, expect } from "vitest";
 import { buildOpencodeConfig, getModelId } from "./opencode-config";
-import { agentToModels } from "@terragon/agent/utils";
-import { validateProviderModel } from "@terragon/agent/proxy";
+import { agentToModels } from "@rover/agent/utils";
+import { validateProviderModel } from "@rover/agent/proxy";
 
 describe("buildOpencodeConfig", () => {
   it("should build a valid opencode config", () => {
     const config = buildOpencodeConfig({
-      publicUrl: "https://www.terragonlabs.com",
+      publicUrl: "https://www.roverlabs.com",
       userMcpConfig: {
         mcpServers: {
           rover: {
@@ -43,7 +43,7 @@ describe("buildOpencodeConfig", () => {
             "npm": "@ai-sdk/openai-compatible",
             "name": "Rover",
             "options": {
-              "baseURL": "https://www.terragonlabs.com/api/proxy/openrouter/v1",
+              "baseURL": "https://www.roverlabs.com/api/proxy/openrouter/v1",
               "headers": {
                 "X-Daemon-Token": "{env:DAEMON_TOKEN}"
               }
@@ -79,7 +79,7 @@ describe("buildOpencodeConfig", () => {
             "npm": "@ai-sdk/google",
             "name": "Rover Google",
             "options": {
-              "baseURL": "https://www.terragonlabs.com/api/proxy/google/v1",
+              "baseURL": "https://www.roverlabs.com/api/proxy/google/v1",
               "apiKey": "unused",
               "headers": {
                 "X-Daemon-Token": "{env:DAEMON_TOKEN}"
@@ -100,7 +100,7 @@ describe("buildOpencodeConfig", () => {
             "npm": "@ai-sdk/anthropic",
             "name": "Rover Anthropic",
             "options": {
-              "baseURL": "https://www.terragonlabs.com/api/proxy/anthropic/v1",
+              "baseURL": "https://www.roverlabs.com/api/proxy/anthropic/v1",
               "apiKey": "unused",
               "headers": {
                 "X-Daemon-Token": "{env:DAEMON_TOKEN}"
@@ -117,7 +117,7 @@ describe("buildOpencodeConfig", () => {
             "npm": "@ai-sdk/openai",
             "name": "Rover OpenAI",
             "options": {
-              "baseURL": "https://www.terragonlabs.com/api/proxy/openai/v1",
+              "baseURL": "https://www.roverlabs.com/api/proxy/openai/v1",
               "apiKey": "unused",
               "headers": {
                 "X-Daemon-Token": "{env:DAEMON_TOKEN}"

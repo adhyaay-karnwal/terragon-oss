@@ -1,7 +1,7 @@
 import { Environments } from "@/components/environments/main";
 import { getUserIdOrRedirect } from "@/lib/auth-server";
 import { db } from "@/lib/db";
-import { getEnvironments } from "@terragon/shared/model/environments";
+import { getEnvironments } from "@rover/shared/model/environments";
 import React from "react";
 import type { Metadata } from "next";
 

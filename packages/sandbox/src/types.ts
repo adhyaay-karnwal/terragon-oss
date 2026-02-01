@@ -1,6 +1,6 @@
-import { SandboxProvider, SandboxSize } from "@terragon/types/sandbox";
-import { AIAgent, AIAgentCredentials } from "@terragon/agent/types";
-import { FeatureFlags } from "@terragon/daemon/shared";
+import { SandboxProvider, SandboxSize } from "@rover/types/sandbox";
+import { AIAgent, AIAgentCredentials } from "@rover/agent/types";
+import { FeatureFlags } from "@rover/daemon/shared";
 import { McpConfig } from "./mcp-config";
 // NOTE: This is stored in the database, so don't remove any values from this list.
 export type SandboxStatus =

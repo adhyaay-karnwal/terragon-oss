@@ -2,21 +2,21 @@
 
 import { db } from "@/lib/db";
 import { adminOnly } from "@/lib/auth-server";
-import { User } from "@terragon/shared";
+import { User } from "@rover/shared";
 import * as z from "zod/v4";
 import { Resend } from "resend";
-import { env } from "@terragon/env/apps-www";
-import { WaitlistWelcomeEmail } from "@terragon/transactional/emails/waitlist-welcome";
-import { OnboardingCompletionReminderEmail } from "@terragon/transactional/emails/onboarding-completion-reminder";
-import { generateAccessCode } from "@terragon/shared/model/access-codes";
+import { env } from "@rover/env/apps-www";
+import { WaitlistWelcomeEmail } from "@rover/transactional/emails/waitlist-welcome";
+import { OnboardingCompletionReminderEmail } from "@rover/transactional/emails/onboarding-completion-reminder";
+import { generateAccessCode } from "@rover/shared/model/access-codes";
 import {
   getEligibleReengagementRecipients,
   recordReengagementEmail,
-} from "@terragon/shared/model/reengagement-emails";
+} from "@rover/shared/model/reengagement-emails";
 import {
   getEligibleOnboardingCompletionRecipients,
   recordOnboardingCompletionEmail,
-} from "@terragon/shared/model/onboarding-completion-emails";
+} from "@rover/shared/model/onboarding-completion-emails";
 
 export const sendOnboardingEmail = adminOnly(async function sendOnboardingEmail(
   adminUser: User,
@@ -52,9 +52,9 @@ export const sendOnboardingEmail = adminOnly(async function sendOnboardingEmail(
   const resend = new Resend(env.RESEND_API_KEY ?? "DUMMY_KEY");
 
   const result = await resend.emails.send({
-    from: "The Rover Team <onboarding@mail.terragonlabs.com>",
+    from: "The Rover Team <onboarding@mail.roverlabs.com>",
     to: email,
-    replyTo: "support@terragonlabs.com",
+    replyTo: "support@roverlabs.com",
     subject: "Welcome to the Rover Alpha!",
     react: <WaitlistWelcomeEmail accessLink={accessLink} />,
   });
@@ -124,9 +124,9 @@ export const sendReengagementEmails = adminOnly(async (adminUser: User) => {
       const accessLink = `${baseUrl}/invited?code=${recipient.code}`;
 
       const result = await resend.emails.send({
-        from: "The Rover Team <onboarding@mail.terragonlabs.com>",
+        from: "The Rover Team <onboarding@mail.roverlabs.com>",
         to: recipient.email,
-        replyTo: "support@terragonlabs.com",
+        replyTo: "support@roverlabs.com",
         subject: "Reminder: Redeem Rover Access Code",
         react: <WaitlistWelcomeEmail accessLink={accessLink} />,
       });
@@ -209,9 +209,9 @@ export const sendOnboardingCompletionEmails = adminOnly(
         const dashboardLink = `${baseUrl}/`;
 
         const result = await resend.emails.send({
-          from: "The Rover Team <onboarding@mail.terragonlabs.com>",
+          from: "The Rover Team <onboarding@mail.roverlabs.com>",
           to: user.email,
-          replyTo: "support@terragonlabs.com",
+          replyTo: "support@roverlabs.com",
           subject: "Forget something?",
           react: (
             <OnboardingCompletionReminderEmail dashboardLink={dashboardLink} />

@@ -1,5 +1,5 @@
 import { db } from "@/lib/db";
-import { getUser, updateUser } from "@terragon/shared/model/user";
+import { getUser, updateUser } from "@rover/shared/model/user";
 import { stripeCustomersCreate } from "./stripe";
 
 export async function ensureStripeCustomer({

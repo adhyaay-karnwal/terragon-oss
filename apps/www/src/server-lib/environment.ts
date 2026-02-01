@@ -2,8 +2,8 @@ import {
   getOctokitForUserOrThrow,
   getDefaultBranchForRepo,
 } from "@/lib/github";
-import { DB } from "@terragon/shared/db";
-import { getEnvironment } from "@terragon/shared/model/environments";
+import { DB } from "@rover/shared/db";
+import { getEnvironment } from "@rover/shared/model/environments";
 
 export async function getSetupScriptFromRepo({
   db,

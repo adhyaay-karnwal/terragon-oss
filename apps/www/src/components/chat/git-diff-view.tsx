@@ -19,7 +19,7 @@ import {
   X,
   Image,
 } from "lucide-react";
-import { ThreadInfoFull } from "@terragon/shared";
+import { ThreadInfoFull } from "@rover/shared";
 import { cn } from "@/lib/utils";
 import {
   parseMultiFileDiff,
@@ -28,7 +28,7 @@ import {
   type ParsedDiffFile,
 } from "@/lib/git-diff";
 import { Button } from "@/components/ui/button";
-import type { DBUserMessage } from "@terragon/shared";
+import type { DBUserMessage } from "@rover/shared";
 import { GenericPromptBox } from "@/components/promptbox/generic-promptbox";
 import { ImageDiffView } from "@/components/chat/image-diff-view";
 import { useFeatureFlag } from "@/hooks/use-feature-flag";
@@ -111,7 +111,7 @@ function getFileIcon(changeType: FileChangeType, isImage: boolean = false) {
   if (isImage) {
     const colorClass =
       changeType === "added"
-        ? "text-green-600 dark:text-green-400"
+        ? "text-primary dark:text-green-400"
         : changeType === "deleted"
           ? "text-red-600 dark:text-red-400"
           : "text-neutral-600 dark:text-neutral-400";
@@ -121,7 +121,7 @@ function getFileIcon(changeType: FileChangeType, isImage: boolean = false) {
   switch (changeType) {
     case "added":
       return (
-        <FilePlus className="w-4 h-4 flex-shrink-0 text-green-600 dark:text-green-400" />
+        <FilePlus className="w-4 h-4 flex-shrink-0 text-primary dark:text-green-400" />
       );
     case "deleted":
       return (
@@ -310,7 +310,7 @@ function FileDiffWrapper({
           {showLineCounts ? (
             <>
               {parsedFile.additions > 0 && (
-                <span className="text-green-600 dark:text-green-400 text-xs font-medium">
+                <span className="text-primary dark:text-green-400 text-xs font-medium">
                   +{parsedFile.additions}
                 </span>
               )}
@@ -323,7 +323,7 @@ function FileDiffWrapper({
           ) : isImage ? (
             <span className="text-xs font-medium">
               {parsedFile.changeType === "added" ? (
-                <span className="text-green-600 dark:text-green-400">
+                <span className="text-primary dark:text-green-400">
                   {parsedFile.newFileSize !== undefined
                     ? `+${formatFileSize(parsedFile.newFileSize)}`
                     : "New image"}
@@ -468,7 +468,7 @@ function FilesChangedHeader({
         {(additions > 0 || deletions > 0) && (
           <div className="flex items-center gap-2 text-xs font-medium flex-shrink-0 min-w-0">
             {additions > 0 && (
-              <span className="flex items-center gap-1 text-green-600 dark:text-green-400 whitespace-nowrap">
+              <span className="flex items-center gap-1 text-primary dark:text-green-400 whitespace-nowrap">
                 <span>+{additions}</span>
               </span>
             )}

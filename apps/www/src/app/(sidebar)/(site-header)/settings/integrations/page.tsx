@@ -1,7 +1,7 @@
 import { IntegrationsSettings } from "@/components/settings/tab/integrations";
 import { getUserIdOrRedirect } from "@/lib/auth-server";
 import { db } from "@/lib/db";
-import { getSlackAccounts } from "@terragon/shared/model/slack";
+import { getSlackAccounts } from "@rover/shared/model/slack";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

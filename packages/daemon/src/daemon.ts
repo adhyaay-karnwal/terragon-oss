@@ -1,4 +1,4 @@
-import { AIAgent } from "@terragon/agent/types";
+import { AIAgent } from "@rover/agent/types";
 import { IDaemonRuntime, writeToUnixSocket } from "./runtime";
 import {
   DaemonMessageClaude,
@@ -106,7 +106,7 @@ export class RoverDaemon {
     this.agentFrontmatterReader = new AgentFrontmatterReader(runtime);
 
     // Load feature flags from environment variable if available
-    const envFeatureFlags = process.env.TERRAGON_FEATURE_FLAGS;
+    const envFeatureFlags = process.env.ROVER_FEATURE_FLAGS;
     if (envFeatureFlags) {
       try {
         this.featureFlags = JSON.parse(envFeatureFlags);

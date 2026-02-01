@@ -51,7 +51,7 @@ Put this in your `~/.config/opencode/opencode.json`:
       "options": {
         "baseURL": "http://localhost:3000/api/proxy/openrouter/v1",
         "headers": {
-          "X-Daemon-Token": "{env:TERRAGON_TOKEN}"
+          "X-Daemon-Token": "{env:ROVER_TOKEN}"
         }
       },
       "models": {
@@ -80,5 +80,5 @@ Put this in your `~/.config/opencode/opencode.json`:
 Then run:
 
 ```sh
-TERRAGON_TOKEN=<token> opencode run --model rover/grok-code --format json "Hi, how are you?"
+ROVER_TOKEN=<token> opencode run --model rover/grok-code --format json "Hi, how are you?"
 ```

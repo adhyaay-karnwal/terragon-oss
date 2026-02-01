@@ -6,9 +6,9 @@ import { db } from "@/lib/db";
 import {
   getEnvironment,
   updateEnvironment,
-} from "@terragon/shared/model/environments";
-import { encryptValue } from "@terragon/utils/encryption";
-import { env } from "@terragon/env/apps-www";
+} from "@rover/shared/model/environments";
+import { encryptValue } from "@rover/utils/encryption";
+import { env } from "@rover/env/apps-www";
 import { getPostHogServer } from "@/lib/posthog-server";
 import { UserFacingError } from "@/lib/server-actions";
 import {

@@ -33,7 +33,7 @@ export const WaitlistWelcomeEmail = ({
               <Text className="text-base text-gray-700 mb-3">👋 Hi there,</Text>
 
               <Text className="text-base text-gray-700 mb-3">
-                Thanks for signing up for the terragonlabs.com alpha program!
+                Thanks for signing up for the roverlabs.com alpha program!
               </Text>
 
               <Text className="text-base text-gray-700 mb-4">
@@ -43,7 +43,7 @@ export const WaitlistWelcomeEmail = ({
               <Section className="text-center mb-6">
                 <Button
                   href={accessLink}
-                  className="bg-green-600 text-white px-8 py-3 rounded-md font-semibold inline-block"
+                  className="bg-primary text-white px-8 py-3 rounded-md font-semibold inline-block"
                 >
                   Redeem Access Code
                 </Button>
@@ -64,8 +64,8 @@ export const WaitlistWelcomeEmail = ({
                 </Text>
 
                 <Link
-                  href="https://cdn.terragonlabs.com/censoredlogin.webm"
-                  className="text-base text-green-600 underline mb-3 block"
+                  href="https://cdn.roverlabs.com/censoredlogin.webm"
+                  className="text-base text-primary underline mb-3 block"
                 >
                   View setup video
                 </Link>
@@ -79,8 +79,8 @@ export const WaitlistWelcomeEmail = ({
                 <ul className="list-disc pl-6 mb-4">
                   <li className="text-base text-gray-700 mb-1">
                     <Link
-                      href="https://docs.terragonlabs.com/docs/"
-                      className="text-green-600 underline"
+                      href="https://docs.roverlabs.com/docs/"
+                      className="text-primary underline"
                     >
                       Documentation & release notes
                     </Link>
@@ -90,7 +90,7 @@ export const WaitlistWelcomeEmail = ({
                   <li className="text-base text-gray-700 mb-1">
                     <Link
                       href="https://discord.gg/akupbpGJQF"
-                      className="text-green-600 underline"
+                      className="text-primary underline"
                     >
                       Discord community
                     </Link>
@@ -120,10 +120,10 @@ export const WaitlistWelcomeEmail = ({
                   <li className="text-base text-gray-700 mb-1">
                     <strong>Direct support email:</strong> email{" "}
                     <Link
-                      href="mailto:support@terragonlabs.com"
-                      className="text-green-600 underline"
+                      href="mailto:support@roverlabs.com"
+                      className="text-primary underline"
                     >
-                      support@terragonlabs.com
+                      support@roverlabs.com
                     </Link>
                   </li>
                 </ul>

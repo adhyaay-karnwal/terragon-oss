@@ -211,7 +211,7 @@ export function AutomationsVisual() {
           isActive
             ? "border-primary/50 bg-primary/5 shadow-md"
             : isCompleted
-              ? "border-green-500/50 bg-green-500/5 opacity-80"
+              ? "border-green-500/50 bg-orange-500/5 opacity-80"
               : "border-border/50 bg-background opacity-60",
           dragging === nodeId && "shadow-lg scale-105",
         )}

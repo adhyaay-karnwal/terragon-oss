@@ -1,6 +1,6 @@
 import { describe, test, expect } from "vitest";
 import { toDBMessage } from "./toDBMessage";
-import { ClaudeMessage } from "@terragon/daemon/shared";
+import { ClaudeMessage } from "@rover/daemon/shared";
 
 describe("toDBMessage", () => {
   describe("user messages", () => {

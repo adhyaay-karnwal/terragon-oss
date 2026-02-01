@@ -1,21 +1,21 @@
 import { toDBMessage } from "@/agent/msg/toDBMessage";
 import { getPendingToolCallErrorMessages } from "@/lib/db-message-helpers";
 import { db } from "@/lib/db";
-import { ClaudeMessage } from "@terragon/daemon/shared";
+import { ClaudeMessage } from "@rover/daemon/shared";
 import {
   DBMessage,
   DBSystemMessage,
   DBUserMessage,
   ThreadChatInsert,
   ThreadStatus,
-} from "@terragon/shared";
+} from "@rover/shared";
 import {
   getThreadChat,
   getThreadMinimal,
-} from "@terragon/shared/model/threads";
+} from "@rover/shared/model/threads";
 import { waitUntil } from "@vercel/functions";
 import { setActiveThreadChat } from "@/agent/sandbox-resource";
-import { extendSandboxLife } from "@terragon/sandbox";
+import { extendSandboxLife } from "@rover/sandbox";
 import { checkpointThread } from "@/server-lib/checkpoint-thread";
 import {
   internalPOST,
@@ -35,7 +35,7 @@ import {
 } from "@/agent/msg/helpers";
 import { getEligibleQueuedThreadChats } from "./process-queued-thread";
 import { trackUsageEvents } from "./usage-events";
-import { getFeatureFlagForUser } from "@terragon/shared/model/feature-flags";
+import { getFeatureFlagForUser } from "@rover/shared/model/feature-flags";
 import { compactThreadChat } from "./compact";
 
 export async function handleDaemonEvent({

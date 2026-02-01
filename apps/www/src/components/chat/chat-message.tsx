@@ -7,8 +7,8 @@ import {
   UISystemMessage,
   UIUserMessage,
   UIGitDiffPart,
-} from "@terragon/shared";
-import { AIAgent } from "@terragon/agent/types";
+} from "@rover/shared";
+import { AIAgent } from "@rover/agent/types";
 import { MessagePart } from "./message-part";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronRight } from "lucide-react";
@@ -317,7 +317,7 @@ function SystemMessage({ message }: { message: UISystemMessage }) {
         return "bg-red-500";
       case "clear-context":
       case "compact-result":
-        return "bg-green-500";
+        return "bg-orange-500";
       case "cancel-schedule":
         return "bg-muted-foreground";
       case "stop":

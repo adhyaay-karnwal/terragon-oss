@@ -1,5 +1,5 @@
-import { env } from "@terragon/env/apps-www";
-import { publicAppUrl } from "@terragon/env/next-public";
+import { env } from "@rover/env/apps-www";
+import { publicAppUrl } from "@rover/env/next-public";
 
 export async function internalPOST(path: string) {
   console.log(`internalPOST ${path}`);

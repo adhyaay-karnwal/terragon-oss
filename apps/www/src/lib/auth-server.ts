@@ -7,12 +7,12 @@ import {
   UserSettings,
   UserFlags,
   UserCredentials,
-} from "@terragon/shared";
-import { getUserSettings } from "@terragon/shared/model/user";
-import { getUserFlags } from "@terragon/shared/model/user-flags";
+} from "@rover/shared";
+import { getUserSettings } from "@rover/shared/model/user";
+import { getUserFlags } from "@rover/shared/model/user-flags";
 import { cache } from "react";
-import { env } from "@terragon/env/apps-www";
-import { getFeatureFlagsForUser } from "@terragon/shared/model/feature-flags";
+import { env } from "@rover/env/apps-www";
+import { getFeatureFlagsForUser } from "@rover/shared/model/feature-flags";
 import { UserCookies } from "@/lib/cookies";
 import { getUserCookies } from "./cookies-server";
 import { redirect } from "next/navigation";

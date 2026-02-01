@@ -1,15 +1,15 @@
-import { env } from "@terragon/env/apps-www";
+import { env } from "@rover/env/apps-www";
 import { Octokit } from "octokit";
 import type { EmitterWebhookEvent } from "@octokit/webhooks";
 import { getOctokitForApp } from "@/lib/github";
 import { formatThreadContext } from "@/server-lib/ext-thread-context";
-import { publicAppUrl } from "@terragon/env/next-public";
-import { AccessInfo } from "@terragon/shared/db/types";
+import { publicAppUrl } from "@rover/env/next-public";
+import { AccessInfo } from "@rover/shared/db/types";
 import { db } from "@/lib/db";
-import { getUserIdByGitHubAccountId } from "@terragon/shared/model/user";
+import { getUserIdByGitHubAccountId } from "@rover/shared/model/user";
 import { getAccessInfoForUser } from "@/lib/subscription";
-import { AIModel } from "@terragon/agent/types";
-import { parseModelOrNull } from "@terragon/agent/utils";
+import { AIModel } from "@rover/agent/types";
+import { parseModelOrNull } from "@rover/agent/utils";
 
 // Check if comment mentions the GitHub app
 export function isAppMentioned(commentBody: string): boolean {
@@ -24,14 +24,14 @@ export function isAppMentioned(commentBody: string): boolean {
 
 /**
  * Extract model name from GitHub comment body.
- * Looks for patterns like "@terragon-labs [sonnet]" or "@terragon-labs [opus]"
+ * Looks for patterns like "@rover-labs [sonnet]" or "@rover-labs [opus]"
  * Returns the model name if valid, null otherwise.
  *
  * Examples:
- * - "@terragon-labs [sonnet] fix this bug" -> "sonnet"
- * - "@terragon-labs [gpt-5] improve code" -> "gpt-5"
- * - "@terragon-labs fix this" -> null
- * - "@terragon-labs [invalid-model]" -> null
+ * - "@rover-labs [sonnet] fix this bug" -> "sonnet"
+ * - "@rover-labs [gpt-5] improve code" -> "gpt-5"
+ * - "@rover-labs fix this" -> null
+ * - "@rover-labs [invalid-model]" -> null
  */
 export function extractModelFromComment({
   commentBody,

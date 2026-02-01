@@ -3,13 +3,13 @@ import {
   getOrCreateGlobalEnvironment,
   getEnvironment,
   getDecryptedMcpConfig,
-} from "@terragon/shared/model/environments";
+} from "@rover/shared/model/environments";
 import { getUserIdOrNull, getUserIdOrRedirect } from "@/lib/auth-server";
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
 import { EnvironmentUI } from "@/components/environments/main";
 import type { Metadata } from "next";
-import { env } from "@terragon/env/apps-www";
+import { env } from "@rover/env/apps-www";
 
 export async function generateMetadata({
   params,

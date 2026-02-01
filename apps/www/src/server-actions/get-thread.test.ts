@@ -4,12 +4,12 @@ import { db } from "@/lib/db";
 import {
   createTestUser,
   createTestThread,
-} from "@terragon/shared/model/test-helpers";
+} from "@rover/shared/model/test-helpers";
 import { mockLoggedInUser, mockLoggedOutUser } from "@/test-helpers/mock-next";
-import { User, Session } from "@terragon/shared";
+import { User, Session } from "@rover/shared";
 import { getOctokitForUser } from "@/lib/github";
 import { unwrapResult } from "@/lib/server-actions";
-import { updateThreadVisibility } from "@terragon/shared/model/thread-visibility";
+import { updateThreadVisibility } from "@rover/shared/model/thread-visibility";
 
 const getThreadAction = async (threadId: string) => {
   return unwrapResult(await getThreadActionServerAction(threadId));

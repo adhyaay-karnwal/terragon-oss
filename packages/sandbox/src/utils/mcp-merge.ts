@@ -2,12 +2,12 @@ import { McpConfig, McpServer } from "../mcp-config";
 
 export function buildMergedMcpConfig({
   userMcpConfig,
-  includeTerry,
+  includeRover,
   roverCommand,
   roverArgs,
 }: {
   userMcpConfig: McpConfig | undefined;
-  includeTerry: boolean;
+  includeRover: boolean;
   roverCommand: string;
   roverArgs: string[];
 }): McpConfig {
@@ -19,7 +19,7 @@ export function buildMergedMcpConfig({
     ),
   } as Record<string, McpServer>;
 
-  if (includeTerry) {
+  if (includeRover) {
     mergedServers["rover"] = {
       command: roverCommand,
       args: roverArgs,

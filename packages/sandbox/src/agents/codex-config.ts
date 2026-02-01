@@ -4,20 +4,20 @@ import { buildMergedMcpConfig } from "../utils/mcp-merge";
 
 export function buildCodexToml({
   userMcpConfig,
-  includeTerry,
+  includeRover,
   roverCommand,
   roverArgs,
   roverModelProviderBaseUrl,
 }: {
   userMcpConfig: McpConfig | undefined;
-  includeTerry: boolean;
+  includeRover: boolean;
   roverCommand: string;
   roverArgs: string[];
   roverModelProviderBaseUrl?: string | null;
 }): string {
   const merged: McpConfig = buildMergedMcpConfig({
     userMcpConfig,
-    includeTerry,
+    includeRover,
     roverCommand,
     roverArgs,
   });

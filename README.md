@@ -2,7 +2,7 @@
 
 > **Snapshot notice (January 16, 2026):** This repository is an open-source snapshot of Rover at the time of shutdown. It is provided **as-is**, with no guarantees of maintenance, support, or completeness.
 
-![Rover](https://cdn.terragonlabs.com/dashboard-beRp.png)
+![Rover](https://cdn.roverlabs.com/dashboard-beRp.png)
 
 Delegate work to coding agents in the cloud.
 

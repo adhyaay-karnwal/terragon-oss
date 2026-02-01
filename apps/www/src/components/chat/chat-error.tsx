@@ -1,6 +1,6 @@
 import { Button } from "../ui/button";
 import { RotateCcw, GitBranch, Loader2 } from "lucide-react";
-import { Thread, ThreadErrorType } from "@terragon/shared";
+import { Thread, ThreadErrorType } from "@rover/shared";
 import Link from "next/link";
 import { isAgentWorking } from "@/agent/thread-status";
 import { useTheme } from "next-themes";

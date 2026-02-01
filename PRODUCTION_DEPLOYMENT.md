@@ -28,7 +28,7 @@ This guide covers deploying Rover to production with an optimized, profitable cr
    - Realtime updates for task status, chat streaming
    
 3. **CLI (apps/cli)** - `rover` command
-   - Publish to: npm registry (@terragon-labs/cli)
+   - Publish to: npm registry (@rover-labs/cli)
    - Used for local task handoff and MCP server
    
 4. **Documentation (apps/docs)** - Fumadocs site
@@ -147,7 +147,7 @@ With 5x markup on AI costs and optimized sandbox usage:
 ```bash
 # Create Neon project at neon.tech
 # Get connection string
-DATABASE_URL="postgresql://user:pass@ep-xxx.neon.tech/rover?sslmode=require"
+DATABASE_URL="postgresql://user:pass@REPLACE_WITH_YOUR_NEON_ENDPOINT.neon.tech/rover?sslmode=require"
 
 # Push schema
 pnpm -C packages/shared drizzle-kit-push-prod
@@ -165,7 +165,7 @@ pnpm -C packages/shared drizzle-kit-push-prod
 # Create Upstash Redis at upstash.com
 # Get connection URLs
 UPSTASH_REDIS_REST_URL="https://xxx.upstash.io"
-UPSTASH_REDIS_REST_TOKEN="xxx"
+UPSTASH_REDIS_REST_TOKEN="REPLACE_WITH_YOUR_VALUE"
 ```
 
 ### Storage: Cloudflare R2
@@ -179,9 +179,9 @@ UPSTASH_REDIS_REST_TOKEN="xxx"
 ```bash
 # Create R2 bucket at dash.cloudflare.com
 # Create API token with R2 permissions
-R2_ACCOUNT_ID="xxx"
-R2_ACCESS_KEY_ID="xxx"
-R2_SECRET_ACCESS_KEY="xxx"
+R2_ACCOUNT_ID="REPLACE_WITH_YOUR_VALUE"
+R2_ACCESS_KEY_ID="REPLACE_WITH_YOUR_VALUE"
+R2_SECRET_ACCESS_KEY="REPLACE_WITH_YOUR_VALUE"
 R2_BUCKET_NAME="rover-uploads"
 R2_PRIVATE_BUCKET_NAME="rover-private"
 R2_PUBLIC_URL="https://cdn.roverlabs.com"
@@ -198,7 +198,7 @@ R2_PUBLIC_URL="https://cdn.roverlabs.com"
 ```bash
 # Sign up at e2b.dev
 # Get API key
-E2B_API_KEY="e2b_xxx"
+E2B_API_KEY="REPLACE_WITH_YOUR_E2B_API_KEY"
 ```
 
 **Cost Optimization**:
@@ -212,7 +212,7 @@ E2B_API_KEY="e2b_xxx"
 - Transactional emails, onboarding, notifications
 
 ```bash
-RESEND_API_KEY="re_xxx"
+RESEND_API_KEY="REPLACE_WITH_YOUR_RESEND_API_KEY"
 ```
 
 ### Monitoring: Better Stack (formerly LogTail)
@@ -306,25 +306,25 @@ ENCRYPTION_MASTER_KEY="$(openssl rand -base64 32)"
 INTERNAL_SHARED_SECRET="$(openssl rand -hex 32)"
 
 # AI Providers
-ANTHROPIC_API_KEY="sk-ant-xxx"
-OPENAI_API_KEY="sk-xxx"
-GOOGLE_AI_API_KEY="AIzaXXX"  # Optional
+ANTHROPIC_API_KEY="REPLACE_WITH_YOUR_ANTHROPIC_API_KEY"
+OPENAI_API_KEY="REPLACE_WITH_YOUR_OPENAI_API_KEY"
+GOOGLE_AI_API_KEY="REPLACE_WITH_YOUR_GOOGLE_AI_API_KEY"  # Optional
 
 # Sandbox
-E2B_API_KEY="e2b_xxx"
-DAYTONA_API_KEY="xxx"  # Optional
+E2B_API_KEY="REPLACE_WITH_YOUR_E2B_API_KEY"
+DAYTONA_API_KEY="REPLACE_WITH_YOUR_VALUE"  # Optional
 
 # Storage
-R2_ACCOUNT_ID="xxx"
-R2_ACCESS_KEY_ID="xxx"
-R2_SECRET_ACCESS_KEY="xxx"
+R2_ACCOUNT_ID="REPLACE_WITH_YOUR_VALUE"
+R2_ACCESS_KEY_ID="REPLACE_WITH_YOUR_VALUE"
+R2_SECRET_ACCESS_KEY="REPLACE_WITH_YOUR_VALUE"
 R2_BUCKET_NAME="rover-uploads"
 R2_PRIVATE_BUCKET_NAME="rover-private"
 R2_PUBLIC_URL="https://cdn.roverlabs.com"
 
 # GitHub
-GITHUB_CLIENT_ID="Iv1.xxx"
-GITHUB_CLIENT_SECRET="xxx"
+GITHUB_CLIENT_ID="REPLACE_WITH_YOUR_GITHUB_CLIENT_ID"
+GITHUB_CLIENT_SECRET="REPLACE_WITH_YOUR_VALUE"
 GITHUB_WEBHOOK_SECRET="$(openssl rand -hex 32)"
 GITHUB_APP_ID="123456"
 GITHUB_APP_PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----"
@@ -332,28 +332,28 @@ NEXT_PUBLIC_GITHUB_APP_NAME="rover-app"
 
 # Redis
 UPSTASH_REDIS_REST_URL="https://xxx.upstash.io"
-UPSTASH_REDIS_REST_TOKEN="xxx"
+UPSTASH_REDIS_REST_TOKEN="REPLACE_WITH_YOUR_VALUE"
 
 # Stripe
-STRIPE_SECRET_KEY="sk_live_xxx"
-STRIPE_WEBHOOK_SECRET="whsec_xxx"
-STRIPE_PRICE_CREDIT_PACK_STARTER="price_xxx"
-STRIPE_PRICE_CREDIT_PACK_DEVELOPER="price_xxx"
-STRIPE_PRICE_CREDIT_PACK_PRO="price_xxx"
-STRIPE_PRICE_CREDIT_PACK_TEAM="price_xxx"
-STRIPE_PRICE_HOBBY_MONTHLY="price_xxx"
-STRIPE_PRICE_DEVELOPER_MONTHLY="price_xxx"
-STRIPE_PRICE_PRO_MONTHLY="price_xxx"
+STRIPE_SECRET_KEY="REPLACE_WITH_YOUR_STRIPE_SECRET_KEY"
+STRIPE_WEBHOOK_SECRET="REPLACE_WITH_YOUR_STRIPE_WEBHOOK_SECRET"
+STRIPE_PRICE_CREDIT_PACK_STARTER="REPLACE_WITH_YOUR_PRICE_ID"
+STRIPE_PRICE_CREDIT_PACK_DEVELOPER="REPLACE_WITH_YOUR_PRICE_ID"
+STRIPE_PRICE_CREDIT_PACK_PRO="REPLACE_WITH_YOUR_PRICE_ID"
+STRIPE_PRICE_CREDIT_PACK_TEAM="REPLACE_WITH_YOUR_PRICE_ID"
+STRIPE_PRICE_HOBBY_MONTHLY="REPLACE_WITH_YOUR_PRICE_ID"
+STRIPE_PRICE_DEVELOPER_MONTHLY="REPLACE_WITH_YOUR_PRICE_ID"
+STRIPE_PRICE_PRO_MONTHLY="REPLACE_WITH_YOUR_PRICE_ID"
 
 # Broadcast
 NEXT_PUBLIC_BROADCAST_HOST="rover-broadcast.your-username.partykit.dev"
 NEXT_PUBLIC_BROADCAST_URL="https://rover-broadcast.your-username.partykit.dev"
 
 # Email
-RESEND_API_KEY="re_xxx"
+RESEND_API_KEY="REPLACE_WITH_YOUR_RESEND_API_KEY"
 
 # Monitoring (Optional)
-POSTHOG_API_KEY="phc_xxx"
+POSTHOG_API_KEY="REPLACE_WITH_YOUR_POSTHOG_API_KEY"
 SLACK_FEEDBACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 ```
 
@@ -376,7 +376,7 @@ psql $DATABASE_URL -c "\dt"
 # 2. Monthly Plans (recurring subscriptions)
 
 # Copy price IDs to env vars
-STRIPE_PRICE_CREDIT_PACK_STARTER="price_xxx"
+STRIPE_PRICE_CREDIT_PACK_STARTER="REPLACE_WITH_YOUR_PRICE_ID"
 # ... etc
 ```
 
@@ -445,9 +445,9 @@ pnpm build
 
 # Publish to npm
 npm publish --access public
-# Published as @terragon-labs/cli
+# Published as @rover-labs/cli
 
-# Users can install: npm install -g @terragon-labs/cli
+# Users can install: npm install -g @rover-labs/cli
 # Then use: rover auth, rover pull, rover create, etc.
 ```
 
@@ -476,7 +476,7 @@ SENTRY_DSN="https://xxx@sentry.io/xxx"
 ```bash
 # Already integrated in apps/www
 # Just add env var
-POSTHOG_API_KEY="phc_xxx"
+POSTHOG_API_KEY="REPLACE_WITH_YOUR_POSTHOG_API_KEY"
 ```
 
 ### 9. Configure GitHub App
@@ -701,7 +701,7 @@ POSTHOG_API_KEY="phc_xxx"
 - **Documentation**: docs.roverlabs.com
 - **Status Page**: status.roverlabs.com (optional)
 - **Support Email**: support@roverlabs.com
-- **GitHub**: github.com/terragon-labs/terragon
+- **GitHub**: github.com/rover-labs/rover
 - **Discord/Slack**: Community for users and developers
 
 ---
@@ -717,7 +717,7 @@ stripe products create \
   --description="1,000 credits for Rover tasks"
 
 stripe prices create \
-  --product="prod_xxx" \
+  --product="REPLACE_WITH_YOUR_PRODUCT_ID" \
   --unit-amount=1000 \
   --currency=usd \
   --tax-behavior=exclusive
@@ -728,7 +728,7 @@ stripe products create \
   --description="3,000 credits for Rover tasks (17% bonus)"
 
 stripe prices create \
-  --product="prod_xxx" \
+  --product="REPLACE_WITH_YOUR_PRODUCT_ID" \
   --unit-amount=2500 \
   --currency=usd \
   --tax-behavior=exclusive
@@ -739,7 +739,7 @@ stripe products create \
   --description="7,500 credits for Rover tasks (33% bonus)"
 
 stripe prices create \
-  --product="prod_xxx" \
+  --product="REPLACE_WITH_YOUR_PRODUCT_ID" \
   --unit-amount=5000 \
   --currency=usd \
   --tax-behavior=exclusive
@@ -750,7 +750,7 @@ stripe products create \
   --description="18,000 credits for Rover tasks (44% bonus)"
 
 stripe prices create \
-  --product="prod_xxx" \
+  --product="REPLACE_WITH_YOUR_PRODUCT_ID" \
   --unit-amount=10000 \
   --currency=usd \
   --tax-behavior=exclusive
@@ -765,7 +765,7 @@ stripe products create \
   --description="1,500 credits/month with rollover"
 
 stripe prices create \
-  --product="prod_xxx" \
+  --product="REPLACE_WITH_YOUR_PRODUCT_ID" \
   --unit-amount=1500 \
   --currency=usd \
   --recurring[interval]=month \
@@ -777,7 +777,7 @@ stripe products create \
   --description="5,000 credits/month with rollover"
 
 stripe prices create \
-  --product="prod_xxx" \
+  --product="REPLACE_WITH_YOUR_PRODUCT_ID" \
   --unit-amount=3900 \
   --currency=usd \
   --recurring[interval]=month \
@@ -789,7 +789,7 @@ stripe products create \
   --description="15,000 credits/month with rollover and priority support"
 
 stripe prices create \
-  --product="prod_xxx" \
+  --product="REPLACE_WITH_YOUR_PRODUCT_ID" \
   --unit-amount=9900 \
   --currency=usd \
   --recurring[interval]=month \

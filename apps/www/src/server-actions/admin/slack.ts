@@ -1,12 +1,12 @@
 "use server";
 
 import { adminOnly } from "@/lib/auth-server";
-import { User } from "@terragon/shared";
+import { User } from "@rover/shared";
 import { WebClient } from "@slack/web-api";
 import { db } from "@/lib/db";
-import { getSlackAccountAndInstallationForWorkspace } from "@terragon/shared/model/slack";
-import { decryptValue } from "@terragon/utils/encryption";
-import { env } from "@terragon/env/apps-www";
+import { getSlackAccountAndInstallationForWorkspace } from "@rover/shared/model/slack";
+import { decryptValue } from "@rover/utils/encryption";
+import { env } from "@rover/env/apps-www";
 import {
   buildSlackMentionMessage,
   SlackAppMentionEvent,

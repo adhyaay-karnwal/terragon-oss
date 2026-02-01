@@ -10,7 +10,7 @@ function expandTilde(input: string): string {
 }
 
 function getSettingsDir(): string {
-  const override = process.env.TERRY_SETTINGS_DIR;
+  const override = process.env.ROVER_SETTINGS_DIR;
   if (override && override.trim().length > 0) {
     return resolve(expandTilde(override.trim()));
   }

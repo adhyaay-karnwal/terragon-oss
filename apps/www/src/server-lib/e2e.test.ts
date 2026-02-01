@@ -3,15 +3,15 @@ import { unwrapResult } from "@/lib/server-actions";
 import {
   createTestThread,
   createTestUser,
-} from "@terragon/shared/model/test-helpers";
+} from "@rover/shared/model/test-helpers";
 import {
   getThread,
   getThreadChat,
   getThreads,
   updateThreadChat,
-} from "@terragon/shared/model/threads";
+} from "@rover/shared/model/threads";
 import { db } from "@/lib/db";
-import * as schema from "@terragon/shared/db/schema";
+import * as schema from "@rover/shared/db/schema";
 import {
   newThread as newThreadAction,
   NewThreadArgs,
@@ -44,7 +44,7 @@ import {
   runScheduledThread as runScheduledThreadAction,
   cancelScheduledThread as cancelScheduledThreadAction,
 } from "@/server-actions/scheduled-thread";
-import { gitCommitAndPushBranch } from "@terragon/sandbox/commands";
+import { gitCommitAndPushBranch } from "@rover/sandbox/commands";
 
 const newThread = async (args: NewThreadArgs) => {
   return unwrapResult(await newThreadAction(args));

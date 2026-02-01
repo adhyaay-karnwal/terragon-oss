@@ -2,7 +2,7 @@
 
 import { useRealtimeUser } from "@/hooks/useRealtime";
 import Link from "next/link";
-import { Environment } from "@terragon/shared";
+import { Environment } from "@rover/shared";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import { EnvironmentVariablesEditor } from "@/components/environments/environment-variables-editor";
@@ -11,13 +11,13 @@ import { updateEnvironmentVariables } from "@/server-actions/environment-variabl
 import { updateMcpConfig } from "@/server-actions/mcp-config";
 import { toast } from "sonner";
 import { usePageBreadcrumbs } from "@/hooks/usePageBreadcrumbs";
-import { McpConfig } from "@terragon/sandbox/mcp-config";
+import { McpConfig } from "@rover/sandbox/mcp-config";
 import { Button } from "@/components/ui/button";
 import { FileCog } from "lucide-react";
 import { CreateEnvironmentButton } from "@/components/environments/create-environment-button";
 import { DeleteEnvironmentButton } from "@/components/environments/delete-environment-button";
 import { useUnsavedChangesWarning } from "@/hooks/useUnsavedChangesWarning";
-import { publicDocsUrl } from "@terragon/env/next-public";
+import { publicDocsUrl } from "@rover/env/next-public";
 import { usePageHeader } from "@/contexts/page-header";
 import { Portal } from "@radix-ui/react-portal";
 import { useServerActionMutation } from "@/queries/server-action-helpers";

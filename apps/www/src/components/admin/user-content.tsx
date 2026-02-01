@@ -24,7 +24,7 @@ import {
   BillingInfo,
   Automation,
   SlackAccountWithMetadata,
-} from "@terragon/shared";
+} from "@rover/shared";
 import { toast } from "sonner";
 import { UserSearch } from "./user-search";
 import { UserRoleSelector } from "./user-role-selector";
@@ -46,10 +46,10 @@ import { AdminAutomationsTable } from "./automations-list";
 import {
   getAllAgentTypes,
   isConnectedCredentialsSupported,
-} from "@terragon/agent/utils";
+} from "@rover/agent/utils";
 import { DataTable } from "@/components/ui/data-table";
 import { ColumnDef } from "@tanstack/react-table";
-import { AIAgent } from "@terragon/agent/types";
+import { AIAgent } from "@rover/agent/types";
 import { useServerActionMutation } from "@/queries/server-action-helpers";
 
 const userKeys: (keyof User)[] = [
@@ -347,7 +347,7 @@ export function AdminUserContent({
                             className={cn(
                               "w-2 h-2 rounded-full",
                               account.installation?.isActive
-                                ? "bg-green-500"
+                                ? "bg-orange-500"
                                 : "bg-red-500",
                             )}
                           />

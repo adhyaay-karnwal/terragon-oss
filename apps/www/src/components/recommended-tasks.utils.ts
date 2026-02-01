@@ -1,5 +1,5 @@
-import type { AIModel } from "@terragon/agent/types";
-import { modelToAgent } from "@terragon/agent/utils";
+import type { AIModel } from "@rover/agent/types";
+import { modelToAgent } from "@rover/agent/utils";
 
 interface RecommendedTask {
   id: string;

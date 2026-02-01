@@ -1,6 +1,6 @@
 import { describe, test, expect } from "vitest";
 import { toUIMessages } from "./toUIMessages";
-import type { DBMessage } from "@terragon/shared";
+import type { DBMessage } from "@rover/shared";
 
 describe("toUIMessages", () => {
   test("groups agent text and tool interactions", () => {

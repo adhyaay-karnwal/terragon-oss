@@ -1,4 +1,4 @@
-import { ThreadInfo } from "@terragon/shared";
+import { ThreadInfo } from "@rover/shared";
 
 export function getThreadTitle(thread: Pick<ThreadInfo, "name">) {
   if (thread.name) {

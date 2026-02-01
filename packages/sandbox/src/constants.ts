@@ -1,4 +1,4 @@
-import { daemonAsStr, mcpServerAsStr } from "@terragon/bundled";
+import { daemonAsStr, mcpServerAsStr } from "@rover/bundled";
 
 export function getDaemonFile() {
   return daemonAsStr;

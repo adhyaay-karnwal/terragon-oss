@@ -4,11 +4,11 @@ import {
   updateThread,
   updateThreadChat,
   updateThreadChatStatusAtomic,
-} from "@terragon/shared/model/threads";
+} from "@rover/shared/model/threads";
 import { ThreadError } from "./error";
 import { handleTransition, ThreadEvent } from "./machine";
-import { ThreadChatInsert, ThreadInsert, ThreadStatus } from "@terragon/shared";
-import { markThreadChatAsUnread } from "@terragon/shared/model/thread-read-status";
+import { ThreadChatInsert, ThreadInsert, ThreadStatus } from "@rover/shared";
+import { markThreadChatAsUnread } from "@rover/shared/model/thread-read-status";
 
 export async function updateThreadChatWithTransition({
   userId,

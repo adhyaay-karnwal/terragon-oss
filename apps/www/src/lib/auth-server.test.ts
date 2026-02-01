@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { db } from "@/lib/db";
-import * as schema from "@terragon/shared/db/schema";
+import * as schema from "@rover/shared/db/schema";
 import { eq } from "drizzle-orm";
 import {
   adminOnly,
@@ -11,13 +11,13 @@ import {
   getUserInfoOrNull,
   validInternalRequestOrThrow,
 } from "@/lib/auth-server";
-import { createTestUser } from "@terragon/shared/model/test-helpers";
+import { createTestUser } from "@rover/shared/model/test-helpers";
 import {
   mockLoggedInUser,
   mockLoggedOutUser,
   mockNextHeaders,
 } from "@/test-helpers/mock-next";
-import { env } from "@terragon/env/apps-www";
+import { env } from "@rover/env/apps-www";
 import { UserFacingError } from "./server-actions";
 
 describe("auth-server", () => {

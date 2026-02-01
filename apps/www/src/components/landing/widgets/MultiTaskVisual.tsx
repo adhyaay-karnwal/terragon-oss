@@ -150,7 +150,7 @@ export function MultiTaskVisual() {
                     {/* Status */}
                     <div className="mt-2 flex items-center gap-1.5">
                       <div
-                        className={`size-1.5 rounded-full ${task.status === "Running" ? "bg-muted-foreground" : task.status === "Ready" ? "bg-green-600/90" : "bg-yellow-600/90"}`}
+                        className={`size-1.5 rounded-full ${task.status === "Running" ? "bg-muted-foreground" : task.status === "Ready" ? "bg-primary/90" : "bg-yellow-600/90"}`}
                       ></div>
                       <span className="text-xs text-muted-foreground">
                         {task.status}

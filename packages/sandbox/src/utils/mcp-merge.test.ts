@@ -15,10 +15,10 @@ describe("buildMergedMcpConfig", () => {
     },
   };
 
-  it("filters user-provided rover and injects built-in when includeTerry=true", () => {
+  it("filters user-provided rover and injects built-in when includeRover=true", () => {
     const merged = buildMergedMcpConfig({
       userMcpConfig: userCfg,
-      includeTerry: true,
+      includeRover: true,
       roverCommand: "node",
       roverArgs: ["/tmp/rover-mcp-server.mjs"],
     });
@@ -46,10 +46,10 @@ describe("buildMergedMcpConfig", () => {
     });
   });
 
-  it("omits rover entirely when includeTerry=false", () => {
+  it("omits rover entirely when includeRover=false", () => {
     const merged = buildMergedMcpConfig({
       userMcpConfig: userCfg,
-      includeTerry: false,
+      includeRover: false,
       roverCommand: "node",
       roverArgs: ["/tmp/rover-mcp-server.mjs"],
     });
@@ -62,7 +62,7 @@ describe("buildMergedMcpConfig", () => {
   it("handles undefined user config", () => {
     const merged = buildMergedMcpConfig({
       userMcpConfig: undefined,
-      includeTerry: true,
+      includeRover: true,
       roverCommand: "node",
       roverArgs: ["/tmp/rover-mcp-server.mjs"],
     });

@@ -4,7 +4,7 @@ import { InvitedWaitlist } from "@/components/invited-waitlist";
 import { StructuredData } from "@/components/system/structured-data";
 import { Metadata } from "next";
 import { cookies } from "next/headers";
-import { validateAccessCode } from "@terragon/shared/model/access-codes";
+import { validateAccessCode } from "@rover/shared/model/access-codes";
 import { db } from "@/lib/db";
 import { OG_IMAGE_URL } from "@/lib/constants";
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "You've been invited to Rover",
     description:
       "Join Rover with your exclusive access code and start using background agents for Claude Code.",
-    url: "https://www.terragonlabs.com/invited",
+    url: "https://www.roverlabs.com/invited",
     siteName: "Rover",
     images: [
       {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     "exclusive access",
   ],
   alternates: {
-    canonical: "https://www.terragonlabs.com/invited",
+    canonical: "https://www.roverlabs.com/invited",
   },
   robots: {
     index: false,

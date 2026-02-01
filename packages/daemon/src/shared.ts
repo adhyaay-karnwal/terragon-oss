@@ -1,6 +1,6 @@
 import * as z from "zod/v4";
 import { Anthropic } from "@anthropic-ai/sdk";
-import { AIAgentSchema } from "@terragon/agent/types";
+import { AIAgentSchema } from "@rover/agent/types";
 
 export const defaultPipePath = "/tmp/rover-daemon.pipe";
 export const defaultUnixSocketPath = "/tmp/rover-daemon.sock";

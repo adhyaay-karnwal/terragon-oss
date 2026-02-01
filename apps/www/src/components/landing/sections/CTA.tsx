@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { publicDocsUrl } from "@terragon/env/next-public";
+import { publicDocsUrl } from "@rover/env/next-public";
 import Link from "next/link";
 
 export default function CTA() {

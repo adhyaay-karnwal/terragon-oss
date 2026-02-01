@@ -57,13 +57,13 @@ export const OnboardingCompletionReminderEmail = ({
               <Section className="text-center mb-6">
                 <Button
                   href={dashboardLink}
-                  className="bg-green-600 text-white px-8 py-3 rounded-md font-semibold inline-block"
+                  className="bg-primary text-white px-8 py-3 rounded-md font-semibold inline-block"
                 >
                   Create Your First Task
                 </Button>
               </Section>
 
-              <Section className="bg-green-50 p-4 rounded-md mb-3">
+              <Section className="bg-secondary p-4 rounded-md mb-3">
                 <Text className="text-base text-gray-700 mb-0">
                   <strong>💡 Tip:</strong> You can @ mention files, paste URLs,
                   upload images, or use voice input to describe your task.
@@ -73,15 +73,15 @@ export const OnboardingCompletionReminderEmail = ({
               <Text className="text-base text-gray-700 mb-0">
                 Need additional help? Email{" "}
                 <Link
-                  href="mailto:support@terragonlabs.com"
-                  className="text-green-600 underline"
+                  href="mailto:support@roverlabs.com"
+                  className="text-primary underline"
                 >
-                  support@terragonlabs.com
+                  support@roverlabs.com
                 </Link>{" "}
                 or join our{" "}
                 <Link
                   href="https://discord.com/invite/akupbpGJQF"
-                  className="text-green-600 underline"
+                  className="text-primary underline"
                 >
                   Discord community
                 </Link>

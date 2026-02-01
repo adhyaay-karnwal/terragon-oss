@@ -10,7 +10,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
 // Get the path to the rover CLI executable
-function getTerryPath(): string {
+function getRoverPath(): string {
   // Check if rover is available in PATH
   try {
     const result = spawnSync("which", ["rover"], {
@@ -31,15 +31,15 @@ function getTerryPath(): string {
   if (existsSync(cliPath)) {
     return cliPath;
   }
-  throw new Error("Terry CLI not found");
+  throw new Error("Rover CLI not found");
 }
 
 // Execute rover command and return output safely
-async function executeTerryCommand(
+async function executeRoverCommand(
   command: string,
   args: string[] = [],
 ): Promise<string> {
-  const roverPath = getTerryPath();
+  const roverPath = getRoverPath();
 
   // Build command array safely without shell interpolation
   const commandArgs = [command, ...args];
@@ -167,7 +167,7 @@ export async function startMCPServer(): Promise<void> {
     try {
       switch (name) {
         case "rover_list":
-          const listOutput = await executeTerryCommand("list");
+          const listOutput = await executeRoverCommand("list");
           return {
             content: [
               {
@@ -204,7 +204,7 @@ export async function startMCPServer(): Promise<void> {
             createArgs.push("--no-new-branch");
           }
 
-          const createOutput = await executeTerryCommand("create", createArgs);
+          const createOutput = await executeRoverCommand("create", createArgs);
           return {
             content: [
               {
@@ -222,7 +222,7 @@ export async function startMCPServer(): Promise<void> {
             pullArgs.push(pullParams.threadId);
           }
 
-          const pullOutput = await executeTerryCommand("pull", pullArgs);
+          const pullOutput = await executeRoverCommand("pull", pullArgs);
           return {
             content: [
               {

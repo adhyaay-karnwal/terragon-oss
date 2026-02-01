@@ -1,4 +1,4 @@
-import * as schema from "@terragon/shared/db/schema";
+import * as schema from "@rover/shared/db/schema";
 import { betterAuth } from "better-auth";
 import {
   bearer,
@@ -10,18 +10,18 @@ import {
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { stripe as createStripePlugin } from "@better-auth/stripe";
 import { db } from "./db";
-import { env } from "@terragon/env/apps-www";
+import { env } from "@rover/env/apps-www";
 import { Resend } from "resend";
-import { encryptToken } from "@terragon/utils/encryption";
+import { encryptToken } from "@rover/utils/encryption";
 import { getPostHogServer } from "./posthog-server";
 import { nonLocalhostPublicAppUrl } from "./server-utils";
-import { publicAppUrl } from "@terragon/env/next-public";
+import { publicAppUrl } from "@rover/env/next-public";
 import { handleStripeCreditTopUpEvent } from "@/server-lib/stripe-credit-top-ups";
 import { maybeGrantSignupBonus } from "@/server-lib/credits";
 import { handlePromotionCodeCheckoutSessionCompleted } from "./stripe-promotion-codes";
 import Stripe from "stripe";
 import { LoopsClient } from "loops";
-import { getUnusedPromotionCodeForUser } from "@terragon/shared/model/subscription";
+import { getUnusedPromotionCodeForUser } from "@rover/shared/model/subscription";
 import {
   STRIPE_PLAN_CONFIGS,
   getStripeWebhookSecret,
@@ -285,13 +285,13 @@ export const auth = betterAuth({
         const url =
           process.env.NEXT_PUBLIC_VERCEL_ENV === "preview"
             ? rawUrl.replace(
-                "https://www.terragonlabs.com",
+                "https://www.roverlabs.com",
                 `https://${process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL}`,
               )
             : rawUrl;
         const resend = new Resend(env.RESEND_API_KEY ?? "DUMMY_KEY");
         const result = await resend.emails.send({
-          from: "Terry <onboarding@mail.terragonlabs.com>",
+          from: "Rover <onboarding@mail.roverlabs.com>",
           to: email,
           subject: "Sign in to Rover",
           html: `
@@ -315,8 +315,8 @@ export const auth = betterAuth({
     ...stripePlugins,
   ],
   trustedOrigins: [
-    "www.terragonlabs.com",
-    "terragonlabs.com",
+    "www.roverlabs.com",
+    "roverlabs.com",
     process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL &&
       `https://${process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL}`,
     process.env.NODE_ENV === "development" && publicAppUrl(),

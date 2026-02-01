@@ -2,8 +2,8 @@
 
 import { userOnlyAction } from "@/lib/auth-server";
 import { db } from "@/lib/db";
-import { ThreadInfo } from "@terragon/shared";
-import { getThreads } from "@terragon/shared/model/threads";
+import { ThreadInfo } from "@rover/shared";
+import { getThreads } from "@rover/shared/model/threads";
 
 export const getThreadsAction = userOnlyAction(
   async function getThreadsAction(

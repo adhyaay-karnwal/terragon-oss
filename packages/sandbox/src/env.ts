@@ -1,4 +1,4 @@
-import { AIAgentCredentials } from "@terragon/agent/types";
+import { AIAgentCredentials } from "@rover/agent/types";
 
 export function getEnv({
   userEnv,
@@ -13,7 +13,7 @@ export function getEnv({
 }) {
   const env: Record<string, string> = {
     // Indicates the agent is running in a Rover sandbox environment
-    TERRAGON: "true",
+    ROVER: "true",
     // Set default GH_TOKEN from GitHub access token
     // This can be overridden if user provides their own GH_TOKEN
     GH_TOKEN: githubAccessToken,

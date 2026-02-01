@@ -6,7 +6,7 @@ import { secondaryPaneClosedAtom } from "@/atoms/user-cookies";
 import { atom, useAtom } from "jotai";
 import { usePlatform } from "@/hooks/use-platform";
 import { threadQueryKeys } from "@/queries/thread-queries";
-import { ThreadChatInfoFull, ThreadInfoFull } from "@terragon/shared/db/types";
+import { ThreadChatInfoFull, ThreadInfoFull } from "@rover/shared/db/types";
 import { useQueryClient } from "@tanstack/react-query";
 
 export function useMarkChatAsRead({

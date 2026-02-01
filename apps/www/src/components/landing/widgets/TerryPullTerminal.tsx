@@ -10,13 +10,13 @@ const outputLines: Array<string | { text: string; delay: number }> = [
   "",
   "Name           Add konami code easter egg",
   "Branch         rover/add-konami-code-easter-egg",
-  "Repository     terragon-labs/terragon",
+  "Repository     rover-labs/rover",
   "PR Number      #1234",
   { text: "", delay: 600 },
   "✓ Task ready for local work",
 ];
 
-export function TerryPullTerminal() {
+export function RoverPullTerminal() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
   const [visible, setVisible] = useState(false);

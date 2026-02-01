@@ -13,14 +13,14 @@ import {
 } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
 import { DBMessage, DBUserMessage } from "./db-message";
-import type { SandboxProvider, SandboxSize } from "@terragon/types/sandbox";
-import type { SandboxStatus, BootingSubstatus } from "@terragon/sandbox/types";
+import type { SandboxProvider, SandboxSize } from "@rover/types/sandbox";
+import type { SandboxStatus, BootingSubstatus } from "@rover/sandbox/types";
 import {
   AIModel,
   AIAgent,
   SelectedAIModels,
   AgentModelPreferences,
-} from "@terragon/agent/types";
+} from "@rover/agent/types";
 import {
   GithubPRStatus,
   GithubCheckRunConclusion,

@@ -11,13 +11,13 @@ export default defineConfig({
   clean: true,
   shims: true,
   bundle: true,
-  noExternal: ["@terragon/cli-api-contract"],
+  noExternal: ["@rover/cli-api-contract"],
   define: {
-    "process.env.TERRAGON_WEB_URL": JSON.stringify(
-      process.env.TERRAGON_WEB_URL || "https://www.terragonlabs.com",
+    "process.env.ROVER_WEB_URL": JSON.stringify(
+      process.env.ROVER_WEB_URL || "https://www.roverlabs.com",
     ),
-    "process.env.TERRY_NO_AUTO_UPDATE": JSON.stringify(
-      process.env.TERRY_NO_AUTO_UPDATE || "0",
+    "process.env.ROVER_NO_AUTO_UPDATE": JSON.stringify(
+      process.env.ROVER_NO_AUTO_UPDATE || "0",
     ),
   },
 });

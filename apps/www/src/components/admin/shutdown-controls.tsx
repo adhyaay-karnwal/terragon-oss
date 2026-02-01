@@ -146,12 +146,12 @@ export function ShutdownControls({
               <h3 className="font-medium">Results</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center gap-2 p-3 border rounded-lg bg-green-50 dark:bg-green-900/20">
-                  <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400" />
+                  <CheckCircle2 className="h-5 w-5 text-primary dark:text-green-400" />
                   <div>
                     <p className="font-medium text-green-700 dark:text-green-300">
                       {result.success}
                     </p>
-                    <p className="text-xs text-green-600 dark:text-green-400">
+                    <p className="text-xs text-primary dark:text-green-400">
                       Canceled
                     </p>
                   </div>

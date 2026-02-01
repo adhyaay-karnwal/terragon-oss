@@ -5,8 +5,8 @@ import { getUserIdOrNull } from "@/lib/auth-server";
 import { isStripeConfigured } from "@/server-lib/stripe";
 import { getBillingInfo } from "@/lib/subscription";
 import { db } from "@/lib/db";
-import { getFeatureFlagsGlobal } from "@terragon/shared/model/feature-flags";
-import { publicDocsUrl } from "@terragon/env/next-public";
+import { getFeatureFlagsGlobal } from "@rover/shared/model/feature-flags";
+import { publicDocsUrl } from "@rover/env/next-public";
 import Link from "next/link";
 
 /**

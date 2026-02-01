@@ -1,15 +1,15 @@
 import { describe, expect, it, vi, beforeEach, beforeAll } from "vitest";
 import { handleAppMention } from "./handle-app-mention";
-import { User, GitHubPR } from "@terragon/shared";
+import { User, GitHubPR } from "@rover/shared";
 import {
   createTestGitHubPR,
   createTestThread,
   createTestUser,
   setFeatureFlagOverrideForTest,
-} from "@terragon/shared/model/test-helpers";
-import { updateUserSettings } from "@terragon/shared/model/user";
+} from "@rover/shared/model/test-helpers";
+import { updateUserSettings } from "@rover/shared/model/user";
 import { db } from "@/lib/db";
-import * as schema from "@terragon/shared/db/schema";
+import * as schema from "@rover/shared/db/schema";
 import { newThreadInternal } from "@/server-lib/new-thread-internal";
 import {
   getOctokitForUser,
@@ -21,7 +21,7 @@ import {
 } from "@/lib/github";
 import { queueFollowUpInternal } from "@/server-lib/follow-up";
 import { getDiffContextStr } from "./utils";
-import { createAutomation } from "@terragon/shared/model/automations";
+import { createAutomation } from "@rover/shared/model/automations";
 import { convertToPlainText } from "@/lib/db-message-helpers";
 import { redis } from "@/lib/redis";
 

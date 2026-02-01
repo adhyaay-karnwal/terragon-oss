@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AllToolParts } from "@terragon/shared";
+import { AllToolParts } from "@rover/shared";
 import { cn } from "@/lib/utils";
 import { getAgentColorClass } from "./agent-colors";
 import { ansiToHtml } from "./utils";
@@ -24,7 +24,7 @@ export function GenericToolPart({
       <span className="h-5 flex items-center">
         <span
           className={cn("shrink-0 size-2 rounded-full inline-block", {
-            "bg-green-500": toolStatus === "completed",
+            "bg-orange-500": toolStatus === "completed",
             "bg-red-500": toolStatus === "error",
             "bg-muted-foreground animate-blink": toolStatus === "pending",
           })}

@@ -4,7 +4,7 @@ import {
   createTestThread,
   createTestAutomation,
 } from "./test-helpers";
-import { env } from "@terragon/env/pkg-shared";
+import { env } from "@rover/env/pkg-shared";
 import { createDb } from "../db";
 import { ThreadInsert, ThreadChatInsert, User } from "../db/types";
 import { DBMessage, DBUserMessage } from "../db/db-message";
