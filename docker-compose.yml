@@ -1,3 +1,11 @@
+# Docker Compose for Terragon Production Deployment
+# Optimized for Oracle Cloud Always Free tier (2 OCPU ARM, 12 GB RAM)
+#
+# Usage:
+#   docker compose build
+#   docker compose up -d
+#   docker compose logs -f app
+
 services:
   postgres:
     image: postgres:16-alpine
@@ -10,23 +18,40 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U terragon"]
-      interval: 5s
+      interval: 10s
       timeout: 5s
       retries: 5
+    # Resource limits for lightweight deployment
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
 
   redis:
     image: redis:7-alpine
     restart: unless-stopped
     volumes:
       - redisdata:/data
+    # Persist data every 60 seconds if at least 1 key changed
+    command: redis-server --appendonly yes --appendfsync everysec
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
-      interval: 5s
+      interval: 10s
       timeout: 5s
       retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
 
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: unless-stopped
     ports:
       - "3000:3000"
@@ -38,15 +63,23 @@ services:
     env_file:
       - .env.production
     environment:
+      # Override DATABASE_URL to use docker network
       DATABASE_URL: postgresql://terragon:${POSTGRES_PASSWORD:-changeme}@postgres:5432/terragon
+      # Local Redis (no auth needed)
       REDIS_URL: http://redis:6379
       REDIS_TOKEN: ""
+      # Runtime settings
       NODE_ENV: production
       DOCKER_BUILD: "true"
-    volumes:
-      - appuploads:/app/apps/www/public/uploads
+      # Cron worker needs to know the internal app URL
+      APP_URL: http://localhost:3000
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
 
 volumes:
   pgdata:
   redisdata:
-  appuploads:
