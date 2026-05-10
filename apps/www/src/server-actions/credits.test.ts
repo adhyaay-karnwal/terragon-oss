@@ -28,7 +28,7 @@ describe("createCreditTopUpCheckoutSession", () => {
       .spyOn(stripeConfig, "stripeCustomersCreate")
       .mockResolvedValue({
         id: "cus_existing_123",
-        email: "test@terragon.com",
+        email: "test@rover.com",
         name: "Test User",
       } as any);
   });
@@ -74,12 +74,12 @@ describe("createCreditTopUpCheckoutSession", () => {
       expect.objectContaining({
         customer: "cus_existing_123",
         metadata: expect.objectContaining({
-          terragon_user_id: user.id,
+          rover_user_id: user.id,
           reason: CREDIT_TOP_UP_REASON,
         }),
         payment_intent_data: expect.objectContaining({
           metadata: expect.objectContaining({
-            terragon_user_id: user.id,
+            rover_user_id: user.id,
             reason: CREDIT_TOP_UP_REASON,
           }),
         }),
@@ -108,7 +108,7 @@ describe("createCreditTopUpCheckoutSession", () => {
         email: user.email,
         name: user.name,
         metadata: {
-          terragon_user_id: user.id,
+          rover_user_id: user.id,
         },
       }),
     );

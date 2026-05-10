@@ -155,7 +155,7 @@ const createThread = os.threads.create.handler(
       const isInstalled = await isAppInstalledOnRepo(owner, repo);
       if (!isInstalled) {
         throw errors.INTERNAL_ERROR({
-          message: `GitHub App is not installed on repository ${githubRepoFullName}. Please install the Terragon GitHub App on this repository first.`,
+          message: `GitHub App is not installed on repository ${githubRepoFullName}. Please install the Rover GitHub App on this repository first.`,
         });
       }
     } catch (error) {

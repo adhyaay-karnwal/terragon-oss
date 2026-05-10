@@ -91,7 +91,7 @@ export async function postBillingLinkComment({
   reviewCommentId?: number;
 }): Promise<void> {
   const billingUrl = `${publicAppUrl()}/settings/billing`;
-  const body = `To use Terragon from GitHub, please set up billing here: ${billingUrl}`;
+  const body = `To use Rover from GitHub, please set up billing here: ${billingUrl}`;
 
   if (reviewCommentId) {
     try {

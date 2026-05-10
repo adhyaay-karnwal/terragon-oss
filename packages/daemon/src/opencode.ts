@@ -312,19 +312,19 @@ export function opencodeCommand({
 }): string {
   // NOTE: We can remove once everything deploys for a day or so
   // now that we're using the normalizedModelForDaemon function.
-  // Use the terry provider prefix for Opencode models
+  // Use the rover provider prefix for Opencode models
   let normalizedModel = model;
   if (model.startsWith("opencode/")) {
-    normalizedModel = model.replace("opencode/", "terry/");
+    normalizedModel = model.replace("opencode/", "rover/");
   }
   if (model.startsWith("opencode-google/")) {
-    normalizedModel = model.replace("opencode-google/", "terry-google/");
+    normalizedModel = model.replace("opencode-google/", "rover-google/");
   }
   if (model.startsWith("opencode-oai")) {
-    normalizedModel = model.replace("opencode-oai/", "terry-oai/");
+    normalizedModel = model.replace("opencode-oai/", "rover-oai/");
   }
   if (model.startsWith("opencode-ant")) {
-    normalizedModel = model.replace("opencode-ant/", "terry-ant/");
+    normalizedModel = model.replace("opencode-ant/", "rover-ant/");
   }
   // Write prompt to a temporary file
   const tmpFileName = `/tmp/opencode-prompt-${nanoid()}.txt`;

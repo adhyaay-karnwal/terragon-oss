@@ -22,7 +22,7 @@ export async function ensureStripeCustomer({
     email: user.email,
     name: user.name,
     metadata: {
-      terragon_user_id: userId,
+      rover_user_id: userId,
     },
   });
   await updateUser({ db, userId, updates: { stripeCustomerId: customer.id } });

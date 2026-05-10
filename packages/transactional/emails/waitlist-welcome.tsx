@@ -21,13 +21,13 @@ export const WaitlistWelcomeEmail = ({
   return (
     <Html>
       <Head />
-      <Preview>Welcome to the Terragon Alpha!</Preview>
+      <Preview>Welcome to the Rover Alpha!</Preview>
       <Tailwind>
         <Body className="bg-white font-sans">
           <Container className="mx-auto p-5 max-w-[600px]">
             <Section className="mt-6">
               <Heading className="text-2xl font-bold text-gray-900 mb-1">
-                Welcome to Terragon Alpha! 🎉
+                Welcome to Rover Alpha! 🎉
               </Heading>
 
               <Text className="text-base text-gray-700 mb-3">👋 Hi there,</Text>
@@ -37,7 +37,7 @@ export const WaitlistWelcomeEmail = ({
               </Text>
 
               <Text className="text-base text-gray-700 mb-4">
-                <strong>Use the button below to access Terragon.</strong>
+                <strong>Use the button below to access Rover.</strong>
               </Text>
 
               <Section className="text-center mb-6">
@@ -109,7 +109,7 @@ export const WaitlistWelcomeEmail = ({
                 <ul className="list-disc pl-6 mb-3">
                   <li className="text-base text-gray-700 mb-1">
                     <strong>In-product feedback:</strong> click the "Send
-                    Feedback" button in the Terragon sidebar to share in-product
+                    Feedback" button in the Rover sidebar to share in-product
                     feedback via a quick modal
                   </li>
                   <li className="text-base text-gray-700 mb-1">
@@ -132,14 +132,14 @@ export const WaitlistWelcomeEmail = ({
               <Hr className="border-gray-300 my-6" />
 
               <Text className="text-base text-gray-700 mb-3">
-                Thanks so much for being part of the early Terragon journey!
+                Thanks so much for being part of the early Rover journey!
                 Excited to grow this product with you.
               </Text>
 
               <Text className="text-base text-gray-700 mb-0">
                 Best,
                 <br />
-                Terragon team
+                Rover team
               </Text>
             </Section>
           </Container>

@@ -5,21 +5,21 @@ import { buildMergedMcpConfig } from "../utils/mcp-merge";
 export function buildCodexToml({
   userMcpConfig,
   includeTerry,
-  terryCommand,
-  terryArgs,
-  terryModelProviderBaseUrl,
+  roverCommand,
+  roverArgs,
+  roverModelProviderBaseUrl,
 }: {
   userMcpConfig: McpConfig | undefined;
   includeTerry: boolean;
-  terryCommand: string;
-  terryArgs: string[];
-  terryModelProviderBaseUrl?: string | null;
+  roverCommand: string;
+  roverArgs: string[];
+  roverModelProviderBaseUrl?: string | null;
 }): string {
   const merged: McpConfig = buildMergedMcpConfig({
     userMcpConfig,
     includeTerry,
-    terryCommand,
-    terryArgs,
+    roverCommand,
+    roverArgs,
   });
 
   // Map JSON schema to Codex TOML layout
@@ -38,10 +38,10 @@ export function buildCodexToml({
   }
 
   const modelProvidersToml: Record<string, any> = {};
-  if (terryModelProviderBaseUrl) {
-    modelProvidersToml.terry = {
-      name: "terry",
-      base_url: terryModelProviderBaseUrl,
+  if (roverModelProviderBaseUrl) {
+    modelProvidersToml.rover = {
+      name: "rover",
+      base_url: roverModelProviderBaseUrl,
       env_http_headers: {
         "X-Daemon-Token": "DAEMON_TOKEN",
       },

@@ -9,16 +9,16 @@ import { existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
-// Get the path to the terry CLI executable
+// Get the path to the rover CLI executable
 function getTerryPath(): string {
-  // Check if terry is available in PATH
+  // Check if rover is available in PATH
   try {
-    const result = spawnSync("which", ["terry"], {
+    const result = spawnSync("which", ["rover"], {
       encoding: "utf-8",
       stdio: "pipe",
     });
     if (result.status === 0) {
-      return "terry";
+      return "rover";
     }
   } catch {
     // Ignore error and fall through
@@ -34,12 +34,12 @@ function getTerryPath(): string {
   throw new Error("Terry CLI not found");
 }
 
-// Execute terry command and return output safely
+// Execute rover command and return output safely
 async function executeTerryCommand(
   command: string,
   args: string[] = [],
 ): Promise<string> {
-  const terryPath = getTerryPath();
+  const roverPath = getTerryPath();
 
   // Build command array safely without shell interpolation
   const commandArgs = [command, ...args];
@@ -57,19 +57,19 @@ async function executeTerryCommand(
   let executable: string;
   let execArgs: string[];
 
-  if (terryPath === "terry") {
-    executable = "terry";
+  if (roverPath === "rover") {
+    executable = "rover";
     execArgs = commandArgs;
   } else {
     executable = "node";
-    execArgs = [terryPath, ...commandArgs];
+    execArgs = [roverPath, ...commandArgs];
   }
 
   const result = spawnSync(executable, execArgs, spawnOptions);
 
   if (result.error) {
     throw new Error(
-      `Failed to execute terry ${command}: ${result.error.message}`,
+      `Failed to execute rover ${command}: ${result.error.message}`,
     );
   }
 
@@ -79,7 +79,7 @@ async function executeTerryCommand(
     const stdout = result.stdout?.toString().trim() || "";
     const errorMessage =
       stderr || stdout || `Command failed with exit code ${result.status}`;
-    throw new Error(`terry ${command} failed: ${errorMessage}`);
+    throw new Error(`rover ${command} failed: ${errorMessage}`);
   }
 
   return result.stdout?.toString().trim() || "";
@@ -90,7 +90,7 @@ export async function startMCPServer(): Promise<void> {
   // MCP Server
   const server = new Server(
     {
-      name: "terry-mcp-server",
+      name: "rover-mcp-server",
       version: "0.1.0",
     },
     {
@@ -105,16 +105,16 @@ export async function startMCPServer(): Promise<void> {
     return {
       tools: [
         {
-          name: "terry_list",
-          description: "List all tasks in Terragon (calls 'terry list')",
+          name: "rover_list",
+          description: "List all tasks in Rover (calls 'rover list')",
           inputSchema: {
             type: "object",
             properties: {},
           },
         },
         {
-          name: "terry_create",
-          description: "Create a new task in Terragon (calls 'terry create')",
+          name: "rover_create",
+          description: "Create a new task in Rover (calls 'rover create')",
           inputSchema: {
             type: "object",
             properties: {
@@ -142,9 +142,9 @@ export async function startMCPServer(): Promise<void> {
           },
         },
         {
-          name: "terry_pull",
+          name: "rover_pull",
           description:
-            "Pull/fetch session data for a task (calls 'terry pull')",
+            "Pull/fetch session data for a task (calls 'rover pull')",
           inputSchema: {
             type: "object",
             properties: {
@@ -166,7 +166,7 @@ export async function startMCPServer(): Promise<void> {
 
     try {
       switch (name) {
-        case "terry_list":
+        case "rover_list":
           const listOutput = await executeTerryCommand("list");
           return {
             content: [
@@ -177,7 +177,7 @@ export async function startMCPServer(): Promise<void> {
             ],
           };
 
-        case "terry_create":
+        case "rover_create":
           const createParams = args as {
             message?: string;
             repo?: string;
@@ -214,7 +214,7 @@ export async function startMCPServer(): Promise<void> {
             ],
           };
 
-        case "terry_pull":
+        case "rover_pull":
           const pullParams = args as { threadId?: string };
           const pullArgs: string[] = [];
 

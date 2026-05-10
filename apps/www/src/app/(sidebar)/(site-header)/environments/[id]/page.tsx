@@ -18,7 +18,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const userId = await getUserIdOrNull();
   if (!userId) {
-    return { title: "Environment | Terragon" };
+    return { title: "Environment | Rover" };
   }
   const { id } = await params;
   const environment = await getEnvironment({
@@ -27,10 +27,10 @@ export async function generateMetadata({
     userId,
   });
   if (!environment) {
-    return { title: "Environment | Terragon" };
+    return { title: "Environment | Rover" };
   }
   return {
-    title: `${environment.repoFullName} Environment | Terragon`,
+    title: `${environment.repoFullName} Environment | Rover`,
   };
 }
 

@@ -14,19 +14,19 @@ export function WorkAnywhere() {
             <div className="px-3 pt-3 pb-2 flex items-center gap-2">
               <Image
                 src={plantLight}
-                alt="Terragon"
+                alt="Rover"
                 width={14}
                 height={14}
                 className="block dark:hidden"
               />
               <Image
                 src={plantDark}
-                alt="Terragon"
+                alt="Rover"
                 width={14}
                 height={14}
                 className="hidden dark:block"
               />
-              <div className="text-xs font-semibold">Terragon</div>
+              <div className="text-xs font-semibold">Rover</div>
             </div>
 
             {/* Prompt box */}

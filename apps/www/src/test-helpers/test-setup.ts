@@ -71,7 +71,7 @@ vi.mock("@/server-lib/internal-request", () => ({
           {},
           {
             "Content-Type": "application/json",
-            "X-Terragon-Secret": env.INTERNAL_SHARED_SECRET,
+            "X-Rover-Secret": env.INTERNAL_SHARED_SECRET,
           },
         ),
         { params: Promise.resolve({ userId }) },
@@ -83,7 +83,7 @@ vi.mock("@/server-lib/internal-request", () => ({
           {},
           {
             "Content-Type": "application/json",
-            "X-Terragon-Secret": env.INTERNAL_SHARED_SECRET,
+            "X-Rover-Secret": env.INTERNAL_SHARED_SECRET,
           },
         ),
       );
@@ -95,7 +95,7 @@ vi.mock("@/server-lib/internal-request", () => ({
           {},
           {
             "Content-Type": "application/json",
-            "X-Terragon-Secret": env.INTERNAL_SHARED_SECRET,
+            "X-Rover-Secret": env.INTERNAL_SHARED_SECRET,
           },
         ),
         {
@@ -155,7 +155,7 @@ index 1234567..89abcdef 100644
     }),
     gitPullUpstream: vi.fn().mockResolvedValue(undefined),
     gitCommitAndPushBranch: vi.fn().mockResolvedValue({
-      branchName: "terragon/test-branch",
+      branchName: "rover/test-branch",
     }),
   };
 });

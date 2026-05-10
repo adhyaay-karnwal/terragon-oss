@@ -28,7 +28,7 @@ type PartGroup = {
 // Never collapse these tool names
 const nonCollapsibleToolNames = new Set<string>([
   "SuggestFollowupTask",
-  "mcp__terry__SuggestFollowupTask",
+  "mcp__rover__SuggestFollowupTask",
   "ExitPlanMode",
 ]);
 

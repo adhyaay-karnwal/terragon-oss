@@ -3,26 +3,26 @@ import { McpConfig, McpServer } from "../mcp-config";
 export function buildMergedMcpConfig({
   userMcpConfig,
   includeTerry,
-  terryCommand,
-  terryArgs,
+  roverCommand,
+  roverArgs,
 }: {
   userMcpConfig: McpConfig | undefined;
   includeTerry: boolean;
-  terryCommand: string;
-  terryArgs: string[];
+  roverCommand: string;
+  roverArgs: string[];
 }): McpConfig {
   const mergedServers: Record<string, McpServer> = {
     ...Object.fromEntries(
       Object.entries(userMcpConfig?.mcpServers ?? {}).filter(
-        ([name]) => name !== "terry",
+        ([name]) => name !== "rover",
       ),
     ),
   } as Record<string, McpServer>;
 
   if (includeTerry) {
-    mergedServers["terry"] = {
-      command: terryCommand,
-      args: terryArgs,
+    mergedServers["rover"] = {
+      command: roverCommand,
+      args: roverArgs,
     } as McpServer;
   }
 

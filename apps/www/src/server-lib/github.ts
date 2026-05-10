@@ -108,7 +108,7 @@ function getCheckRunPayloadForAutomation({
   "details_url" | "name" | "output" | "status" | "conclusion"
 > {
   return {
-    name: `Terragon Automation - ${automation.name}`,
+    name: `Rover Automation - ${automation.name}`,
     output: {
       title: automation.name,
       summary,

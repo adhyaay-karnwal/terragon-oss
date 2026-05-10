@@ -1,6 +1,6 @@
 ---
 title: Release Notes
-description: Stay up to date with the latest changes and improvements to Terragon.
+description: Stay up to date with the latest changes and improvements to Rover.
 ---
 
 ## November 24, 2025
@@ -90,7 +90,7 @@ description: Stay up to date with the latest changes and improvements to Terrago
 - **GitHub Mention Automation**: Customize the behavior when @terragon-labs is mentioned in GitHub by creating a "GitHub Mention" automation.
   - Pro users can additionally have the automation trigger in response to mentions from bot users.
 - **Schedule Multi-Hour Automations**: Pro users can now schedule automations that run at multiple hours on a given day. When creating an automation with a "Schedule" trigger, you can configure it to run at at 9am and 5pm, for example, instead of just once each day.
-- **Codex Rate Limit Queueing**: When you hit a rate limit associated with your ChatGPT subscription, Terragon automatically queues new tasks and messages until your rate limit resets. This behavior is similar to how we handle Claude rate limit errors and should help make it easier to continue working when you hit a rate limit.
+- **Codex Rate Limit Queueing**: When you hit a rate limit associated with your ChatGPT subscription, Rover automatically queues new tasks and messages until your rate limit resets. This behavior is similar to how we handle Claude rate limit errors and should help make it easier to continue working when you hit a rate limit.
 
 ![Multi-Hour Schedule Automations](https://cdn.terragonlabs.com/multi-hour-schedule-8b3S.png)
 
@@ -112,7 +112,7 @@ description: Stay up to date with the latest changes and improvements to Terrago
 
 ## October 15, 2025
 
-- **Haiku 4.5**: Terragon now supports Haiku 4.5 when using the Claude Code agent. Learn more about this new model [here](https://www.anthropic.com/news/claude-haiku-4-5).
+- **Haiku 4.5**: Rover now supports Haiku 4.5 when using the Claude Code agent. Learn more about this new model [here](https://www.anthropic.com/news/claude-haiku-4-5).
 
 ## October 14, 2025
 
@@ -156,7 +156,7 @@ description: Stay up to date with the latest changes and improvements to Terrago
 
 - **Documentation Updates**:
   - New [Slack integration guide](/docs/integrations/slack-integration) with setup instructions and examples.
-  - New ["When to use Terragon"](/docs/getting-started/quick-start#when-and-how-to-use-terragon) section to help understand ideal use cases
+  - New ["When to use Rover"](/docs/getting-started/quick-start#when-and-how-to-use-rover) section to help understand ideal use cases
 
 **UX Improvements & Bug Fixes**
 
@@ -172,8 +172,8 @@ description: Stay up to date with the latest changes and improvements to Terrago
 
 **Features**
 
-- **Amp Agent**: Terragon now supports [Amp](https://ampcode.com). Configure your Amp API key in [Settings](https://www.terragonlabs.com/settings/agent) to use this powerful alternative to Claude and Codex.
-- **Sonnet 4.5**: Terragon now supports Sonnet 4.5 when using the Claude Code agent.
+- **Amp Agent**: Rover now supports [Amp](https://ampcode.com). Configure your Amp API key in [Settings](https://www.terragonlabs.com/settings/agent) to use this powerful alternative to Claude and Codex.
+- **Sonnet 4.5**: Rover now supports Sonnet 4.5 when using the Claude Code agent.
 - **GitHub Integration Improvements**:
   - When you mention `@terragon-labs` in a PR comment, we now include more context from the full comment thread
   - PRs created from GitHub issues now automatically include "#issueNumber" in their body, properly linking PRs to their corresponding issues
@@ -192,7 +192,7 @@ description: Stay up to date with the latest changes and improvements to Terrago
 - Fixed Unicode surrogate pair errors that could occur with certain characters in code.
 - Branch names now include a unique hash to prevent conflicts when multiple tasks work on similar features.
 - Resolved RTL text handling issues for file paths in diff views.
-- Running the `terry pull` CLI command now checks for uncommitted changes before switching branches
+- Running the `rover pull` CLI command now checks for uncommitted changes before switching branches
 - Sidebar wordmark now links to dashboard for easier navigation
 - Improved tool call and thinking message display especially for Codex. These are now collapsed by default unless they're the latest message.
 
@@ -223,10 +223,10 @@ description: Stay up to date with the latest changes and improvements to Terrago
 - **Documentation updates**:
   - Added comprehensive [git checkpointing documentation](/docs/configuration/git-checkpointing)
   - Added [example setup scripts](/docs/configuration/environment-setup/setup-scripts) for Go, using a custom Node.js version, Ruby, Java, and Swift
-- **Branch name prefix customization**: You can now customize the branch prefix added to Terragon-generated branches (defaults to `terragon/`). Update this in [Settings](https://www.terragonlabs.com/settings).
+- **Branch name prefix customization**: You can now customize the branch prefix added to Rover-generated branches (defaults to `rover/`). Update this in [Settings](https://www.terragonlabs.com/settings).
 - **Codex Agent Improvements**: MCP tool calls and errors are now rendered and surfaced in the task output
-- **Support for Claude Teams and Enterprise**: You can now use Claude Teams and Claude Enterprise subscriptions in Terragon
-- **Terragon Sandbox Environment Variable**: Added `TERRAGON` environment variable to sandbox environments so you can distinguish when the agent is running in a Terragon sandbox versus elsewhere.
+- **Support for Claude Teams and Enterprise**: You can now use Claude Teams and Claude Enterprise subscriptions in Rover
+- **Rover Sandbox Environment Variable**: Added `TERRAGON` environment variable to sandbox environments so you can distinguish when the agent is running in a Rover sandbox versus elsewhere.
 - **Setup Script Editor Improvements**: The setup script editor now streams output in real-time so you'll see live feedback as you test changes. Access this by clicking on one of your environments from the [Environments](https://www.terragonlabs.com/environments) page.
 
 **UX Improvements & Bug Fixes**
@@ -249,7 +249,7 @@ description: Stay up to date with the latest changes and improvements to Terrago
 - **Context usage display**: Context usage is now displayed within tasks above the prompt box
 - **Improved task list UI (out of early access)**: Your task list is now always accessible from the sidebar when you're on the Home page or when viewing tasks.
 - **Plan Mode for Claude Code (out of early access)**: You can now use Claude Code's plan mode when creating new tasks. When a task is created in plan mode, Claude will provide a detailed implementation plan for you to approve or edit before any changes are made. To enable plan mode, in the prompt box change the mode selector in the bottom left to "Plan".
-- **Edit GitHub action workflows**: Terragon can now create and edit GitHub Action workflows in your repository
+- **Edit GitHub action workflows**: Rover can now create and edit GitHub Action workflows in your repository
 - **CLI Enhancements**:
   - Added new `--model` flag for the CLI `create` command so you can specify which AI model to use when creating tasks
   - Added new `--mode` flag for the CLI `create` command so you can specify whether to create tasks in plan or execution mode (Claude Code only)
@@ -325,7 +325,7 @@ description: Stay up to date with the latest changes and improvements to Terrago
 **Bug Fixes**
 
 - Improved error handling when using the Codex agent
-- Fixes instances where Terragon wasn't willing to use `gh` commands to interact with GitHub
+- Fixes instances where Rover wasn't willing to use `gh` commands to interact with GitHub
 
 ## August 5, 2025
 
@@ -333,7 +333,7 @@ description: Stay up to date with the latest changes and improvements to Terrago
 
 - **OpenAI Codex Agent**: Introducing support for OpenAI's Codex as an alternative agent. Configure your OpenAI API key in Settings then select from the Codex mini, o4 mini, o3, or o3 Pro models in the model selector.
 - **Opus 4.1**: Selecting Opus in the model selector now uses Opus 4.1
-- **Environment-Specific Setup Scripts**: You can now define a setup script from Environments without committing a `terragon-setup.sh` file to your repository. Environment scripts take precedence over those defined in `terragon-setup.sh` files.
+- **Environment-Specific Setup Scripts**: You can now define a setup script from Environments without committing a `rover-setup.sh` file to your repository. Environment scripts take precedence over those defined in `rover-setup.sh` files.
 - **New Github Integration Settings**:
   - Control whether GitHub @mentions in PRs are added to existing threads or create new tasks
   - Control whether PRs are opened as 'Draft' or 'Ready for review'
@@ -342,7 +342,7 @@ description: Stay up to date with the latest changes and improvements to Terrago
 **UX Improvements**
 
 - **Improved Subagent Support**: When you use Claude Code subagents, we now show the name of the subagent and the agent's color for improved confirmation the subagent is working as expected
-- **Diff Context in GitHub mentions**: Mentioning @terragon-labs in GitHub PR comments now includes context of the diff in the message back to Terragon
+- **Diff Context in GitHub mentions**: Mentioning @terragon-labs in GitHub PR comments now includes context of the diff in the message back to Rover
 - **Clarified Task Sharing Permissions**: The "Anyone with the link" permission was updated to "Logged in users with the link" to accurately reflect the actual behavior
 - **Additional Context in Push Notifications**: Push notifications now include the task name for improved context
 - **Improved Setup Script Timeout Handling**: We extended the setup script timeout to 5 minutes and now show the output of the script and which commands ran if it times out
@@ -355,7 +355,7 @@ description: Stay up to date with the latest changes and improvements to Terrago
 - Fixed notification display for tasks when browser tab is inactive
 - Enhanced dynamic slash command loading states in the prompt box
 - Stale tabs will now reload automatically
-- Terragon now has permission to clone multiple repositories in a single sandbox
+- Rover now has permission to clone multiple repositories in a single sandbox
 
 ## July 25, 2025
 
@@ -365,10 +365,10 @@ description: Stay up to date with the latest changes and improvements to Terrago
 - **Draft tasks**: Save tasks as drafts to submit later, accessible from the segmented submit button in the prompt box
 - **Retry tasks**: You can now retry tasks if you want to start over with the original prompt, or edit it before trying again. Retrying a task archives the original task after you submit, and is accessible from the new "Retry" option in the submenu within a task.
 - **Automatic context window management**: When a task is close to the context window limit, we'll automatically compact the message history while preserving context. You'll see a warning when you're approaching the limit and indication that we'll automatically compact soon.
-- **Updated Node version in the sandbox**: Node.js v22 is now the default version in the sandbox due to stability issues with v24. If your project requires Node v24, you can update your `terragon-setup.sh` file to use it.
+- **Updated Node version in the sandbox**: Node.js v22 is now the default version in the sandbox due to stability issues with v24. If your project requires Node v24, you can update your `rover-setup.sh` file to use it.
 - **Notifications**: You can now receive notifications when your tasks are complete. Enable this in settings, and make sure you have browser notifications turned on.
 - **Claude Code 1.0.60**: We've upgraded to the latest version of Claude Code, which includes support for custom agents.
-- **MCP server**: You can now use the terry cli as an MCP server. Run `claude mcp add terry -- terry mcp` to add it to Claude Code.
+- **MCP server**: You can now use the rover cli as an MCP server. Run `claude mcp add rover -- rover mcp` to add it to Claude Code.
   - This allows you to manage, create, and switch tasks all from within Claude Code locally.
 
 **UX Improvements & Bug Fixes**
@@ -384,7 +384,7 @@ description: Stay up to date with the latest changes and improvements to Terrago
 - Archiving tasks now automatically redirects to the dashboard
 - Fixed a bug where out of memory errors in the sandbox would result in core dumps
 - Fixed a bug where queuing messages would result in errors if your Claude rate limit was hit
-- Manual API key entry with `terry auth` for cases where automatic authentication fails.
+- Manual API key entry with `rover auth` for cases where automatic authentication fails.
 
 ## July 21, 2025
 
@@ -421,7 +421,7 @@ description: Stay up to date with the latest changes and improvements to Terrago
   - Tasks default to being visible to all repository members
   - You can change sharing permissions via the share modal on a task or in [Settings](https://terragonlabs.com/settings)
 - **Claude rate limit handling**: We now automatically queue and retry tasks if you hit your rate limit
-- **New `terry list` CLI command**: View all tasks for the current repository
+- **New `rover list` CLI command**: View all tasks for the current repository
 
 **UX Improvements**
 
@@ -440,9 +440,9 @@ description: Stay up to date with the latest changes and improvements to Terrago
 
 **Features**
 
-- **Anyone can signup**: Terragon is free to use while in beta.
-- **Revamped docs**: Much more comprehensive docs on how to use Terragon
-- **Improved GitHub integration**: Terragon now automatically reacts with 👀 emoji when mentioned in GitHub comments
+- **Anyone can signup**: Rover is free to use while in beta.
+- **Revamped docs**: Much more comprehensive docs on how to use Rover
+- **Improved GitHub integration**: Rover now automatically reacts with 👀 emoji when mentioned in GitHub comments
 - **Bring your own API key**: For enterprise/non-claude subscribers, you can now manually enter an Anthropic API key.
 - **Upload your .env files**: You can now quickly setup your environments from a .env file by pasting the contents of an existing .env.
 
@@ -458,11 +458,11 @@ description: Stay up to date with the latest changes and improvements to Terrago
 
 - **Sandbox**: We've upgraded the sandbox to use Ubuntu 24.04 and now have PHP and Composer installed
 - **GitHub CI status**: See the CI status of your pull requests alongside your tasks
-- **Progressive Web App support**: You can now add Terragon to your home screen for faster access on mobile
+- **Progressive Web App support**: You can now add Rover to your home screen for faster access on mobile
 - **Updated PR titles and descriptions**: We now automatically update these when the agent makes follow up code changes
 - **Task renaming**: You can now manually rename your tasks
 - **Slash command suggestions**: Type `/` to see available slash commands for the agent. You can use most of the slash commands available in Claude Code today.
-- **Invite your team**: You can now generate access codes to invite your friends to try out Terragon
+- **Invite your team**: You can now generate access codes to invite your friends to try out Rover
 
 **UX Improvements**
 
@@ -484,8 +484,8 @@ description: Stay up to date with the latest changes and improvements to Terrago
 **Features**
 
 - **Custom system prompts**: Configure custom system prompt in [Settings](/settings).
-- **New task creation command in cli**: Use `terry create` to create new tasks directly from the CLI with GitHub repository integration
-- **Open in Claude**: `terry pull --resume` now opens a conversation in Claude locally after syncing the code
+- **New task creation command in cli**: Use `rover create` to create new tasks directly from the CLI with GitHub repository integration
+- **Open in Claude**: `rover pull --resume` now opens a conversation in Claude locally after syncing the code
 
 **Quality of Life**
 
@@ -501,4 +501,4 @@ Alpha Release
 - Run multiple coding agents simultaneously in isolated sandboxes
 - Agents open PRs for you with their work
 - Mention `@terragon-labs` in GitHub comments to spawn new tasks
-- Use the `terry` cli to continue working with the agent locally
+- Use the `rover` cli to continue working with the agent locally

@@ -63,7 +63,7 @@ function getBootingSubstatusMessage(substatus: BootingSubstatus): string {
     case "installing-agent":
       return "Installing agent";
     case "running-setup-script":
-      return "Running terragon-setup.sh";
+      return "Running rover-setup.sh";
     case "booting-done":
       return "Waiting for assistant to start";
     default:

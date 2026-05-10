@@ -22,7 +22,7 @@ function extractCreditMetadata(
     return null;
   }
   const reason = metadata.reason;
-  const userId = metadata.terragon_user_id;
+  const userId = metadata.rover_user_id;
   if (typeof userId !== "string" || userId.length === 0) {
     return null;
   }

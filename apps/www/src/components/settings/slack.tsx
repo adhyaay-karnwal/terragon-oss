@@ -165,7 +165,7 @@ export function SlackAccountSettings({
     return (
       <div className="flex flex-col gap-2 rounded-lg w-full">
         <p className="text-sm">
-          Connect your Slack workspace to interact with Terragon through Slack
+          Connect your Slack workspace to interact with Rover through Slack
         </p>
         <div className="flex">
           <Button

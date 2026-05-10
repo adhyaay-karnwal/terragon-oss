@@ -35,7 +35,7 @@ export async function getSetupScriptFromRepo({
     const { data } = await octokit.rest.repos.getContent({
       owner,
       repo,
-      path: "terragon-setup.sh",
+      path: "rover-setup.sh",
       ref: branchName,
     });
     if ("content" in data && typeof data.content === "string") {

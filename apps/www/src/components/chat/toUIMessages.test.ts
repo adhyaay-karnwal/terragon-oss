@@ -796,7 +796,7 @@ describe("toUIMessages", () => {
         parent_tool_use_id: null,
         parts: [
           {
-            text: "**Directory listing:** Contains CLAUDE.md, ...**README Summary:** Terragon is a...",
+            text: "**Directory listing:** Contains CLAUDE.md, ...**README Summary:** Rover is a...",
             type: "text",
           },
         ],
@@ -850,7 +850,7 @@ describe("toUIMessages", () => {
             status: "completed",
           },
           {
-            text: "**Directory listing:** Contains CLAUDE.md, ...**README Summary:** Terragon is a...",
+            text: "**Directory listing:** Contains CLAUDE.md, ...**README Summary:** Rover is a...",
             type: "text",
           },
         ],

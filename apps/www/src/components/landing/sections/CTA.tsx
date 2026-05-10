@@ -13,7 +13,7 @@ export default function CTA() {
             Ready to ship faster?
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
-            Join thousands of developers building with Terragon
+            Join thousands of developers building with Rover
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2">
             <Button

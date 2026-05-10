@@ -14,7 +14,7 @@ function getSettingsDir(): string {
   if (override && override.trim().length > 0) {
     return resolve(expandTilde(override.trim()));
   }
-  return join(homedir(), ".terry");
+  return join(homedir(), ".rover");
 }
 
 const CONFIG_DIR = getSettingsDir();

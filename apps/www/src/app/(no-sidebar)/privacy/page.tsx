@@ -2,9 +2,9 @@ import Footer from "@/components/landing/sections/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Terragon Labs",
+  title: "Privacy Policy - Rover Labs",
   description:
-    "Privacy Policy for Terragon Labs Inc. Learn how we collect, use, and protect your personal information when using our AI-powered coding assistant platform.",
+    "Privacy Policy for Rover Labs Inc. Learn how we collect, use, and protect your personal information when using our AI-powered coding assistant platform.",
   robots: {
     index: true,
     follow: true,
@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
         <article className="prose prose-slate max-w-none">
           <header className="text-center mb-12">
             <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4">
-              Terragon Labs Inc. Privacy Policy
+              Rover Labs Inc. Privacy Policy
             </h1>
             <div className="text-muted-foreground">
               <p>Effective Date: September 29, 2025</p>
@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
           <div className="space-y-8 text-foreground leading-relaxed">
             <section>
               <p className="text-lg leading-relaxed">
-                Terragon Labs Inc. ("Terragon Labs," "we," "us," or "our") is
+                Rover Labs Inc. ("Rover Labs," "we," "us," or "our") is
                 committed to protecting your privacy. This Privacy Policy
                 describes how we collect, use, share, and protect information
                 when you access or use our website at terragonlabs.com, its
@@ -241,7 +241,7 @@ export default function PrivacyPolicy() {
               <div className="bg-muted/30 p-6 rounded-lg border">
                 <h3 className="font-semibold mb-3">Legal Department</h3>
                 <div className="font-mono text-sm space-y-1">
-                  <p>Terragon Labs Inc.</p>
+                  <p>Rover Labs Inc.</p>
                   <p>131 Continental Dr Suite 305</p>
                   <p>Newark, DE 19713, USA</p>
                   <p>Telephone: (415) 707-2952</p>

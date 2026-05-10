@@ -63,7 +63,7 @@ export function normalizeToolCall<T extends ToolCall>(
   toolCall: T,
 ): T {
   // Handle MCP tools (agent-agnostic)
-  if (toolCall.name === "mcp__terry__SuggestFollowupTask") {
+  if (toolCall.name === "mcp__rover__SuggestFollowupTask") {
     return {
       ...toolCall,
       name: "SuggestFollowupTask",
