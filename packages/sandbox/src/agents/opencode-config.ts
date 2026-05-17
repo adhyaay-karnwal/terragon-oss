@@ -82,18 +82,18 @@ export function buildOpencodeConfig({
     autoupdate: false,
     mcp,
     provider: {
-      terry: {
+      rover: {
         npm: "@ai-sdk/openai-compatible",
-        name: "Terragon",
+        name: "Rover",
         options: {
           baseURL: `${publicUrl}/api/proxy/openrouter/v1`,
           headers: { "X-Daemon-Token": "{env:DAEMON_TOKEN}" },
         },
         models: openRouterModels,
       },
-      "terry-google": {
+      "rover-google": {
         npm: "@ai-sdk/google",
-        name: "Terragon Google",
+        name: "Rover Google",
         options: {
           baseURL: `${publicUrl}/api/proxy/google/v1`,
           apiKey: "unused",
@@ -112,9 +112,9 @@ export function buildOpencodeConfig({
           },
         },
       },
-      "terry-ant": {
+      "rover-ant": {
         npm: "@ai-sdk/anthropic",
-        name: "Terragon Anthropic",
+        name: "Rover Anthropic",
         options: {
           baseURL: `${publicUrl}/api/proxy/anthropic/v1`,
           apiKey: "unused",
@@ -127,9 +127,9 @@ export function buildOpencodeConfig({
           },
         },
       },
-      "terry-oai": {
+      "rover-oai": {
         npm: "@ai-sdk/openai",
-        name: "Terragon OpenAI",
+        name: "Rover OpenAI",
         options: {
           baseURL: `${publicUrl}/api/proxy/openai/v1`,
           apiKey: "unused",

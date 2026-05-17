@@ -1139,7 +1139,7 @@ Hey @app, I found several issues:
     });
 
     it("should create tasks for both mentioning user and automation user when both apply", async () => {
-      // Mentioning user is a Terragon user but not the automation owner
+      // Mentioning user is a Rover user but not the automation owner
       await createAutomation({
         db,
         userId: automationUser.id,

@@ -22,6 +22,7 @@ export async function ensureStripeCustomer({
     email: user.email,
     name: user.name,
     metadata: {
+      rover_user_id: userId,
       terragon_user_id: userId,
     },
   });

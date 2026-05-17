@@ -24,14 +24,14 @@ export function isAppMentioned(commentBody: string): boolean {
 
 /**
  * Extract model name from GitHub comment body.
- * Looks for patterns like "@terragon-labs [sonnet]" or "@terragon-labs [opus]"
+ * Looks for patterns like "@rover-labs [sonnet]" or "@rover-labs [opus]"
  * Returns the model name if valid, null otherwise.
  *
  * Examples:
- * - "@terragon-labs [sonnet] fix this bug" -> "sonnet"
- * - "@terragon-labs [gpt-5] improve code" -> "gpt-5"
- * - "@terragon-labs fix this" -> null
- * - "@terragon-labs [invalid-model]" -> null
+ * - "@rover-labs [sonnet] fix this bug" -> "sonnet"
+ * - "@rover-labs [gpt-5] improve code" -> "gpt-5"
+ * - "@rover-labs fix this" -> null
+ * - "@rover-labs [invalid-model]" -> null
  */
 export function extractModelFromComment({
   commentBody,
@@ -91,7 +91,7 @@ export async function postBillingLinkComment({
   reviewCommentId?: number;
 }): Promise<void> {
   const billingUrl = `${publicAppUrl()}/settings/billing`;
-  const body = `To use Terragon from GitHub, please set up billing here: ${billingUrl}`;
+  const body = `To use Rover from GitHub, please set up billing here: ${billingUrl}`;
 
   if (reviewCommentId) {
     try {

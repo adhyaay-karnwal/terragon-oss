@@ -1,6 +1,6 @@
 ---
 title: Environment Variables
-description: Configure secrets and environment variables for your Terragon sandboxes.
+description: Configure secrets and environment variables for your Rover sandboxes.
 ---
 
 import { Steps, Step } from "fumadocs-ui/components/steps";
@@ -70,24 +70,25 @@ SLACK_TOKEN=xoxb-...
 
 ## Default Environment Variables
 
-Terragon automatically sets the following environment variables in your sandbox:
+Rover automatically sets the following environment variables in your sandbox:
 
 | Name       | Description                                                                                                                                                              |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `TERRAGON` | Always set to `true` when running in a Terragon sandbox. You can use this variable to differentiate when the agent/code is running in a Terragon sandbox versus locally. |
+| `ROVER` | Always set to `true` when running in a Rover sandbox. You can use this variable to differentiate when the agent/code is running in a Rover sandbox versus locally. |
+| `TERRAGON` | Back-compat alias for `ROVER`. |
 | `GH_TOKEN` | GitHub access token for the `gh` CLI. You can override this by setting your own `GH_TOKEN` environment variable.                                                         |
 
 <Callout type="info">
-  **Custom GitHub Token**: If you need to use a different GitHub token (e.g., for accessing private packages or repositories), you can add your own `GH_TOKEN` environment variable. Your custom token will take precedence over the default token provided by Terragon.
+  **Custom GitHub Token**: If you need to use a different GitHub token (e.g., for accessing private packages or repositories), you can add your own `GH_TOKEN` environment variable. Your custom token will take precedence over the default token provided by Rover.
 </Callout>
 
 ## Using Environment Variables
 
 ### In Setup Scripts
 
-Environment variables are automatically available in your `terragon-setup.sh` script:
+Environment variables are automatically available in your `rover-setup.sh` script:
 
-```bash title="terragon-setup.sh"
+```bash title="rover-setup.sh"
 #!/bin/bash
 echo "API Key: $MY_API_KEY"
 echo "Database URL: $DATABASE_URL"

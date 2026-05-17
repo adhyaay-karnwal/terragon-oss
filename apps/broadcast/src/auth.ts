@@ -10,7 +10,7 @@ export async function validateRequest(
   env: Record<string, unknown>,
 ) {
   if (!channel) {
-    const sharedSecret = request.headers.get("X-Terragon-Secret");
+    const sharedSecret = request.headers.get("X-Rover-Secret");
     if (sharedSecret && sharedSecret === getInternalSharedSecret(env)) {
       return;
     }

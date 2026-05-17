@@ -4,7 +4,7 @@
     "subtype": "init",
     "cwd": "/Users/test/test-project",
     "session_id": "session_followup_001",
-    "tools": ["mcp__terry__SuggestFollowupTask"],
+    "tools": ["mcp__rover__SuggestFollowupTask"],
     "mcp_servers": [],
     "model": "claude-opus-4-20250514",
     "permissionMode": "bypassPermissions",
@@ -47,7 +47,7 @@
         {
           "type": "tool_use",
           "id": "toolu_01FOLLOWUP",
-          "name": "mcp__terry__SuggestFollowupTask",
+          "name": "mcp__rover__SuggestFollowupTask",
           "input": {
             "title": "Implement End-to-End Authentication Tests",
             "description": "Set up Cypress and write comprehensive end-to-end tests covering the full authentication flow (sign-up, login, password reset, and OAuth). Integrate the tests into the CI pipeline, mock external services where appropriate, minimize flakiness, and document the setup in the README."

@@ -1,7 +1,7 @@
 {
   "name": "@terragon/env",
   "version": "1.0.0",
-  "description": "Package to manage environment variables across the terragon monorepo",
+  "description": "Package to manage environment variables across the rover monorepo",
   "type": "module",
   "exports": {
     "./apps-www": "./src/apps-www.ts",

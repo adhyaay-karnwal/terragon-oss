@@ -7,26 +7,26 @@ import { ServerProviders } from "@/components/system/server-providers";
 import { KonamiVideo } from "@/components/konami-video";
 
 export const metadata: Metadata = {
-  title: "Terragon",
+  title: "Rover",
   description: "AI-powered coding assistant platform",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Terragon",
+    title: "Rover",
   },
   formatDetection: {
     telephone: false,
   },
   openGraph: {
     type: "website",
-    siteName: "Terragon",
-    title: "Terragon",
+    siteName: "Rover",
+    title: "Rover",
     description: "AI-powered coding assistant platform",
   },
   twitter: {
     card: "summary",
-    title: "Terragon",
+    title: "Rover",
     description: "AI-powered coding assistant platform",
   },
 };

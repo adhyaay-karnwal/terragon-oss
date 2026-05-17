@@ -11,7 +11,7 @@ export function getThreadDocumentTitle(
   thread: Pick<ThreadInfo, "name" | "isUnread">,
 ) {
   if (thread.isUnread) {
-    return `(1) ${getThreadTitle(thread)} | Terragon`;
+    return `(1) ${getThreadTitle(thread)} | Rover`;
   }
-  return `${getThreadTitle(thread)} | Terragon`;
+  return `${getThreadTitle(thread)} | Rover`;
 }

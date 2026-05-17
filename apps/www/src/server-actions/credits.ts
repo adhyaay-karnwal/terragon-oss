@@ -30,6 +30,7 @@ export const createCreditTopUpCheckoutSession = userOnlyAction(
         enabled: true,
         invoice_data: {
           metadata: {
+            rover_user_id: userId,
             terragon_user_id: userId,
             reason: CREDIT_TOP_UP_REASON,
           },
@@ -38,11 +39,13 @@ export const createCreditTopUpCheckoutSession = userOnlyAction(
       payment_intent_data: {
         setup_future_usage: "off_session",
         metadata: {
+          rover_user_id: userId,
           terragon_user_id: userId,
           reason: CREDIT_TOP_UP_REASON,
         },
       },
       metadata: {
+        rover_user_id: userId,
         terragon_user_id: userId,
         reason: CREDIT_TOP_UP_REASON,
       },

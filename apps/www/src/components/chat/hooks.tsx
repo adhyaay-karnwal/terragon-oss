@@ -53,7 +53,7 @@ export function useThreadDocumentTitleAndFavicon({
   // Update document title and favicon based on unread messages
   const documentTitle = name
     ? getThreadDocumentTitle({ name, isUnread: isThreadUnread })
-    : "Terragon";
+    : "Rover";
   useEffect(() => {
     if (typeof document === "undefined") {
       return;

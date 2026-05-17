@@ -1,7 +1,7 @@
 {
   "name": "@terragon/utils",
   "version": "1.0.0",
-  "description": "Shared utility functions for the terragon monorepo",
+  "description": "Shared utility functions for the rover monorepo",
   "type": "module",
   "exports": {
     "./error": "./src/error.ts",

@@ -6,7 +6,10 @@ import packageJson from "../../package.json" assert { type: "json" };
 
 async function checkForUpdate() {
   // Check if update notifications are disabled
-  if (process.env.TERRY_NO_UPDATE_CHECK === "1") {
+  if (
+    process.env.ROVER_NO_UPDATE_CHECK === "1" ||
+    process.env.TERRY_NO_UPDATE_CHECK === "1"
+  ) {
     return null;
   }
 
@@ -45,7 +48,7 @@ export function UpdateNotifier() {
         Update available: {updateInfo.current} → {updateInfo.latest}
       </Text>
       <Text color="gray"> Run </Text>
-      <Text color="cyan">npm install -g @terragon-labs/cli</Text>
+      <Text color="cyan">npm install -g @rover-labs/cli</Text>
       <Text color="gray"> to update</Text>
     </Box>
   );

@@ -10,48 +10,48 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Terragon Documentation",
-    template: "%s | Terragon Docs",
+    default: "Rover Documentation",
+    template: "%s | Rover Docs",
   },
   description:
-    "Comprehensive documentation for Terragon - AI-powered coding assistant platform. Learn how to use Terragon to run coding agents in parallel inside remote sandboxes.",
+    "Comprehensive documentation for Rover - AI-powered coding assistant platform. Learn how to use Rover to run coding agents in parallel inside remote sandboxes.",
   keywords: [
-    "Terragon",
+    "Rover",
     "AI coding assistant",
     "documentation",
     "coding agents",
     "developer tools",
     "AI development",
   ],
-  authors: [{ name: "Terragon Labs" }],
-  creator: "Terragon Labs",
-  publisher: "Terragon Labs",
-  metadataBase: new URL("https://docs.terragonlabs.com"),
+  authors: [{ name: "Rover Labs" }],
+  creator: "Rover Labs",
+  publisher: "Rover Labs",
+  metadataBase: new URL("https://docs.roverlabs.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://docs.terragonlabs.com",
-    siteName: "Terragon Documentation",
-    title: "Terragon Documentation",
+    url: "https://docs.roverlabs.com",
+    siteName: "Rover Documentation",
+    title: "Rover Documentation",
     description:
-      "Documentation for Terragon - AI-powered coding assistant platform",
+      "Documentation for Rover - AI-powered coding assistant platform",
     images: [
       {
-        url: "https://cdn.terragonlabs.com/og-img-2-_W6t.png",
+        url: "https://cdn.roverlabs.com/og-img-2-_W6t.png",
         width: 1200,
         height: 630,
-        alt: "Terragon Documentation",
+        alt: "Rover Documentation",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terragon Documentation",
+    title: "Rover Documentation",
     description:
-      "Documentation for Terragon - AI-powered coding assistant platform",
-    images: ["https://cdn.terragonlabs.com/og-img-2-_W6t.png"],
-    creator: "@terragonlabs",
-    site: "@terragonlabs",
+      "Documentation for Rover - AI-powered coding assistant platform",
+    images: ["https://cdn.roverlabs.com/og-img-2-_W6t.png"],
+    creator: "@roverlabs",
+    site: "@roverlabs",
   },
   robots: {
     index: true,
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://docs.terragonlabs.com",
+    canonical: "https://docs.roverlabs.com",
   },
 };
 
@@ -85,8 +85,8 @@ export default function Layout({ children }: { children: ReactNode }) {
     "@type": "TechArticle",
     publisher: {
       "@type": "Organization",
-      name: "Terragon Labs",
-      url: "https://www.terragonlabs.com",
+      name: "Rover Labs",
+      url: "https://www.roverlabs.com",
     },
     inLanguage: "en-US",
   };

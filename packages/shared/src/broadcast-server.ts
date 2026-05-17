@@ -28,7 +28,7 @@ export async function publishBroadcastUserMessage(
       method: "POST",
       body: JSON.stringify(message),
       headers: {
-        "X-Terragon-Secret": env.INTERNAL_SHARED_SECRET!,
+        "X-Rover-Secret": env.INTERNAL_SHARED_SECRET!,
       },
     },
   );

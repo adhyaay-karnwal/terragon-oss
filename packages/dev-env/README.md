@@ -1,6 +1,6 @@
 # @terragon/dev-env
 
-Contains code to setup the development environment for terragon.
+Contains code to setup the development environment for rover.
 
 1. The docker compose file for the dev environment.
 2. A script to setup a tunnel to the dev environment.
